@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>projet_event</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -18,31 +18,6 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.php?p=home">Play Doh</a>
-        </div>
-        <div class="navbar-header" style="float:right;-right: 50px">
-          <a class="navbar-brand" href="index.php?p=connexion">Connexion</a>
-          <a class="navbar-brand" href="index.php?p=inscription">Inscription</a>
-        </div>
-    </nav>
-
-
-    <div class="container">
-
-      <div class="starter-template" style="padding-top: 65px;">
-      <img src="../playdoh/public/img/logopd.jpg" style="margin-left: 40%; height: 175px;">
-      <!-- Affichage du contenu de $content -->
-      <?=
-        $content; 
-      ?>
-
-      </div>
-
-    </div><!-- /.container -->
-
+    <p> yali yolo</p>
   </body>
 </html>
