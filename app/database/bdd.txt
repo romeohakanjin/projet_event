@@ -1,0 +1,48 @@
+CREATE TABLE IF NOT EXISTS Membre(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `mail` varchar(50) NOT NULL,
+    `password` varchar(60) NOT NULL,
+    `genre` varchar(10) NOT NULL,
+    `nom` varchar(30) NOT NULL,
+    `prenom` varchar(15) NOT NULL,
+    `adresse` varchar(50) NULL,
+    `code_postal` int(10) NULL,
+    `ville` varchar(50) NULL,
+    `date-naissance` date NULL,
+    `tel` int(17) NULL,
+    `date_creation` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `etat_membre` ENUM('Inscrit', 'Actif', 'Inactif') DEFAULT 'Inscrit',
+    `news_letter` int(1) NULL default '0',
+    `score` int  NULL default '0',
+    `ip_membre` int (20) NOT NULL,
+    
+    CONSTRAINT PKM1 PRIMARY KEY (id, ip_membre),
+    CONSTRAINT FKM1 FOREIGN KEY (ip_membre) REFERENCES Connexion(ip)
+)ENGINE=InnoDb;
+
+CREATE TABLE IF NOT EXISTS Liste_Contact(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `genre` varchar(10) NOT NULL,
+    `nom` varchar(30) NOT NULL,
+    `prenom` varchar(15) NOT NULL,
+    `adresse` varchar(50) NULL,
+    `code-postal` int(10) NULL,
+    `ville` varchar(50) NULL,
+    `tel` int(17) NULL,
+    `tel_fix` int(17) NULL,
+    `date_ajout` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `id_membre` int NOT NULL,
+    
+    CONSTRAINT PKLC1 PRIMARY KEY (id, id_membre),
+    CONSTRAINT FKLC1 FOREIGN KEY (id_membre) REFERENCES Membre(id)
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS Connexion(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `ip` int(20) NOT NULL,
+    `derniere-connexion` DATETIME NOT NULL,
+    `id_membre` int NOT NULL,
+    
+    CONSTRAINT PKC1 PRIMARY KEY (id, id_membre, ip),
+    CONSTRAINT FKC1 FOREIGN KEY (id_membre) REFERENCES Membre(id)
+)ENGINE=InnoDB;
