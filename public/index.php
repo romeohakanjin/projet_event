@@ -1,7 +1,7 @@
 <?php
 	//Inclure la class Autoloader
 	require '../models/Autoloader.php';
-	
+
 	//Relancer et gérer l'autoloading
 	Autoloader::register();
 
@@ -20,10 +20,18 @@
 		require '../views/index.php';
 	}
 
-	else if ($p === 'contact') {
-		require '../views/contact.php';
+	else if ($p === 'admin') {
+		require '../views/admin/index.php';
 	}
 
+	else if ($p === 'liste_contact') {
+		require '../views/admin/liste_contact.php';
+	}
+
+	else if ($p === 'membre') {
+		require '../views/admin/membre.php';
+	}
+	
 	$content = ob_get_clean();
 	require '../views/template/default.php';
 ?>
