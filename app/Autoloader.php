@@ -10,12 +10,10 @@
 		//Prends en charge les namespace
 		static function autoload($class){
 			if(strpos($class, __NAMESPACE__.'\\') ==0){
-				$class = str_replace(__NAMESPACE__.'\\','',$class);
-				
-				$class = str_replace('\\', '/', $class);
-
 				//Récupère la classe en fonction de celle en paramètre en fonction du dossier parent donc 'app'
-				require __DIR__.'/'.$class.'.php';
+				$open = 'C:\xampp\htdocs\projet\projet_event/models/'.$class.'.php';
+				$open= str_replace('app/', '', $open);
+				require $open;
 			}
 		}
 
