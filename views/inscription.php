@@ -1,6 +1,6 @@
 <h2>Inscription</h2>
 <div class="container">
-  <form class="form-signin" action="controllers/MembreC.php" method="POST">
+  <form class="form-signin" action="../controllers/index.php?action=inscription" method="POST">
 
     <label for="inputEmail" class="sr-only">Email address</label>
     <input autocomplete="off" type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value="<?php if(isset($mail)) { echo $mail; } ?>">

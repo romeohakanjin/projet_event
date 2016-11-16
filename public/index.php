@@ -15,6 +15,9 @@
 	//Stocker l'affichage
 	ob_start();
 
+    $conf = Config::getInstance()->get("db_user");
+    var_dump($conf);
+
     //Redirection en fonction du paramètre
 	switch ($p) {
 		case 'home':

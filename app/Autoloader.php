@@ -11,9 +11,7 @@
 		static function autoload($class){
 			if(strpos($class, __NAMESPACE__.'\\') ==0){
 				//Récupère la classe en fonction de celle en paramètre en fonction du dossier parent donc 'app'
-				//$open = 'C:\xampp\htdocs\projet\projet_event/models/'.$class.'.php';
-                $open = 'C:\wamp64\www\projet_event/models/'.$class.'.php';
-                $open= str_replace('app/', '', $open);
+                $open = dirname(__DIR__).'/models/'.$class.'.php';
 				require $open;
 			}
 		}
