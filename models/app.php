@@ -1,6 +1,6 @@
 <?php
 	class App{
-		const DB_NAME = 'playdoh';
+		const DB_NAME = 'project_event';
 		const DB_USER = 'root';
 		const DB_PASS = '';
 		const DB_HOST = 'localhost';	

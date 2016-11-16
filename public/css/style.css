@@ -1,3 +1,55 @@
-div#navbar{
+#navbar{
+	float: left;
+}
+
+ul.nav{
 	float: right;
+}
+
+table.admin-table-gestion th{
+	text-align: center;
+}
+
+table.admin-table-gestion td{
+	padding: 4px;
+	text-align: center;
+}
+
+.tr-table-admin-gestion{
+	border-bottom: solid 1px ;
+}
+
+img.icon-admin-gestion{
+	max-width: 25px;
+}
+
+.ul-gestion-admin-type-membre p{
+	display: initial;
+}
+
+footer .row{
+	background-color: #333333;
+	height: auto;
+	color: white;
+}
+
+.header-img{
+	width: 125px;
+	height: 125px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+div.coordonnes{
+	margin-left: 5%;
+}
+div.info{
+	margin-top: 10%;
+}
+div.accueil{
+	margin-left: 5%;
 }
