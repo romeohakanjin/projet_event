@@ -1,12 +1,12 @@
 <?php
-	class Membre{
+	class Membre extends models{
 
-		public static function getMembre(){
-			return app::getDB()->query('SELECT * FROM membre', __CLASS__);
+		public function getMembre(){
+			return $this->db->query('SELECT * FROM membre');
 		}
 
-        public static function getMembreEtat($etat){
-            return app::getDB()->prepare('SELECT * FROM membre WHERE id_etat = ?', [$etat], __CLASS__, true);
+        public function getMembreEtat($etat){
+            return $this->db->prepare('SELECT * FROM membre WHERE id_etat = ?', [$etat]);
         }
 	}
 ?>
