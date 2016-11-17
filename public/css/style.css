@@ -4,6 +4,7 @@
 
 ul.nav{
 	float: right;
+<<<<<<< HEAD
 }
 
 table.admin-table-gestion th{
@@ -52,4 +53,6 @@ div.info{
 }
 div.accueil{
 	margin-left: 5%;
+=======
+>>>>>>> 9690ecf8433ff46bff0807598b4b7bbce2bd7204
 }
