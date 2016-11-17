@@ -10,7 +10,7 @@
         static function autoload($class){
             if(strpos($class, __NAMESPACE__.'\\') ==0){
                 //Récupère la classe en fonction de celle en paramètre en fonction de la racine/models
-                $open = dirname(__DIR__).'/models/'.$class.'.php';
+                $open = ROOT.'/models/'.$class.'.php';
                 require $open;
             }
         }

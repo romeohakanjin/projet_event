@@ -1,6 +1,9 @@
 <?php
+    //on défini notre variable webroot
+    define('ROOT', dirname(__DIR__));
+
     //Inclure la class Autoloader
-    require '../app/Autoloader.php';
+    require ROOT.'/app/Autoloader.php';
 
     //Relancer et gérer l'autoloading
     Autoloader::register();
@@ -22,23 +25,23 @@
     //Redirection en fonction du paramètre
     switch ($p) {
         case 'home':
-            require '../views/index.php';
+            require ROOT.'/views/index.php';
             break;
 
         case 'admin':
-            require '../views/admin/index.php';
+            require ROOT.'/views/admin/index.php';
             break;
 
         case 'liste_utilisateur':
-            require '../views/admin/liste_utilisateur.php';
+            require ROOT.'/views/admin/liste_utilisateur.php';
             break;
 
         case 'connexion':
-            require '../views/connexion.php';
+            require ROOT.'/views/connexion.php';
             break;
 
         case 'inscription':
-            require '../views/inscription.php';
+            require ROOT.'/views/inscription.php';
             break;
 
         default:
@@ -47,5 +50,5 @@
     }
 
     $content = ob_get_clean();
-    require '../views/template/default.php';
+    require ROOT.'/views/template/default.php';
 ?>
