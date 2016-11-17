@@ -17,7 +17,7 @@
 	?>
 	
 	<br/><br/><br/><br/>
-	<div class="accueil">
+	<div class="accueil col-xs-offset-1 col-md-offset-2">
 
 		<h1> Le but du job dating? </h1>
 		<p>

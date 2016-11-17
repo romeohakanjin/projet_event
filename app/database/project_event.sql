@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 15 Novembre 2016 à 13:46
+-- Généré le :  Jeu 17 Novembre 2016 à 19:35
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `project_event`
 --
-CREATE DATABASE IF NOT EXISTS `project_event` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `project_event`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +36,7 @@ CREATE TABLE `etat_inscription` (
 --
 
 INSERT INTO `etat_inscription` (`id`, `libelle`) VALUES
-(1, 'En attente de validation'),
+(1, 'En attente'),
 (2, 'Validées'),
 (3, 'Refusées');
 
@@ -50,28 +48,27 @@ INSERT INTO `etat_inscription` (`id`, `libelle`) VALUES
 
 CREATE TABLE `membre` (
   `id` int(11) NOT NULL,
-  `civilite` varchar(20) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `date_naissance` datetime NOT NULL,
   `adresse` varchar(50) NOT NULL,
   `code_postal` int(5) NOT NULL,
   `ville` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `niveau_etude` varchar(50) NOT NULL,
   `type_contrat` varchar(50) NOT NULL,
   `id_utilisateur` int(11) DEFAULT NULL,
-  `id_type` int(11) DEFAULT NULL,
-  `id_etat` int(11) DEFAULT NULL
+  `id_type_membre` int(11) DEFAULT '1',
+  `id_etat_inscription` int(11) DEFAULT '1',
+  `civilite` enum('Madame','Monsieur') DEFAULT NULL,
+  `niveau_etude` enum('1','2','3','4','5','autre') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `membre`
 --
 
-INSERT INTO `membre` (`id`, `civilite`, `nom`, `prenom`, `date_naissance`, `adresse`, `code_postal`, `ville`, `email`, `niveau_etude`, `type_contrat`, `id_utilisateur`, `id_type`, `id_etat`) VALUES
-(1, 'Mlle', 'testNom', 'testPrenom', '1996-11-29 00:00:00', 'testAdresse', 12345, 'testVille', 'test@test.com', 'Bac + 3', 'Contrat pro', 1, 1, 2),
-(2, 'Mr', 'testNom2', 'testPrenom2', '1995-11-06 00:00:00', 'testAdresse2', 57456, 'testVille2', 'test2@test.com', 'Bac + 3', 'Contrat pro', 2, 2, 2);
+INSERT INTO `membre` (`id`, `nom`, `prenom`, `date_naissance`, `adresse`, `code_postal`, `ville`, `type_contrat`, `id_utilisateur`, `id_type_membre`, `id_etat_inscription`, `civilite`, `niveau_etude`) VALUES
+(1, 'testNom', 'testPrenom', '1996-11-29 00:00:00', 'testAdresse', 12345, 'testVille', 'Contrat pro', 1, 1, 2, NULL, NULL),
+(2, 'testNom2', 'testPrenom2', '1995-11-06 00:00:00', 'testAdresse2', 57456, 'testVille2', 'Contrat pro', 2, 2, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -100,19 +97,22 @@ INSERT INTO `type_membre` (`id`, `libelle`) VALUES
 
 CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL,
-  `login` varchar(20) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `identifiant` varchar(20) NOT NULL,
+  `mot_de_passe` varchar(50) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `date_inscription` datetime NOT NULL
+  `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_membre` int(11) DEFAULT NULL,
+  `id_type_membre` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `login`, `password`, `email`, `date_inscription`) VALUES
-(1, 'test', 'test1234', 'test@test.com', '2016-11-14 00:00:00'),
-(2, 'admin', 'admin1234', 'test2@test.com', '2016-11-27 00:00:00');
+INSERT INTO `utilisateur` (`id`, `identifiant`, `mot_de_passe`, `email`, `date_inscription`, `id_membre`, `id_type_membre`) VALUES
+(1, 'test', 'test1234', 'test@test.com', '2016-11-14 00:00:00', NULL, NULL),
+(2, 'admin', 'admin1234', 'test2@test.com', '2016-11-27 00:00:00', NULL, NULL),
+(3, 'sindy', 'test1234', 'sindy@test.com', '2016-11-17 20:22:33', 1, 1);
 
 --
 -- Index pour les tables exportées
@@ -130,8 +130,8 @@ ALTER TABLE `etat_inscription`
 ALTER TABLE `membre`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FKM1` (`id_utilisateur`),
-  ADD KEY `FKM2` (`id_type`),
-  ADD KEY `FKM3` (`id_etat`);
+  ADD KEY `FKM2` (`id_type_membre`),
+  ADD KEY `FKM3` (`id_etat_inscription`);
 
 --
 -- Index pour la table `type_membre`
@@ -143,7 +143,9 @@ ALTER TABLE `type_membre`
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKU1` (`id_membre`),
+  ADD KEY `FKU2` (`id_type_membre`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -168,7 +170,7 @@ ALTER TABLE `type_membre`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Contraintes pour les tables exportées
 --
@@ -178,8 +180,15 @@ ALTER TABLE `utilisateur`
 --
 ALTER TABLE `membre`
   ADD CONSTRAINT `FKM1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`),
-  ADD CONSTRAINT `FKM2` FOREIGN KEY (`id_type`) REFERENCES `type_membre` (`id`),
-  ADD CONSTRAINT `FKM3` FOREIGN KEY (`id_etat`) REFERENCES `etat_inscription` (`id`);
+  ADD CONSTRAINT `FKM2` FOREIGN KEY (`id_type_membre`) REFERENCES `type_membre` (`id`),
+  ADD CONSTRAINT `FKM3` FOREIGN KEY (`id_etat_inscription`) REFERENCES `etat_inscription` (`id`);
+
+--
+-- Contraintes pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD CONSTRAINT `FKU1` FOREIGN KEY (`id_membre`) REFERENCES `membre` (`id`),
+  ADD CONSTRAINT `FKU2` FOREIGN KEY (`id_type_membre`) REFERENCES `type_membre` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
