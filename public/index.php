@@ -15,10 +15,6 @@
 	//Stocker l'affichage
 	ob_start();
 
-    $conf = Config::getInstance()->get("db_user");
-    var_dump($conf);
-
-    //Redirection en fonction du paramètre
 	switch ($p) {
 		case 'home':
 			require '../views/index.php';
@@ -28,8 +24,12 @@
 			require '../views/admin/index.php';
 		break;
 
-		case 'liste_utilisateur':
-			require '../views/admin/liste_utilisateur.php';
+		case 'liste_contact':
+			require '../views/admin/liste_contact.php';
+		break;
+
+		case 'membre':
+			require '../views/admin/membre.php';
 		break;
 
 		case 'connexion':
@@ -44,6 +44,31 @@
 			echo "404 error !";
 		break;
 	}
+
+	//Vérification strict, que ça soit un string et égal à page
+	/*if ($p === 'home') {
+		require '../views/index.php';
+	}
+
+	else if ($p === 'admin') {
+		require '../views/admin/index.php';
+	}
+
+	else if ($p === 'liste_contact') {
+		require '../views/admin/liste_contact.php';
+	}
+
+	else if ($p === 'membre') {
+		require '../views/admin/membre.php';
+	}
+
+	else if ($p === 'connexion') {
+		require '../views/connexion.php';
+	}
+
+	else if ($p === 'inscription') {
+		require '../views/inscription.php';
+	}*/
 	
 	$content = ob_get_clean();
 	require '../views/template/default.php';

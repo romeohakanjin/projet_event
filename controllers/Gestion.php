@@ -2,7 +2,7 @@
 	class Gestiont{
 
 		public function Inscription(){
-			var_dump("Inscription function");die();
+			var_dump("yoo");die();
 		}
 
 	}
