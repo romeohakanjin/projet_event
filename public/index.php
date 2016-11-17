@@ -16,7 +16,7 @@
 	ob_start();
 
 	switch ($p) {
-		case 'home':
+		case 'accueil':
 			require '../views/index.php';
 		break;
 

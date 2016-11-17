@@ -13,7 +13,7 @@
 </head>
 <body>
 	<?php
-	include 'header.php';
+	include './header.php';
 	?>
 	
 	<br/><br/><br/><br/>
@@ -43,7 +43,7 @@
 	<br/><br/>
 
 	<?php
-	include 'footer.php';
+	include './footer.php';
 	?>
 </body>
 </html>
