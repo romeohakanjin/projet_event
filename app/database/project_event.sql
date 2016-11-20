@@ -110,9 +110,9 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `identifiant`, `mot_de_passe`, `email`, `date_inscription`, `id_membre`, `id_type_membre`) VALUES
-(1, 'admin', 'admin', 'admin@test.com', '2016-11-27 00:00:00', NULL, NULL),
-(2, 'test', 'test', 'test@test.com', '2016-11-14 00:00:00', 1, 2),
-(3, 'sindy', 'test', 'sindy@test.com', '2016-11-17 20:22:33', 2, 2);
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@test.com', '2016-11-27 00:00:00', NULL, 1 ),
+(2, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test@test.com', '2016-11-14 00:00:00', 1, 2),
+(3, 'sindy', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'sindy@test.com', '2016-11-17 20:22:33', 2, 2);
 
 --
 -- Index pour les tables exportées

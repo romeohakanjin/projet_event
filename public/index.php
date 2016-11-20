@@ -18,7 +18,7 @@
     else{
         $p = 'home';
     }
-
+    
     //Stocker l'affichage
     ob_start();
 

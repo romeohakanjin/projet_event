@@ -10,8 +10,6 @@
 		<th>Ville</th>
 		<th>Etudes</th>
 		<th>Contrat</th>
-		<th>Type membre</th>
-		<th>Etat</th>
 		<th>Modifier</th>
 		<th>Supprimer</th>
 	</tr>
@@ -29,8 +27,6 @@
 			<td><?php print $membreData->ville ?></td>
 			<td><?php print $membreData->niveau_etude ?></td>
 			<td><?php print $membreData->type_contrat ?></td>
-			<td>id_type</td>
-			<td>id_etat</td>
 			<td><a href="admin.php?p=edit_table&id=<?php print $membreData->id ?>"><img src="../public/images/update.png" class="icon-admin-gestion"></a></td>
 			<td><a href="admin.php?p=delete_table&id=<?php print $membreData->id ?>"><img src="../public/images/del.png"class="icon-admin-gestion"></a></td>
 		</tr>
