@@ -1,0 +1,37 @@
+body{
+	font-family: 'Titillium Web', sans-serif;
+}
+
+div#navbar{
+	float: right;
+}
+
+table.admin-table-gestion th{
+	text-align: center;
+}
+
+table.admin-table-gestion td{
+	padding: 4px;
+	text-align: center;
+}
+
+.tr-table-admin-gestion{
+	border-bottom: solid 1px ;
+}
+
+img.icon-admin-gestion{
+	max-width: 25px;
+}
+
+div.add-button a img{
+	max-width:35px;
+}
+
+div.add-button{
+
+	float: right;
+}
+
+.ul-gestion-admin-type-membre p{
+	display: initial;
+}
