@@ -1,4 +1,4 @@
-<?php if(!empty(Membre::getMembreEtat($_GET['etat']))):?>
+<?php if(!empty($membre->getMembreEtatInscription($_GET['etat']))):?>
 <table class="admin-table-gestion">
 	<tr class="tr-table-admin-gestion">
 		<th>id</th>
@@ -8,7 +8,6 @@
 		<th>Adresse</th>
 		<th>Code postal</th>
 		<th>Ville</th>
-		<th>Email</th>
 		<th>Etudes</th>
 		<th>Contrat</th>
 		<th>Type membre</th>
@@ -19,22 +18,21 @@
 <?php else:print "Aucun résultat !";?>
 <?php endif ;?>
 
-	<?php foreach(Membre::getMembreEtat($_GET['etat']) as $membre) : ?>
+	<?php foreach($membre->getMembreEtatInscription($_GET['etat']) as $membreData) : ?>
 		<tr>
-			<td><?php print $membre->id ?></td>
-			<td><?php print $membre->nom ?></td>
-			<td><?php print $membre->prenom ?></td>
-			<td><?php print $membre->date_naissance ?></td>
-			<td><?php print $membre->adresse ?></td>
-			<td><?php print $membre->code_postal ?></td>
-			<td><?php print $membre->ville ?></td>
-			<td><?php print $membre->email ?></td>
-			<td><?php print $membre->niveau_etude ?></td>
-			<td><?php print $membre->type_contrat ?></td>
+			<td><?php print $membreData->id ?></td>
+			<td><?php print $membreData->nom ?></td>
+			<td><?php print $membreData->prenom ?></td>
+			<td><?php print $membreData->date_naissance ?></td>
+			<td><?php print $membreData->adresse ?></td>
+			<td><?php print $membreData->code_postal ?></td>
+			<td><?php print $membreData->ville ?></td>
+			<td><?php print $membreData->niveau_etude ?></td>
+			<td><?php print $membreData->type_contrat ?></td>
 			<td>id_type</td>
 			<td>id_etat</td>
-			<td><a href=""><img src="../public/images/update.png" class="icon-admin-gestion"></a></td>
-			<td><a href=""><img src="../public/images/del.png"class="icon-admin-gestion"></a></td>
+			<td><a href="admin.php?p=edit_table&id=<?php print $membreData->id ?>"><img src="../public/images/update.png" class="icon-admin-gestion"></a></td>
+			<td><a href="admin.php?p=delete_table&id=<?php print $membreData->id ?>"><img src="../public/images/del.png"class="icon-admin-gestion"></a></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

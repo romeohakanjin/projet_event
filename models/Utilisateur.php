@@ -1,7 +1,8 @@
 <?php
-	class Utilisateur{
-		public static function getUtilisateur(){
-			return app::getDB()->query('SELECT * FROM utilisateur', __CLASS__);
+	class Utilisateur extends models{
+		public function getUtilisateur(){
+			return $this->db->query('SELECT * FROM utilisateur');
 		}
+
 	}
 ?>

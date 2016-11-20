@@ -1,6 +1,8 @@
 <?php
     //on défini notre variable webroot
     define('ROOT', dirname(__DIR__));
+    session_start();
+    $_SESSION['auth'] = 'uhs';
 
     //Inclure la class Autoloader
     require ROOT.'/app/Autoloader.php';
@@ -11,6 +13,7 @@
     $app = app::getInstance();
     $utilisateur =$app->getTable("Utilisateur");
     $membre = $app->getTable("Membre");
+    $models = $app->getTable("Models");
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
@@ -19,21 +22,32 @@
         $p = 'home';
     }
 
+    //Authentification
+    $auth = new Authentification($app->getDB());
+
+    if (!$auth->logged()){
+        $app->forbidden();
+    }
+
     //Stocker l'affichage
     ob_start();
 
     //Redirection en fonction du paramètre
     switch ($p) {
         case 'home':
-            require ROOT.'/views/index.php';
+            require ROOT.'/views/admin/index.php';
             break;
 
-        case 'login':
-            require ROOT.'/views/users/connexion.php';
+        case 'edit_table':
+            require ROOT.'/views/admin/table_form.php';
             break;
 
-        case 'sign-in':
-            require ROOT.'/views/users/inscription.php';
+        case 'add_table':
+            require ROOT.'/views/admin/table_form.php';
+            break;
+
+        case 'delete_table':
+
             break;
 
         default:
@@ -42,5 +56,5 @@
     }
 
     $content = ob_get_clean();
-    require ROOT.'/views/template/default.php';
+    require ROOT.'/views/template/default_admin.php';
 ?>
