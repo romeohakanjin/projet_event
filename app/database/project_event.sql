@@ -50,15 +50,15 @@ CREATE TABLE `membre` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
-  `date_naissance` datetime NOT NULL,
+  `date_naissance` date NOT NULL,
   `adresse` varchar(50) NOT NULL,
-  `code_postal` int(5) NOT NULL,
-  `ville` varchar(50) NOT NULL,
+  `code_postal` varchar(20) NOT NULL,
+  `ville` varchar(250) NOT NULL,
   `type_contrat` varchar(50) NOT NULL,
   `id_utilisateur` int(11) DEFAULT NULL,
   `id_type_membre` int(11) DEFAULT '1',
   `id_etat_inscription` int(11) DEFAULT '1',
-  `civilite` enum('Madame','Monsieur') DEFAULT NULL,
+  `civilite` enum('Mme','Mr') DEFAULT NULL,
   `niveau_etude` enum('1','2','3','4','5','autre') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -67,8 +67,8 @@ CREATE TABLE `membre` (
 --
 
 INSERT INTO `membre` (`id`, `nom`, `prenom`, `date_naissance`, `adresse`, `code_postal`, `ville`, `type_contrat`, `id_utilisateur`, `id_type_membre`, `id_etat_inscription`, `civilite`, `niveau_etude`) VALUES
-(1, 'sindy', 'testPrenom', '1996-11-29 00:00:00', 'testAdresse', 12345, 'testVille', 'Contrat pro', 3, 2, 2, 'Madame', 5),
-(2, 'testNom2', 'testPrenom2', '1995-11-06 00:00:00', 'testAdresse2', 57456, 'testVille2', 'Contrat pro', 2, 2, 2, 'Monsieur', 1);
+(1, 'sindy', 'testPrenom', '1996-11-29 00:00:00', 'testAdresse', 12345, 'testVille', 'Contrat pro', 3, 2, 2, 'Mme', 5),
+(2, 'testNom2', 'testPrenom2', '1995-11-06 00:00:00', 'testAdresse2', 57456, 'testVille2', 'Contrat pro', 2, 2, 2, 'Mr', 1);
 
 -- --------------------------------------------------------
 

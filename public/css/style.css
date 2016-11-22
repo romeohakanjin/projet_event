@@ -26,3 +26,21 @@ img.icon-admin-gestion{
 .ul-gestion-admin-type-membre p{
 	display: initial;
 }
+
+footer .row{
+	background-color: #222;
+    border-color: #080808;
+	height: auto;
+	color: white;
+}
+
+.header-img{
+	width: 125px;
+	height: 125px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}

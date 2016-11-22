@@ -21,8 +21,9 @@
     </div>
     
     <button class="btn btn-lg btn-primary btn-bloick" name='forminscrip' value="inscription" type="submit">S'inscrire</button>
-  
+    <br/>
+    <br/>
   </form>
-</div> <!-- /container -->
+</div>
 
 
