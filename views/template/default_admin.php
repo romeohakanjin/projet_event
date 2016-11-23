@@ -25,12 +25,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-<<<<<<< HEAD
             <li><a href="admin.php?p=deconnexion">Déconnexion</a></li>
-=======
-            <li><a href="index.php?p=login">Connexion</a></li>
-            <li><a href="index.php?p=sign-in">Inscription</a></li>
->>>>>>> 338d12c48b9628b5141625e224efe6fd7ec73f91
           </ul>
         </div>
       </div>

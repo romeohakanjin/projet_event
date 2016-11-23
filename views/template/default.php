@@ -23,15 +23,6 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php?p=home">Event</a>
         </div>
-<<<<<<< HEAD
-=======
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="index.php?p=login">Connexion</a></li>
-            <li><a href="index.php?p=sign-in">Inscription</a></li>
-          </ul>
-        </div>
->>>>>>> 338d12c48b9628b5141625e224efe6fd7ec73f91
       </div>
     </nav>
 
