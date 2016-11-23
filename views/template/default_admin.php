@@ -10,7 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/style_admin.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
     <title>Projet Event</title>
@@ -22,6 +22,11 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php?p=home">Event</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="admin.php?p=deconnexion">Déconnexion</a></li>
+          </ul>
         </div>
       </div>
     </nav>

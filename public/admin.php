@@ -9,8 +9,7 @@
     Autoloader::register();
 
     $app = app::getInstance();
-    $utilisateur =$app->getTable("Utilisateur");
-    $membre = $app->getTable("Membre");
+
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
@@ -19,17 +18,37 @@
         $p = 'home';
     }
 
+    if ($app->logged()){
+        $app->Unauthorized();
+    }
+
+    $utilisateur =$app->getTable("Utilisateur");
+    $membre = $app->getTable("Membre");
+    $models = $app->getTable("Model");
+
     //Stocker l'affichage
     ob_start();
 
     //Redirection en fonction du paramètre
     switch ($p) {
         case 'home':
-            require ROOT.'/views/index.php';
+            require ROOT.'/views/admin/index.php';
             break;
 
-        case 'inscription_event':
-            require ROOT.'/views/users/inscription_event.php';
+        case 'deconnexion':
+            $app->logout();
+            break;
+
+        case 'edit_table':
+            require ROOT.'/views/admin/table_form.php';
+            break;
+
+        case 'add_table':
+            require ROOT.'/views/admin/table_form.php';
+            break;
+
+        case 'delete_table':
+
             break;
 
         default:
@@ -38,5 +57,5 @@
     }
 
     $content = ob_get_clean();
-    require ROOT.'/views/template/default.php';
+    require ROOT.'/views/template/default_admin.php';
 ?>

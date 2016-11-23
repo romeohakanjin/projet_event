@@ -31,7 +31,7 @@
 		public function query($statement){
 			$req = $this->getPDO()->query($statement);
 			$datas = $req->fetchAll(PDO::FETCH_OBJ);
-;
+
 			return $datas;
 		}
 
@@ -39,10 +39,19 @@
             $req = $this->getPDO()->prepare($statment);
             $req->execute($attributes);
 
+            if(strpos($statment, 'UPDATE') === 0 || strpos($statment, 'INSERT') === 0
+                || strpos($statment, 'DELETE') === 0){
+                return $req;
+            }
+
             $req->setFetchMode(PDO::FETCH_OBJ);
-            $datas = $req->fetchAll();
+            $datas = $req->fetchAll(PDO::FETCH_OBJ);
 
             return $datas;
+        }
+
+        public function lastInsertId(){
+            return $this->getPDO()->lastInsertId();
         }
 	}
 ?>
