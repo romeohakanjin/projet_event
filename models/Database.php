@@ -28,6 +28,11 @@
 			return $this->pdo;
 		}
 
+        public function updateDb($statement){
+            $req = $this->getPDO()->query($statement);
+            return $req;
+        }
+
 		public function query($statement){
 			$req = $this->getPDO()->query($statement);
 			$datas = $req->fetchAll(PDO::FETCH_OBJ);

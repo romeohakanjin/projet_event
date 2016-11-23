@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - project_event@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="project_event">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="sys"/>
+    <table id="6" parent="1" name="etat_inscription"/>
+    <table id="7" parent="1" name="membre"/>
+    <column id="8" parent="6" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="9" parent="6" name="libelle">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="10" parent="6" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="11" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="12" parent="7" name="nom">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="13" parent="7" name="prenom">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="14" parent="7" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="15" parent="7" name="date_naissance">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="16" parent="7" name="adresse">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="17" parent="7" name="code_postal">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="18" parent="7" name="ville">
+      <mandatory>1</mandatory>
+      <data-type>varchar(250)|0</data-type>
+    </column>
+    <column id="19" parent="7" name="type_contrat">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="20" parent="7" name="id_etat_inscription">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="21" parent="7" name="civilite">
+      <data-type>enum(&apos;Mme&apos;, &apos;Mr&apos;)|0</data-type>
+    </column>
+    <column id="22" parent="7" name="niveau_etude">
+      <data-type>enum(&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;autre&apos;)|0</data-type>
+    </column>
+    <column id="23" parent="7" name="date_inscription">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <index id="24" parent="7" name="FKM3">
+      <columns>id_etat_inscription</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="25" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="26" parent="7" name="FKM3">
+      <columns>id_etat_inscription</columns>
+      <ref-key>~.etat_inscription.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>

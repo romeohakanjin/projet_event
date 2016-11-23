@@ -1,7 +1,7 @@
 <?php
-	class App{
-		private $db_instance;
-		private static $_instance;
+    class App{
+        private $db_instance;
+        private static $_instance;
 
         public static function getInstance(){
             if (is_null(self::$_instance)) {
@@ -23,6 +23,17 @@
             return $this->db_instance;
         }
 
+        public function logged(){
+            if ( !isset($_SERVER['PHP_AUTH_USER'])
+                || !isset($_SERVER['PHP_AUTH_PW'])
+                || ($_SERVER['PHP_AUTH_USER'] !== "admin" )
+                || ($_SERVER['PHP_AUTH_PW'] !== "1") ){
+                return true;
+            }
+
+            return false;
+        }
+
         public function forbidden(){
             header('HTTP/1.0 403 Forbidden');
             die('Accès interdit');
@@ -32,5 +43,11 @@
             header('HTTP/1.0 404 Not found');
             die('Page introuvable');
         }
-	}
-?>
+
+        public function Unauthorized(){
+            header('WWW-Authenticate: Basic realm="Authentifiez vous"');
+            header('HTTP/1.0 401 Unauthorized');
+            die('Accès restreint !');
+            //Redirection ?
+        }
+    }

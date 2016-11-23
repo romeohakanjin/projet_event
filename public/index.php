@@ -9,7 +9,6 @@
     Autoloader::register();
 
     $app = app::getInstance();
-    $utilisateur =$app->getTable("Utilisateur");
     $membre = $app->getTable("Membre");
 
     if (isset($_GET['p'])) {
@@ -26,14 +25,6 @@
     switch ($p) {
         case 'home':
             require ROOT.'/views/index.php';
-            break;
-
-        case 'login':
-            require ROOT.'/views/users/connexion.php';
-            break;
-
-        case 'sign-in':
-            require ROOT.'/views/users/inscription.php';
             break;
 
         default:

@@ -1,8 +1,6 @@
 <?php
     //on défini notre variable webroot
     define('ROOT', dirname(__DIR__));
-    session_start();
-    $_SESSION['auth'] = 'uhs';
 
     //Inclure la class Autoloader
     require ROOT.'/app/Autoloader.php';
@@ -11,9 +9,7 @@
     Autoloader::register();
 
     $app = app::getInstance();
-    $utilisateur =$app->getTable("Utilisateur");
-    $membre = $app->getTable("Membre");
-    $models = $app->getTable("Models");
+
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
@@ -22,12 +18,12 @@
         $p = 'home';
     }
 
-    //Authentification
-    $auth = new Authentification($app->getDB());
-
-    if (!$auth->logged()){
-        $app->forbidden();
+    if ($app->logged()){
+        $app->Unauthorized();
     }
+
+    $membre = $app->getTable("Membre");
+    $models = $app->getTable("Model");
 
     //Stocker l'affichage
     ob_start();
@@ -38,6 +34,10 @@
             require ROOT.'/views/admin/index.php';
             break;
 
+        case 'deconnexion':
+            $app->logout();
+            break;
+
         case 'edit_table':
             require ROOT.'/views/admin/table_form.php';
             break;
@@ -46,8 +46,10 @@
             require ROOT.'/views/admin/table_form.php';
             break;
 
-        case 'delete_table':
-
+        case 'confirm':
+            if (isset($_GET['e_id']) && isset($_GET['m_id']) && (isset($_GET['e_id']) == 2 || isset($_GET['e_id']) == 3)){
+                $membre->changerEtatInscription($_GET['e_id'], $_GET['m_id']);
+            }
             break;
 
         default:

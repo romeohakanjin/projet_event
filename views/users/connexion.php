@@ -1,19 +1,3 @@
-<?php
-  if(!empty($_POST)){
-    $auth = new Authentification($app->getDB());
-    if($auth->login($_POST['pseudo'], $_POST['password'])){
-      header('Location: admin.php');
-    }
-    else{
-      ?>
-        <div class="alert alert-danger">
-          Identifiants incorrect
-        </div>
-      <?php
-    }
-  }
-?>
-
 <h2>Connexion</h2>
 <div class="container">
   <form class="form-login" action="" method="POST">
