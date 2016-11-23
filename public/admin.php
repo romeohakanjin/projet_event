@@ -46,8 +46,10 @@
             require ROOT.'/views/admin/table_form.php';
             break;
 
-        case 'delete_table':
-
+        case 'confirm':
+            if (isset($_GET['e_id']) && isset($_GET['m_id']) && (isset($_GET['e_id']) == 2 || isset($_GET['e_id']) == 3)){
+                $membre->changerEtatInscription($_GET['e_id'], $_GET['m_id']);
+            }
             break;
 
         default:

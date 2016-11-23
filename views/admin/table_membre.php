@@ -14,7 +14,7 @@
 				<th>Etudes</th>
 				<th>Contrat</th>
 				<th>Modifier</th>
-				<th>Supprimer</th>
+			<!--<th>Supprimer</th>-->
 			</tr>
 <?php else:echo "Aucun résultat";?>
 <?php endif ;?>
@@ -31,7 +31,7 @@
 			<td><?php print $membreData->niveau_etude ?></td>
 			<td><?php print $membreData->type_contrat ?></td>
 			<td><a href="admin.php?p=edit_table&id=<?php print $membreData->id ?>"><img src="../public/images/update.png" class="icon-admin-gestion"></a></td>
-			<td><a href="admin.php?p=delete_table&id=<?php print $membreData->id ?>"><img src="../public/images/del.png"class="icon-admin-gestion"></a></td>
+		<!--<td><a href="admin.php?p=delete_table&id=--><?php //print $membreData->id ?><!--"><img src="../public/images/del.png"class="icon-admin-gestion"></a></td>-->
 		</tr>
 	<?php endforeach; ?>
 </table>
