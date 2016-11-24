@@ -48,7 +48,7 @@ li{
 	list-style-type: none;
 }
 li::before{
-	content: "→ ";
+	content: "→   ";
 	background-repeat: no-repeat; 
 	font-weight: italic;
 }
