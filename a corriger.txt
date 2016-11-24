@@ -1,0 +1,11 @@
+default
+- bouton du  menu : quand la taille de l'écran = xs,sm et md ne fonctionne pas
+	--> n'affiche pas les boutons d'accès aux autres pages
+- footer :  partie contact = le boostrap est moche
+
+inscription
+- absence du template depuis la mise en place des listes déroulantes
+- absence du css depuis la mise en place des listes déroulantes
+- valeur contenue dans les listes déroulantes ne correspondantes pas au valeur voulu
+	--> affiche les valeurs membres au lieu des valeurs pré-défini
+- page connexion: est-elle encore nécessaire s'il n'y a plus de session

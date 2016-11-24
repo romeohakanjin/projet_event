@@ -10,23 +10,28 @@
   <link rel="icon" href="../../favicon.ico">
 
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../public/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   
   <title>Job Dating</title>
 
 </head>
 
 <body>
+  <header>
+    <!-- inclure un slider -->
+  </header>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-       <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button> -->
-        <a class="navbar-brand" href="index.php?p=home">Event</a>
+        </button>
+        <a class="accroche navbar-brand" href="index.php?p=home">Push Your Career</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -37,6 +42,11 @@
       </div>
     </div>
   </nav>
+
+  <aside>
+    <!-- mettre un calendrier avec la date de l'évenement en focus -->
+    <!-- petite div avec "petit conseil" -->
+  </aside>
 
   <div class="container">
     <div class="starter-template" style="padding-top: 100px">
@@ -50,11 +60,10 @@
       <div class="col-xs-9 col-xs-offset-3  col-sm-6 col-md-4 col-md-offset-1">
         <h1>Coordonées</h1>
         <div class="row info">
-          <i class="fa fa-map-marker" aria-hidden="true"></i> Rue de truc, 11111 ville<br />
-          <i class="fa fa-clock-o" aria-hidden="true"></i> Samedi : 09h00 - 13h30 et 14h30 - 19h00<br />
+          <i class="fa fa-map-marker" aria-hidden="true"></i> 10 rue Sextius Michel - 75015 Paris<br />
           <i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@jobdating.fr"> info@jobdating.fr<br /></a>
           <i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0123568745"> 0123568745<br /></a>
-          <i class="fa fa-subway" aria-hidden="true"></i> ligne 9 : arrêt La Muette<br />
+          <i class="fa fa-subway" aria-hidden="true"></i> ligne 6 : arrêt Bir-hakeim ou RER C : arrêt Champs de mars<br />
           <i class="fa fa-info-circle" aria-hidden="true"></i> Campus à proximité de la tour eiffel<br /> 
         </div>
       </div>
