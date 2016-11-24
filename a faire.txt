@@ -1,0 +1,6 @@
+- modifier nom des variables nommer correctement et explicitsh
+- commenter toute les méthodes
+- refaire le header
+- Verifier l'utilisation des query et prepare
+- Générer les formulaires en php ?
+- 
