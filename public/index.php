@@ -26,7 +26,12 @@
         case 'home':
             require ROOT.'/views/index.php';
             break;
-
+        case 'sign-in':
+            require ROOT.'/views/users/inscription.php';
+            break;
+        case 'partner':
+            require ROOT.'/views/users/partenaire.php';
+            break;
         default:
             $app->notFound();
             break;

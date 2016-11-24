@@ -44,3 +44,11 @@ footer .row{
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
+li{
+	list-style-type: none;
+}
+li::before{
+	content: "→ ";
+	background-repeat: no-repeat; 
+	font-weight: italic;
+}
