@@ -1,6 +1,0 @@
-﻿<FilesMatch "index.php">
-    AuthUserFile "projet_event\views\admin\.htpasswd"
-    AuthName "Administration"
-    AuthType Basic
-    Require valid-user
-</FilesMatch>
