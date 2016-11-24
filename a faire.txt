@@ -1,6 +1,28 @@
-- modifier nom des variables nommer correctement et explicitsh
-- commenter toute les méthodes
+Front
 - refaire le header
-- Verifier l'utilisation des query et prepare
+- page de présentation (Accroche,Texte de présentation,Visuels,Organisation/Planning/Déroulement)	Lieu	Contact	Comment s’y rendre)
+- Responsive design
+- Adéquation du graphisme avec le sujet retenu
+- Qualité de l'interface du site Internet (front et back)
+
+
+Back :
 - Générer les formulaires en php ?
-- 
+- ajouter petit calendrier pour saisir la date côté admin et fair en sorte de prendre le bon format de date
+- Créer fonction ExistContrat,ExistEtude afin de comparer après la saisie que les champs existe bien
+- Pour étude et contrat mettre liste d'éléments non modifiable
+- Faire l'URL rewrinting, Accès à l’administration via l’URL « /admin »
+- Faire pagination
+- Verifier l'utilisation des query et prepare
+- commenter toute les méthodes
+- modifier nom des variables nommer correctement et explicitsh
+- Gérer la connexion htaccess dans un fichier pas dans le code
+- Sécurier le backend(champs,url, login)
+
+
+
+
+test :
+- Tester TOUS les champs du site et bouton pour voir réaction
+- Qualité du code source produit
+- Organisation du code source
