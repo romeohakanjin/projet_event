@@ -28,10 +28,13 @@
 			<td><?php print $membreData->ville ?></td>
 			<td><?php print $membreData->niveau_etude ?></td>
 			<td><?php print $membreData->type_contrat ?></td>
-			<td><a href="admin.php?p=edit_table&id=<?php print $membreData->id ?>"><img src="../public/images/update.png" class="icon-admin-gestion"></a></td>
-		<!--<td><a href="admin.php?p=delete_table&id=--><?php //print $membreData->id ?><!--"><img src="../public/images/del.png"class="icon-admin-gestion"></a></td>-->
-			<?php
-			if($_GET['etat'] == 1):?>
+			<td>
+				<a href="admin.php?p=edit_table&id=<?php print $membreData->id ?>">
+					<img src="<?php print '/projet_event/public/images/update.png' ?>"  class="icon-admin-gestion">
+				</a>
+			</td>
+
+			<?php if($_GET['etat'] == 1):?>
 				<td><a href="admin.php?p=confirm&e_id=2&m_id=<?php print $membreData->id ?>">Accepter</a></td>
 				<td><a href="admin.php?p=confirm&e_id=3&m_id=<?php print $membreData->id ?>">Refuser</a></td>
 			<?php endif;?>

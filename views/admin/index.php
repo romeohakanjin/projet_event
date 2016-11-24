@@ -28,4 +28,4 @@ else if(!isset($_GET['etat'])){
     }
 ?>
 
-<div class="add-button icon-admin-gestion"><a href="admin.php?p=add_table"><img src="../public/images/add.png"></a></div>
+<!--<div class="add-button icon-admin-gestion"><a href="admin.php?p=add_table"><img src="../public/images/add.png"></a></div>-->

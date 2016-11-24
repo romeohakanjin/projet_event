@@ -42,9 +42,9 @@
             require ROOT.'/views/admin/table_form.php';
             break;
 
-        case 'add_table':
+        /*case 'add_table':
             require ROOT.'/views/admin/table_form.php';
-            break;
+            break;*/
 
         case 'confirm':
             if (isset($_GET['e_id']) && isset($_GET['m_id']) && (isset($_GET['e_id']) == 2 || isset($_GET['e_id']) == 3)){

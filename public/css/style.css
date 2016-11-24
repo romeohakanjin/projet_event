@@ -1,4 +1,4 @@
-body{
+﻿body{
 	font-family: 'Titillium Web', sans-serif;
 }
 
@@ -19,7 +19,7 @@ table.admin-table-gestion td{
 	border-bottom: solid 1px ;
 }
 
-img.icon-admin-gestion{
+table.admin-table-gestion img{
 	max-width: 25px;
 }
 
@@ -44,11 +44,11 @@ footer .row{
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
-li{
+.partner li{
 	list-style-type: none;
 }
-li::before{
-	content: "→   ";
+.partner li::before{
+	content: "→ ";
 	background-repeat: no-repeat; 
 	font-weight: italic;
 }

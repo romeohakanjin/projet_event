@@ -57,7 +57,6 @@
         <option value="<?php echo $membre->type_contrat; ?>"> <?php echo $membre->type_contrat; ?> </option>
       <?php endforeach; ?>
     </select>
-  
     <br />
     <button class="btn btn-lg btn-primary btn-bloick" name='forminscrip' value="inscription" type="submit">S'inscrire</button>
     <br/>
