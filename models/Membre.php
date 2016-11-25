@@ -9,6 +9,11 @@
             return $this->db->prepare('SELECT * FROM membre WHERE id = ?', [$id]);
         }
 
+        public function inscription($value){
+            echo "dans fonction isncription membre";
+            var_dump($value);die();
+        }
+
         /*public function existeEtude($etude){
             $req = $this->db->prepare('SELECT * FROM membre WHERE niveau_etude = ? LIMIT 1', [$etude]);
         }

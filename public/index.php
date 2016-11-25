@@ -29,7 +29,7 @@
         case 'partner':
             require ROOT.'/views/users/partenaire.php';
             break;
-        case 'inscription':
+        case 'sign-in':
             require ROOT.'/views/users/inscription.php';
             break;
         default:

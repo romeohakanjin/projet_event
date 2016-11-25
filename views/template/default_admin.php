@@ -10,18 +10,28 @@
     <link rel="icon" href="../../favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/projet_event/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <title>Projet Event</title>
+    <title>Job Dating</title>
 
   </head>
 
   <body>
+    <header>
+      <!-- inclure un slider -->
+    </header>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.php?p=home">Event</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="accroche navbar-brand" href="index.php?p=home">Push Your Career</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -36,5 +46,6 @@
         <?php print $content; ?>
       </div>
     </div><!-- /.container -->
+
   </body>
 </html>

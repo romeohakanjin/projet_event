@@ -1,5 +1,9 @@
-body{
+﻿body{
 	font-family: 'Titillium Web', sans-serif;
+}
+a.accroche{
+	font-family: 'Lobster', cursive;
+	font-size: xx-large;
 }
 
 div#navbar{

@@ -4,13 +4,17 @@ Front
 - Responsive design
 - Adéquation du graphisme avec le sujet retenu
 - Qualité de l'interface du site Internet (front et back)
+- bouton du  menu : quand la taille de l'écran = xs,sm et md ne fonctionne pas
+	--> n'affiche pas les boutons d'accès aux autres pages
+- footer :  partie contact = le boostrap est moche
+
+
 
 
 Back :
 - Générer les formulaires en php ?
-- ajouter petit calendrier pour saisir la date côté admin et fair en sorte de prendre le bon format de date
+- ajouter petit calendrier pour saisir la date de naissance côté admin et faire en sorte de prendre le bon format de date
 - Créer fonction ExistContrat,ExistEtude afin de comparer après la saisie que les champs existe bien
-- Pour étude et contrat mettre liste d'éléments non modifiable
 - Faire l'URL rewrinting, Accès à l’administration via l’URL « /admin »
 - Faire pagination
 - Verifier l'utilisation des query et prepare
@@ -20,6 +24,7 @@ Back :
 - Sécurier le backend(champs,url, login)
 - faire dossier vendor pour respecter le format poo
 V - redirection après modification
+V- Pour étude et contrat mettre liste d'éléments non modifiable
 
 
 
@@ -29,3 +34,19 @@ test :
 - Qualité du code source produit
 - Organisation du code source
 - Faire des contrôles de saisie sur tous les champs ! Vérifier meme pour Mr Mme que c'est bien égale à l'un des deux etc
+
+
+
+
+IMPORTANT !!!!
+- METTRE DES CODE HTTP EN FONCTION DES DIFFERENTES ACTION ! INSCRIPTION REUSSI, FAILED, MODIFICATION etc..
+
+
+
+
+inscription
+V- absence du template depuis la mise en place des listes déroulantes
+V- absence du css depuis la mise en place des listes déroulantes
+V- valeur contenue dans les listes déroulantes ne correspondantes pas au valeur voulu
+	--> affiche les valeurs membres au lieu des valeurs pré-défini
+V- page connexion: est-elle encore nécessaire s'il n'y a plus de session
