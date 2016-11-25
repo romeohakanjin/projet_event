@@ -18,11 +18,9 @@ Back :
 - Faire l'URL rewrinting, Accès à l’administration via l’URL « /admin »
 - Faire pagination
 - Verifier l'utilisation des query et prepare
-- commenter toute les méthodes
-- modifier nom des variables nommer correctement et explicitsh
 - Gérer la connexion htaccess dans un fichier pas dans le code
 - Sécurier le backend(champs,url, login)
-- faire dossier vendor pour respecter le format poo
+- faire dossier core pour respecter le format poo
 V - redirection après modification
 V- Pour étude et contrat mettre liste d'éléments non modifiable
 
@@ -34,7 +32,8 @@ test :
 - Qualité du code source produit
 - Organisation du code source
 - Faire des contrôles de saisie sur tous les champs ! Vérifier meme pour Mr Mme que c'est bien égale à l'un des deux etc
-
+- commenter toute les méthodes
+- modifier nom des variables nommer correctement et explicitsh
 
 
 

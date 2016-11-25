@@ -1,5 +1,5 @@
 <?php if(!empty($_POST)){
-    $membre->inscription($_POST);
+    $controller->inscription($_POST);
 }
 ?>
 

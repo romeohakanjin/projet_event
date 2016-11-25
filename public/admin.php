@@ -6,9 +6,10 @@
     require ROOT.'/app/Autoloader.php';
 
     //Relancer et gérer l'autoloading
-    Autoloader::register();
+    App\Autoloader::register();
 
-    $app = app::getInstance();
+
+    $app = App\app::getInstance();
 
 
     if (isset($_GET['p'])) {
@@ -24,6 +25,10 @@
 
     $membre = $app->getTable("Membre");
     $models = $app->getTable("Model");
+    $controller = $app->getController('Membre_controller');
+
+    $controller->inscription("dd");
+
 
     //Stocker l'affichage
     ob_start();
@@ -41,10 +46,6 @@
         case 'edit_table':
             require ROOT.'/views/admin/table_form.php';
             break;
-
-        /*case 'add_table':
-            require ROOT.'/views/admin/table_form.php';
-            break;*/
 
         case 'confirm':
             if (isset($_GET['e_id']) && isset($_GET['m_id']) && (isset($_GET['e_id']) == 2 || isset($_GET['e_id']) == 3)){

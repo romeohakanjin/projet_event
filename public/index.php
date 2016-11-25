@@ -6,10 +6,12 @@
     require ROOT.'/app/Autoloader.php';
 
     //Relancer et gérer l'autoloading
-    Autoloader::register();
+    App\Autoloader::register();
 
-    $app = app::getInstance();
+    $app = App\App::getInstance();
+
     $membre = $app->getTable("Membre");
+    $controller = $app->getController('Membre_controller');
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];

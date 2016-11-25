@@ -2,21 +2,21 @@
 	$_GET['ordre'] = 'ASC';
 } ?>
 <?php if(!empty($membre->getMembre($_GET['ordre']))):?>
-	<table class="admin-table-gestion">
-			<tr class="tr-table-admin-gestion">
-				<th>id</th>
-				<th>Nom</th>
-				<th>Prenom</th>
-				<th>Date naissance</th>
-				<th>Adresse</th>
-				<th>Code postal</th>
-				<th>Ville</th>
-				<th>Etudes</th>
-				<th>Contrat</th>
-				<th>Modifier</th>
-			</tr>
-<?php else:echo "Aucun résultat";?>
-<?php endif ;?>
+<table class="admin-table-gestion">
+	<tr class="tr-table-admin-gestion">
+		<th>id</th>
+		<th>Nom</th>
+		<th>Prenom</th>
+		<th>Date naissance</th>
+		<th>Adresse</th>
+		<th>Code postal</th>
+		<th>Ville</th>
+		<th>Etudes</th>
+		<th>Contrat</th>
+		<th>Modifier</th>
+	</tr>
+	<?php else:echo "Aucun résultat";?>
+	<?php endif ;?>
 
 	<?php foreach($membre->getMembre($_GET['ordre']) as $membreData) : ?>
 		<tr>
@@ -34,6 +34,6 @@
 					<img src="<?php print '/projet_event/public/images/update.png' ?>"  class="icon-admin-gestion">
 				</a>
 			</td>
-			</tr>
+		</tr>
 	<?php endforeach; ?>
 </table>

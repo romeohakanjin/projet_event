@@ -1,4 +1,5 @@
 <?php
+    namespace App;
 //permet de charger automatiquement les différentes classes
     class Autoloader{
         static function register(){
@@ -10,8 +11,9 @@
         static function autoload($class){
             if(strpos($class, __NAMESPACE__.'\\') ==0){
                 //Récupère la classe en fonction de celle en paramètre en fonction de la racine/models
-                $open = ROOT.'/models/'.$class.'.php';
-                require $open;
+               /* $class = str_replace(__NAMESPACE__, '\\', '', $class);
+                $class = str_replace('\\', '/', $class);*/
+                require ROOT.'/'.$class.'.php';
             }
         }
     }
