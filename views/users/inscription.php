@@ -2,16 +2,12 @@
 <br />
 <div class="container">
   <form class="form-signin" action="../controllers/index.php?action=inscription" method="POST">
+    <label for="inputCivilite">Civilité</label><br/>
+    <label><input type="checkbox" id="Checkbox" value="Mr"> Mr</label>
+    <input type="checkbox" id="Checkbox" value="Mme"> <label for="cbox2">Mme</label><br/>
 
-    <label for="inputEmail">Email</label>
-    <input autocomplete="off" type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value="<?php if(isset($mail)) { echo $mail; } ?>">
-
-    <label for="inputPassword">Mot de passe</label>
-    <input autocomplete="off" type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
-
-    <!--afficher une petite liste deroulante-->
-    <label for="inputPrenom">Civilité</label>
-    <input autocomplete="off" type="text" name="inputCivilité" id="inputCivilité" class="form-control" placeholder="Civilité" required value="<?php if(isset($civilite)) { echo $civilite; } ?>">
+    <label for="inputPrenom">Prenom</label>
+    <input autocomplete="off" type="text" name="inputPrenom" id="inputPrenom" class="form-control" placeholder="Prenom" required value="<?php if(isset($civilite)) { echo $civilite; } ?>">
 
     <label for="inputNom">Nom</label>
     <input autocomplete="off" type="text" name="inputNom" id="inputNom" class="form-control" placeholder="Nom" required value="<?php if(isset($nom)) { echo $nom; } ?>">
@@ -31,6 +27,9 @@
 
     <label for="inputVille">Ville</label>
     <input autocomplete="off" type="text" name="inputVille" id="inputVille" class="form-control" placeholder="Ville" required value="<?php if(isset($ville)) { echo $ville; } ?>">
+
+    <label for="inputEmail">Email</label>
+    <input autocomplete="off" type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value="<?php if(isset($mail)) { echo $mail; } ?>">
 
     <!--afficher avec liste déroulante-->
     <label for="inputNiveauEtude">Niveau d'étude</label>

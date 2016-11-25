@@ -22,7 +22,8 @@
 
             $attributes[] = $id;
             $sql_part = implode(', ', $sql_parts);
-            return $this->db->prepare("UPDATE $table SET $sql_part WHERE id = ?", $attributes);
+            $this->db->prepare("UPDATE $table SET $sql_part WHERE id = ?", $attributes);
+            header('Location: admin.php?p=home');
         }
 
 

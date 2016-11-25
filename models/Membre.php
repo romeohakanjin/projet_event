@@ -9,6 +9,14 @@
             return $this->db->prepare('SELECT * FROM membre WHERE id = ?', [$id]);
         }
 
+        /*public function existeEtude($etude){
+            $req = $this->db->prepare('SELECT * FROM membre WHERE niveau_etude = ? LIMIT 1', [$etude]);
+        }
+
+        public function existeCivilite($civilite){
+            $req = $this->db->prepare('SELECT * FROM membre WHERE civilite = ? LIMIT 1', [$civilite]);
+        }*/
+
         public function getMembreEtatInscription($etat_inscription, $ordre){
             return $this->db->prepare('SELECT * FROM membre WHERE id_etat_inscription = ? ORDER BY date_inscription '.$ordre, [$etat_inscription]);
         }
