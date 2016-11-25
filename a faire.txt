@@ -50,3 +50,9 @@ V- absence du css depuis la mise en place des listes déroulantes
 V- valeur contenue dans les listes déroulantes ne correspondantes pas au valeur voulu
 	--> affiche les valeurs membres au lieu des valeurs pré-défini
 V- page connexion: est-elle encore nécessaire s'il n'y a plus de session
+
+
+
+
+SQL : 
+- Ajouter pour type contrat un enum dans le sql (CDI, CDD, Freelance, Alternance, Stage)
