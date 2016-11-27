@@ -1,3 +1,3 @@
-$(function(){
-	$(#inputDateNaissance).datepicker();
-});
+ $( function() {
+    $( "#inputDateNaissance" ).datepicker();
+  });

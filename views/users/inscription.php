@@ -7,6 +7,7 @@
 <br />
 <div class="container">
   <form class="form-signin" action="" method="POST">
+    <!-- Civilité -->
     <label for="inputCivilite">Civilité</label><br/>
     <label><input type="checkbox" id="Checkbox" value="Mr"> Mr</label>
     <input type="checkbox" id="Checkbox" value="Mme"> <label for="cbox2">Mme</label><br/>
@@ -20,10 +21,9 @@
     <input autocomplete="off" type="text" name="inputPrenom" id="inputPrenom" class="form-control" placeholder="Prénom" required value="<?php if(isset($prenom)) { echo $prenom; } ?>">
     
     <!--  Date de naissance  -->
-    <!--mettre un datepicker-->
     <label for="inputDateNaissance">Date de naissance</label>
-    <input autocomplete="off" type="text" name="inputDateNaissance" id="inputDateNaissance" class="form-control" placeholder="Date de naisance" required value="<?php if(isset($date_naissance)) { echo $date_naissance; } ?>">
-
+    <input autocomplete="off" type="text" name="inputDateNaissance" id="inputDateNaissance" class="form-control" placeholder="Date de naisance" required >
+    
     <!--  Adresse  -->
     <label for="inputAdresse">Adresse</label>
     <input autocomplete="off" type="text" name="inputAdresse" id="inputAdresse" class="form-control" placeholder="Adresse" required value="<?php if(isset($adresse)) { echo $adresse; } ?>">
@@ -42,7 +42,7 @@
     
     <!--  Niveau d'étude  -->
    <label for="inputNiveauEtude">Niveau d'étude</label>
-    <select name="niveau_etude" id="niveau_etude" class="form-control">
+    <select name="niveau_etude" id="niveau_etude" class="form-control" required>
         <option value="1">Bac + 1</option>
         <option value="2">Bac + 2</option>
         <option value="3">Bac + 3</option>
@@ -53,10 +53,9 @@
 
     <!--  Type de contrat  -->
       <label for="inputTypeContrat">Type de Contrat</label>
-    <select name="type_contrat" id="type_contrat" class="form-control">
+    <select name="type_contrat" id="type_contrat" class="form-control" required>
         <option value="CDI">CDI</option>
         <option value="CDD">CDD</option>
-        <option value="Freelance">Freelance</option>
         <option value="Alternance">Alternance</option>
         <option value="Stage">Stage</option>
     </select>

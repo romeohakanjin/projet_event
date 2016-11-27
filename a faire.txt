@@ -54,4 +54,4 @@ V- page connexion: est-elle encore nécessaire s'il n'y a plus de session
 
 
 SQL : 
-- Ajouter pour type contrat un enum dans le sql (CDI, CDD, Freelance, Alternance, Stage)
+- Ajouter pour type contrat un enum dans le sql (CDI, CDD, Alternance, Stage)

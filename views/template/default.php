@@ -7,22 +7,28 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="Projet Event !">
   <meta name="author" content="RH-SL">
-  <link rel="icon" href="../../favicon.ico">
+  <title>Job Dating</title>
 
+  <link rel="icon" href="../../favicon.ico">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../public/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  
-  <title>Job Dating</title>
-
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- Datepicker -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../public/js/inscription.js"></script>
 </head>
 
 <body>
   <header>
-    <!-- inclure un slider -->
+    <div class="flexslider col-xs-offset-1 col-md-offset-2">
+      <img src="../public/images/push_your_career.jpg" />
+    </div>
   </header>
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -44,17 +50,21 @@
 
   <aside>
     <!-- mettre un calendrier avec la date de l'évenement en focus -->
-    <!-- petite div avec "petit conseil" -->
+    <div class="calendar">
+      <h3>La date à retenir</h3>
+      <script src="../public/js/calendar.js"></script>
+    </div>
   </aside>
 
-  <div class="container">
-    <div class="starter-template" style="padding-top: 100px">
-      <?php print $content; ?>
+  <section>
+    <div class="container">
+      <div class="starter-template" style="padding-top: 100px">
+        <?php print $content; ?>
+      </div>
     </div>
-  </div>
+  </section>
 
   <footer class="footer">
-
     <div class="row">
       <div class="col-xs-9 col-xs-offset-3  col-sm-6 col-md-4 col-md-offset-1">
         <h1>Coordonées</h1>
@@ -86,5 +96,6 @@
       </div>
     </div>
   </footer>
+  
 </body>
 </html>
