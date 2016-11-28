@@ -57,6 +57,8 @@
 
         public function lastInsertId(){
             return $this->getPDO()->lastInsertId();
-        }
-	}
+        }        
+	}	
+	require ROOT.'/views/admin/paging.php';
+	$paginate = new paginate(getPDO());
 ?>
