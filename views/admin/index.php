@@ -19,25 +19,32 @@ else if(!isset($_GET['etat'])){
     <p><a href="<?php print $url ?>&ordre=DESC">Descendant</a></p>
 </div>
 
+
 <?php
-include_once("../models/Database.php");
+include_once("../app/Database.php");
 ?>
 <link rel="stylesheet" href="../public/css/style.css" type="text/css" />
 <table align="center" width="50%"  border="1">
-<tr>
-<td>
+    <tr>
+        <td>
+            <table align="center" border="1" width="100%" height="100%" id="data">
+                <?php
+                $pag = new Paging();
+                $data = $membre->countMembre();
+                $numbers = $pag->Paginate($data,6);
+                $result = $pag->fetchResult();
+                foreach($result as $r){
+                    echo '<div>'.$r.'</div>';
 
-        <table align="center" border="1" width="100%" height="100%" id="data">
-        <?php 
-        $query = "SELECT * FROM membre";       
-        $records_per_page=3;
-        $newquery = $paginate->paging($query,$records_per_page);
-        $paginate->dataview($newquery);
-        $paginate->paginglink($query,$records_per_page);  
-        ?>
-        </table>
-</td>
-</tr>
+                }
+
+                foreach($numbers as $num){ 
+                    echo '<a href="classpaging.php?page='.$num.'">'.$num.'</a>';
+                }
+                ?>
+            </table>
+        </td>
+    </tr>
 </table>
 
 <?php

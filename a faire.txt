@@ -27,7 +27,7 @@ V- Pour étude et contrat mettre liste d'éléments non modifiable
 
 
 
-test :
+test (une fois que c'est terminé) :
 - Tester TOUS les champs du site et bouton pour voir réaction
 - Qualité du code source produit
 - Organisation du code source

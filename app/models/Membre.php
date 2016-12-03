@@ -6,12 +6,12 @@
 			return $this->db->query('SELECT * FROM membre ORDER BY date_inscription '.$ordre);
 		}
 
-        public function getMembreById($id){
-            return $this->db->prepare('SELECT * FROM membre WHERE id = ?', [$id]);
+        public function countMembre(){
+            return $this->db->query('SELECT COUNT(*) FROM membre');
         }
 
         public function inscription($value){
-            echo "dans fonction isncription membre";
+            echo "dans fonction inscription membre";
             var_dump($value);die();
         }
 

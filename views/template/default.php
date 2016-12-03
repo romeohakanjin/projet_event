@@ -5,21 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="Projet Event !">
+  <meta name="description" content="Job Dating">
   <meta name="author" content="RH-SL">
-  <title>Job Dating</title>
-
   <link rel="icon" href="../../favicon.ico">
+
+  <title>Job Dating</title>
+  
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../public/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <!-- Datepicker -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../public/js/inscription.js"></script>
+
 </head>
 
 <body>
@@ -28,7 +29,6 @@
       <img src="../public/images/push_your_career.jpg" />
     </div>
   </header>
-
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -49,13 +49,11 @@
   </nav>
 
   <aside>
-    <!-- mettre un calendrier avec la date de l'évenement en focus -->
     <div class="calendar">
       <h3>La date à retenir</h3>
       <script src="../public/js/calendar.js"></script>
     </div>
   </aside>
-
   <section>
     <div class="container">
       <div class="starter-template" style="padding-top: 100px">
@@ -73,7 +71,7 @@
           <i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@jobdating.fr"> info@jobdating.fr<br /></a>
           <i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0123568745"> 0123568745<br /></a>
           <i class="fa fa-subway" aria-hidden="true"></i> ligne 6 : arrêt Bir-hakeim ou RER C : arrêt Champs de mars<br />
-          <i class="fa fa-info-circle" aria-hidden="true"></i> Campus à proximité de la tour eiffel<br /> 
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Campus à proximité de la tour eiffel<br />
         </div>
       </div>
 
@@ -96,6 +94,5 @@
       </div>
     </div>
   </footer>
-  
 </body>
 </html>

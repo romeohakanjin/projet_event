@@ -23,7 +23,7 @@
     <!--  Date de naissance  -->
     <label for="inputDateNaissance">Date de naissance</label>
     <input autocomplete="off" type="text" name="inputDateNaissance" id="inputDateNaissance" class="form-control" placeholder="Date de naisance" required >
-    
+
     <!--  Adresse  -->
     <label for="inputAdresse">Adresse</label>
     <input autocomplete="off" type="text" name="inputAdresse" id="inputAdresse" class="form-control" placeholder="Adresse" required value="<?php if(isset($adresse)) { echo $adresse; } ?>">
@@ -41,7 +41,7 @@
     <input autocomplete="off" type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Adresse email" required autofocus value="<?php if(isset($mail)) { echo $mail; } ?>">
     
     <!--  Niveau d'étude  -->
-   <label for="inputNiveauEtude">Niveau d'étude</label>
+    <label for="inputNiveauEtude">Niveau d'étude</label>
     <select name="niveau_etude" id="niveau_etude" class="form-control" required>
         <option value="1">Bac + 1</option>
         <option value="2">Bac + 2</option>

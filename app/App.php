@@ -21,6 +21,11 @@
             return new $class_name($this->getDB());
         }
 
+        public function getClass($name){
+            $class_name = "\\App\\".ucfirst($name);
+            return new $class_name($this->getDB());
+        }
+
         public function getDB(){
             $config = Config::getInstance();
             if (is_null($this->db_instance)){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 27 Novembre 2016 à 16:26
+-- Généré le :  Mar 22 Novembre 2016 à 11:10
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -55,10 +55,10 @@ CREATE TABLE `membre` (
   `adresse` varchar(50) NOT NULL,
   `code_postal` varchar(20) NOT NULL,
   `ville` varchar(250) NOT NULL,
-  `type_contrat` enum('CDD','CDI','Alternance','Stage') NOT NULL,
+  `type_contrat` varchar(50) NOT NULL,
   `id_etat_inscription` int(11) DEFAULT '1',
-  `civilite` enum('Mme','Mr') NOT NULL,
-  `niveau_etude` enum('1','2','3','4','5','autre') NOT NULL,
+  `civilite` enum('Mme','Mr') DEFAULT NULL,
+  `niveau_etude` enum('1','2','3','4','5','autre') DEFAULT NULL,
   `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -67,8 +67,8 @@ CREATE TABLE `membre` (
 --
 
 INSERT INTO `membre` (`id`, `nom`, `prenom`, `email`, `date_naissance`, `adresse`, `code_postal`, `ville`, `type_contrat`, `id_etat_inscription`, `civilite`, `niveau_etude`, `date_inscription`) VALUES
-(1, 'sindy', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Alternance', 2, 'Mme', '5', '2016-11-22 12:04:36'),
-(2, 'testNom2', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Stage', 2, 'Mr', '1', '2016-11-22 12:04:36');
+(1, 'sindy', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 2, 'Mme', '5', '2016-11-22 12:04:36'),
+(2, 'testNom2', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 2, 'Mr', '1', '2016-11-22 12:04:36');
 
 --
 -- Index pour les tables exportées

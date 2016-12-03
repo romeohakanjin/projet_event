@@ -8,9 +8,7 @@
     //Relancer et gérer l'autoloading
     App\Autoloader::register();
 
-
     $app = App\app::getInstance();
-
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
@@ -23,6 +21,7 @@
         $app->Unauthorized();
     }
 
+    $paginate = $app->getClass('Paging');
     $membre = $app->getTable("Membre");
     $models = $app->getTable("Model");
     $controller = $app->getController('Membre_controller');

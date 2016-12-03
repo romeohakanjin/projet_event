@@ -45,7 +45,7 @@
       <div class="starter-template" style="padding-top: 100px">
         <?php print $content; ?>
       </div>
-    </div>
+    </div><!-- /.container -->
 
   </body>
 </html>
