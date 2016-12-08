@@ -1,47 +1,132 @@
-$(function(){
-	$("#inputDateNaissance").datepicker();
+$(document).ready(function() {
+    alert("hey");
+    $('#inputDateNaissance').datepicker();
+    $('#selectCivilite').on('change', function() {
+        alert("0");
+        var input=$(this);
+        var is_civility=input.val();
+        if(is_civility && is_civility !== -1){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputNom').on('input', function() {
+        alert("1");
+        var input=$(this);
+        var is_name=input.val();
+        if(is_name){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputPrenom').on('input', function() {
+        alert("2");
+        var input=$(this);
+        var is_first_name=input.val();
+        if(is_first_name){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputDateNaissance').on('input', function() {
+        alert("3");
+        var input=$(this);
+        var is_birthdate=input.val();
+        if(is_birthdate){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputAdresse').on('input', function() {
+        alert("4");
+        var input=$(this);
+        var is_adress=input.val();
+        if(is_adress){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputCodePostal').on('input', function() {
+        alert("5");
+        var input=$(this);
+        var is_post_code=input.val();
+        if(is_post_code){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputVille').on('input', function() {
+        alert("6");
+        var input=$(this);
+        var is_city=input.val();
+        if(is_city){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#inputEmail').on('input', function() {
+        alert("7");
+        var input=$(this);
+        var re = /^[_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+.)+[a-zA-Z]{2,4}$/;
+        var is_email=re.test(input.val());
+        if(is_email){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#selectNiveauEtude').on('change', function() {
+        alert("8");
+        var input=$(this);
+        var is_study_level=input.val();
+        if(is_study_level){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $('#selectTypeContrat').on('change', function() {
+        alert("9");
+        var input=$(this);
+        var is_contract_type=input.val();
+        if(is_contract_type){
+            input.removeClass("invalid").addClass("valid");
+        }
+        else{
+            input.removeClass("valid").addClass("invalid");
+        }
+    });
+    $("#forminscrip button").click(function(event){
+        var form_data=$("#form-signin").serializeArray();
+        var error_free=true;
+        for (var input in form_data){
+            var element=$("#form-signin"+form_data[input]['name']);
+            var valid=element.hasClass("valid");
+            var error_element=$("span", element.parent());
+            if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+            else{error_element.removeClass("error_show").addClass("error");}
+        }
+        if (!error_free){
+            event.preventDefault(); 
+        }
+        else{
+            alert('No errors: Form will be submitted');
+        }
+    });
 });
-
-function checkInscription(form) {
-    alert("Hello! I am an alert box!!");
-    var civilite = document.getElementById('civilite').value;
-    var nom = document.getElementById('inputNom').value;
-    var prenom = document.getElementById('inputPrenom').value;
-    var email = document.getElementById('inputEmail').value;
-    var niveau_etude = document.getElementById('niveau_etude').value;
-
-    var regexEmail = /^[_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+.)+[a-zA-Z]{2,4}$/;
-    var message = "";
-
-    if(civilite == -1) {
-        alert("Veuillez saisir votre civilité svp!");
-        document.forms['form-inscription'].elements['civilite'].focus();
-    }
-    if(nom == "") {
-        alert("Veuillez saisir votre nom svp!");
-        document.forms['form-inscription'].elements['inputNom'].focus();
-    }
-    if(prenom == "") {
-        alert("Veuillez saisir votre prenom svp!");
-        document.forms['form-inscription'].elements['inputPrenom'].focus();
-    }
-    if(email == "") {
-        alert("Veuillez saisir votre email svp!");
-        document.forms['form-inscription'].elements['inputEmail'].focus();
-    }else if(regexEmail.test(email) == false){
-        alert("Veuillez saisir correctment votre email svp!");
-        document.forms['form-inscription'].elements['inputEmail'].focus();
-    }
-    if(niveau_etude == -1) {
-        alert("Veuillez saisir votre niveau d'étude svp!");
-        document.forms['form-inscription'].elements['niveau_etude'].focus();
-    }
-}
-
-function checkContrat(type_contrat){
-    var type_contrat = document.getElementById('type_contrat').value;
-    if(type_contrat == -1) {
-        alert("Veuillez saisir votre type de contrat svp!");
-        document.forms['form-inscription'].elements['type_contrat'].focus();
-    }
-}

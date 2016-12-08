@@ -16,18 +16,22 @@
   <link rel="stylesheet" type="text/css" href="../public/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="../public/js/inscription.js"></script>
 
+
+
+
 </head>
 
 <body>
   <header>
-    <div class="flexslider col-xs-offset-1 col-md-offset-2">
+    <!-- <div class="flexslider col-xs-offset-1 col-md-offset-2">
       <img src="../public/images/push_your_career.jpg" />
-    </div>
+    </div> -->
   </header>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -49,10 +53,10 @@
   </nav>
 
   <aside>
-    <div class="calendar">
+    <!-- <div class="calendar">
       <h3>La date à retenir</h3>
       <script src="../public/js/calendar.js"></script>
-    </div>
+    </div> -->
   </aside>
   <section>
     <div class="container">
