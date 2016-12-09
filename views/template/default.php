@@ -10,21 +10,22 @@
   <link rel="icon" href="../../favicon.ico">
 
   <title>Job Dating</title>
-  
+  <!-- Font Awesome -->
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+  <!-- Google Web Font -->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <!-- JQuery DatePicker -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- JQuery Validator -->
+  <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
   <script src="../public/js/inscription.js"></script>
-
-
-
-
 </head>
 
 <body>
