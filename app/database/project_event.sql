@@ -67,8 +67,18 @@ CREATE TABLE `membre` (
 --
 
 INSERT INTO `membre` (`id`, `nom`, `prenom`, `email`, `date_naissance`, `adresse`, `code_postal`, `ville`, `type_contrat`, `id_etat_inscription`, `civilite`, `niveau_etude`, `date_inscription`) VALUES
-(1, 'sindy', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 2, 'Mme', '5', '2016-11-22 12:04:36'),
-(2, 'testNom2', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 2, 'Mr', '1', '2016-11-22 12:04:36');
+(1, 'Martin', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 1, 'Mme', '5', '2016-11-22 12:04:36'),
+(2, 'Petit', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 2, 'Mr', '1', '2016-11-22 12:04:36'),
+(3, 'Durand', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 3, 'Mme', '5', '2016-11-22 12:04:36'),
+(4, 'Dubois', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 2, 'Mr', '1', '2016-11-22 12:04:36'),
+(5, 'Moreau', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 1, 'Mme', '5', '2016-11-22 12:04:36'),
+(6, 'Lefebvre', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 3, 'Mr', '1', '2016-11-22 12:04:36'),
+(7, 'Leroy', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 3, 'Mme', '5', '2016-11-22 12:04:36'),
+(8, 'Roux', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 1, 'Mr', '1', '2016-11-22 12:04:36'),
+(9, 'Morel', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 2, 'Mme', '5', '2016-11-22 12:04:36'),
+(10, 'testNom2', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 3, 'Mr', '1', '2016-11-22 12:04:36'),
+(11, 'sindy', 'testPrenom', 'sindy@test.com', '1996-11-29', 'testAdresse', '12345', 'testVille', 'Contrat pro', 2, 'Mme', '5', '2016-11-22 12:04:36'),
+(12, 'testNom2', 'testPrenom2', 'test@test.com', '1995-11-06', 'testAdresse2', '57456', 'testVille2', 'Contrat pro', 1, 'Mr', '1', '2016-11-22 12:04:36');
 
 --
 -- Index pour les tables exportées

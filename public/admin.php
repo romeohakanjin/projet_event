@@ -3,14 +3,11 @@
     define('ROOT', dirname(__DIR__));
 
     //Inclure la class Autoloader
-    require ROOT.'/app/Autoloader.php';
-
+    require ROOT.'/app/App.php';
     //Relancer et gérer l'autoloading
-    App\Autoloader::register();
+    \App\App::load();
 
-
-    $app = App\app::getInstance();
-
+    $app = App\App::getInstance();
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
@@ -24,27 +21,37 @@
     }
 
     $membre = $app->getTable("Membre");
-    $models = $app->getTable("Model");
     $controller = $app->getController('Membre_controller');
-
-    $controller->inscription("dd");
-
 
     //Stocker l'affichage
     ob_start();
-
     //Redirection en fonction du paramètre
     switch ($p) {
         case 'home':
-            require ROOT.'/views/admin/index.php';
+            $ordre = $controller->index();
+            $membrePage = $controller->pagination($ordre);
+            $nbPage = $controller->pageMax($ordre);
+            $url = $controller->url();
+            require ROOT.'/app/views/admin/index.php';
+
             break;
 
-        case 'deconnexion':
+        case 'logout':
             $app->logout();
             break;
 
         case 'edit_table':
-            require ROOT.'/views/admin/table_form.php';
+            if (isset($_GET['id'])){
+
+                $membre_edit = $controller->edit_table($_GET['id']);
+            }
+
+            require ROOT.'/app/views/admin/table_form.php';
+            break;
+
+        case 'confirm_update':
+            $controller->verifUpdate($_GET['id'], [$_POST], 'membre');
+            require ROOT.'/app/views/admin/index.php';
             break;
 
         case 'confirm':
@@ -59,5 +66,5 @@
     }
 
     $content = ob_get_clean();
-    require ROOT.'/views/template/default_admin.php';
+    require ROOT.'/app/views/template/default_admin.php';
 ?>

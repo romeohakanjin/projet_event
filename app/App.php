@@ -12,32 +12,48 @@
         }
 
         public function getTable($name){
-            $class_name = "\\App\\models\\".ucfirst($name);
+            $class_name = "App\\models\\".ucfirst($name);
             return new $class_name($this->getDB());
         }
 
         public function getController($name){
-            $class_name = "\\App\\controllers\\".ucfirst($name);
+            $class_name = "App\\controllers\\".ucfirst($name);
             return new $class_name($this->getDB());
         }
 
+        public static function load(){
+            require 'Autoloader.php';
+            //Relancer et gérer l'autoloading de l'app
+            \App\Autoloader::register();
+
+            require '../core/Autoloader.php';
+            //Relancer et gérer l'autoloading du core
+            \core\Autoloader::register();
+        }
+
         public function getDB(){
-            $config = Config::getInstance();
+            $config = \core\Config::getInstance(ROOT.'/config/config.php');
             if (is_null($this->db_instance)){
-                $this->db_instance =  new Database($config->get("db_name"), $config->get("db_user"), $config->get("db_pass"), $config->get("db_host"));
+                $this->db_instance =  new \core\Database($config->get("db_name"), $config->get("db_user"), $config->get("db_pass"), $config->get("db_host"));
             }
             return $this->db_instance;
         }
 
         public function logged(){
-            if ( !isset($_SERVER['PHP_AUTH_USER'])
+           /* if ( !isset($_SERVER['PHP_AUTH_USER'])
                 || !isset($_SERVER['PHP_AUTH_PW'])
                 || ($_SERVER['PHP_AUTH_USER'] !== "admin" )
                 || ($_SERVER['PHP_AUTH_PW'] !== "1") ){
                 return true;
             }
 
-            return false;
+            return false;*/
+        }
+
+        public function logout(){
+            header('WWW-Authenticate: Basic realm="private"');
+            header('HTTP/1.0 401 Unauthorized');
+            exit();
         }
 
         public function forbidden(){

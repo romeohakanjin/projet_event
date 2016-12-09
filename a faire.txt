@@ -1,3 +1,19 @@
+inscription
+V- absence du template depuis la mise en place des listes déroulantes
+V- absence du css depuis la mise en place des listes déroulantes
+V- valeur contenue dans les listes déroulantes ne correspondantes pas au valeur voulu
+	--> affiche les valeurs membres au lieu des valeurs pré-défini
+V- page connexion: est-elle encore nécessaire s'il n'y a plus de session
+
+
+
+
+SQL : 
+v- Ajouter pour type contrat un enum dans le sql (CDI, CDD, Freelance, Alternance, Stage)
+
+
+
+
 Front
 - refaire le header
 - page de présentation (Accroche,Texte de présentation,Visuels,Organisation/Planning/Déroulement)	Lieu	Contact	Comment s’y rendre)
@@ -12,22 +28,26 @@ Front
 
 
 Back :
-- Générer les formulaires en php ?
-- ajouter petit calendrier pour saisir la date de naissance côté admin et faire en sorte de prendre le bon format de date
-- Créer fonction ExistContrat,ExistEtude afin de comparer après la saisie que les champs existe bien
-- Faire l'URL rewrinting, Accès à l’administration via l’URL « /admin »
-- Faire pagination
-- Verifier l'utilisation des query et prepare
-- Gérer la connexion htaccess dans un fichier pas dans le code
-- Sécurier le backend(champs,url, login)
-- faire dossier core pour respecter le format poo
-V - redirection après modification
+V- Générer les formulaires en php ?
+V- $pdo->rollback() ?
+V- Mettre try/catch avec message explicite (Pas besoin car pdo->setAttribute ERRMODE_EXCEPTION°
+V- Accès à l’administration via l’URL « /admin »
+V- Gérer la connexion htaccess dans un fichier pas dans le code
+V- faire dossier core pour respecter le format poo
+V- redirection après modification
 V- Pour étude et contrat mettre liste d'éléments non modifiable
+V- Faire pagination
+- Gérer ASC et DESC
+- Renommer tous les fichier en _controller _model _view
+- Faire l'URL rewriting
+- Sécurier le backend(champs,url, login)
+- ajouter petit calendrier pour saisir la date de naissance côté admin et faire en sorte de prendre le bon format de date
 
 
 
 
-test :
+test (une fois que c'est terminé) :
+- Faire des vérif sur les requetes et tout lorsque les variables sont vides
 - Tester TOUS les champs du site et bouton pour voir réaction
 - Qualité du code source produit
 - Organisation du code source
@@ -42,16 +62,3 @@ IMPORTANT !!!!
 
 
 
-
-inscription
-V- absence du template depuis la mise en place des listes déroulantes
-V- absence du css depuis la mise en place des listes déroulantes
-V- valeur contenue dans les listes déroulantes ne correspondantes pas au valeur voulu
-	--> affiche les valeurs membres au lieu des valeurs pré-défini
-V- page connexion: est-elle encore nécessaire s'il n'y a plus de session
-
-
-
-
-SQL : 
-- Ajouter pour type contrat un enum dans le sql (CDI, CDD, Freelance, Alternance, Stage)

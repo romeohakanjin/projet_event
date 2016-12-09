@@ -13,7 +13,7 @@
                 //Récupère la classe en fonction de celle en paramètre en fonction de la racine/models
                /* $class = str_replace(__NAMESPACE__, '\\', '', $class);
                 $class = str_replace('\\', '/', $class);*/
-                require ROOT.'/'.$class.'.php';
+                require dirname(__DIR__).'/'.$class.'.php';
             }
         }
     }

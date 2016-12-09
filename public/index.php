@@ -3,10 +3,9 @@
     define('ROOT', dirname(__DIR__));
 
     //Inclure la class Autoloader
-    require ROOT.'/app/Autoloader.php';
-
+    require ROOT.'/app/App.php';
     //Relancer et gérer l'autoloading
-    App\Autoloader::register();
+    \App\App::load();
 
     $app = App\App::getInstance();
 
@@ -26,13 +25,13 @@
     //Redirection en fonction du paramètre
     switch ($p) {
         case 'home':
-            require ROOT.'/views/index.php';
+            require ROOT.'/app/views/index.php';
             break;
         case 'partner':
-            require ROOT.'/views/users/partenaire.php';
+            require ROOT.'/app/views/users/partenaire.php';
             break;
         case 'sign-in':
-            require ROOT.'/views/users/inscription.php';
+            require ROOT.'/app/views/users/inscription.php';
             break;
         default:
             $app->notFound();
@@ -40,5 +39,5 @@
     }
 
     $content = ob_get_clean();
-    require ROOT.'/views/template/default.php';
+    require ROOT.'/app/views/template/default.php';
 ?>
