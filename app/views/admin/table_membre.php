@@ -37,7 +37,7 @@
 <div style="text-align: center">
 	<?php if (isset($nbPage)):
 		for ($i=1; $i<=$nbPage;$i++):?>
-			<p style="display: inline-block;"><a href="<?php print $url ?>&page=<?php print $i ?>"><?php print $i ?></a></p>
+			<p style="display: inline-block;"><a href="<?php print $url."&page=". $i."&ordre=".$_GET['ordre'] ?>"><?php print $i ?></a></p>
 		<?php endfor;
 	endif;?>
 </div>

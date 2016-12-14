@@ -29,10 +29,12 @@
     switch ($p) {
         case 'home':
             $ordre = $controller->index();
+            $page = $controller->getPage();
             $membrePage = $controller->pagination($ordre);
             $nbPage = $controller->pageMax($ordre);
             $url = $controller->url();
-            require ROOT.'/app/views/admin/index.php';
+
+            include ROOT.'/app/views/admin/index.php';
 
             break;
 
@@ -42,7 +44,6 @@
 
         case 'edit_table':
             if (isset($_GET['id'])){
-
                 $membre_edit = $controller->edit_table($_GET['id']);
             }
 

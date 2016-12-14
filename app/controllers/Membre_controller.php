@@ -14,34 +14,41 @@
                     return 'ASC';
                 }
                 if ($_GET['ordre'] == 'DESC'){
-                    var_dump("OUII");
                     return 'DESC';
                 }
             }
             else if(isset($_GET['etat'])){
                 if(!isset($_GET['ordre']) || $_GET['ordre'] == 'ASC'){
-                    $_GET['ordre'] = 'ASC';
+                    return $_GET['ordre'] = 'ASC';
 
                 }
                 else{
-                     $_GET['ordre'] == 'DESC';
+                     return $_GET['ordre'] == 'DESC';
                 }
             }
             return null;
         }
 
-        public function pagination($ordre)
-        {
-            $perPage = 4;
+        public function getPage(){
             if (!isset($_GET['page'])){
                 $_GET['page'] = 1;
             }
+            $pagecourante = intval($_GET['page']);
+
+
+            return $pagecourante;
+        }
+
+        public function pagination($ordre)
+        {
+            $perPage = 4;
             $pagecourante = intval($_GET['page']);
 
             if ($pagecourante <= 0) {
                 $pagecourante = 1;
                 $_GET['page'] = 1;
             }
+
             $depart = ($pagecourante-1)*4;
 
             if (!isset($_GET['etat'])){
@@ -94,6 +101,7 @@
         }
 
         public function verifUpdate($id, $fields, $table){
+            $empty = false;
             $resultat = [
                 'nom' => $fields[0]['inputNom'],
                 'prenom' => $fields[0]['inputPrenom'],
@@ -104,7 +112,21 @@
                 'type_contrat' => $fields[0]['inputContrat'],
                 'niveau_etude' => $fields[0]['inputEtude']
             ];
+            foreach ($resultat as $value){
+                if (empty($value)){
+                    $empty = true;
+                }
 
-            $this->membre->update($id, $resultat, $table);
+            }
+
+            if ($value == false){
+                var_dump("dans if");
+                var_dump($empty);
+                $this->membre->update($id, $resultat, $table);
+            }
+            else{
+                //redirection avec message Modifications non prises en comptes
+            }
+
         }
     }

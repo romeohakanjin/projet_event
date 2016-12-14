@@ -1,7 +1,7 @@
-<h3>Modification membre n°<?php print isset($_GET['id']); ?></h3>
+<h3>Modification membre n°<?php if(isset($membre_edit[0]->id)) { echo $membre_edit[0]->id; }?></h3>
 
 <table class="admin-table-gestion">
-  <form class="form-signin" action="admin.php?p=confirm_update&id=<?php print isset($_GET['id']); ?>" method="POST">
+  <form class="form-signin" action="admin.php?p=confirm_update&id=<?php if(isset($membre_edit[0]->id)) { echo $membre_edit[0]->id; }?>" method="POST">
     <tr class="tr-table-admin-gestion">
       <th>Nom</th>
       <th>Prenom</th>

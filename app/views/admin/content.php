@@ -27,8 +27,6 @@
     <?php if($_GET['p'] === 'edit_table'): ?>
     <td><button class="btn btn-lg btn-primary btn-block" name='formedit'
                 value="editer" type="submit">Modifier</button><td>
-        <?php elseif($_GET['p'] === 'add_table'): ?>
-    <td><button class="btn btn-lg btn-primary btn-block" name='formajout'
-                value="ajouter" type="submit">Ajouter</button><td>
+        <?php $_GET['id'] = $data->id; ?>
         <?php endif; ?>
 </tr>
