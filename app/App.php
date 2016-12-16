@@ -12,12 +12,12 @@
         }
 
         public function getTable($name){
-            $class_name = "App\\models\\".ucfirst($name);
+            $class_name = "App\\models\\".ucfirst($name)."_model";
             return new $class_name($this->getDB());
         }
 
         public function getController($name){
-            $class_name = "App\\controllers\\".ucfirst($name);
+            $class_name = "App\\controllers\\".ucfirst($name)."_controller";
             return new $class_name($this->getDB());
         }
 

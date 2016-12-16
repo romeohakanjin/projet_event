@@ -21,7 +21,7 @@
     }
 
     $membre = $app->getTable("Membre");
-    $controller = $app->getController('Membre_controller');
+    $controller = $app->getController('Membre');
 
     //Stocker l'affichage
     ob_start();

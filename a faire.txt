@@ -1,21 +1,4 @@
-inscription
-V- absence du template depuis la mise en place des listes déroulantes
-V- absence du css depuis la mise en place des listes déroulantes
-V- valeur contenue dans les listes déroulantes ne correspondantes pas au valeur voulu
-	--> affiche les valeurs membres au lieu des valeurs pré-défini
-V- page connexion: est-elle encore nécessaire s'il n'y a plus de session
-
-
-
-
-SQL : 
-v- Ajouter pour type contrat un enum dans le sql (CDI, CDD, Freelance, Alternance, Stage)
-
-
-
-
-Front
-- refaire le header
+Front :
 - page de présentation (Accroche,Texte de présentation,Visuels,Organisation/Planning/Déroulement)	Lieu	Contact	Comment s’y rendre)
 - Responsive design
 - Adéquation du graphisme avec le sujet retenu
@@ -25,24 +8,28 @@ Front
 - footer :  partie contact = le boostrap est moche
 
 
+API:
+- API RESTful actions suivantes :
+	V- Voir la liste des inscrits
+	V- Obtenir les détails d'un utilisateur spécifique
+	- Valider et refuser une inscription(un utilisateur)
+	- Inscrire une personne
+- Format de retour JSON
+- Authentification effectuée avec JWT (accès unique)
+- Bien gérer les :
+	- Code de retours appropriés(200,204,400,401,404,405)
+	- Les méthodes adaptés(GET,POST,..)
+	- URI au bon format (/ressource/identifiant)
+- views
 
 
 Back :
-V- Générer les formulaires en php ?
-V- $pdo->rollback() ?
-V- Mettre try/catch avec message explicite (Pas besoin car pdo->setAttribute ERRMODE_EXCEPTION°
-V- Accès à l’administration via l’URL « /admin »
-V- Gérer la connexion htaccess dans un fichier pas dans le code
-V- faire dossier core pour respecter le format poo
-V- redirection après modification
-V- Pour étude et contrat mettre liste d'éléments non modifiable
-V- Faire pagination
-- Gérer ASC et DESC
-- Renommer tous les fichier en _controller _model _view
-- Faire l'URL rewriting
-- Sécurier le backend(champs,url, login)
-- ajouter petit calendrier pour saisir la date de naissance côté admin et faire en sorte de prendre le bon format de date
-
+- Accès à l’administration via l’URL « /admin »
+- formulaire edit contrôle de saisie
+- formulaire edit ajouter petit calendrier pour saisir la date de naissance côté admin et faire en sorte de prendre le bon format de date
+- Verifier que l'on respecte le thème car on doit faire un contrôle sur un événement,
+		genre le mec s'inscrit à un évenement pas sur le site
+- METTRE DES CODE HTTP EN FONCTION DES DIFFERENTES ACTION ! INSCRIPTION REUSSI, FAILED, MODIFICATION etc..
 
 
 
@@ -54,11 +41,6 @@ test (une fois que c'est terminé) :
 - Faire des contrôles de saisie sur tous les champs ! Vérifier meme pour Mr Mme que c'est bien égale à l'un des deux etc
 - commenter toute les méthodes
 - modifier nom des variables nommer correctement et explicitsh
-
-
-
-IMPORTANT !!!!
-- METTRE DES CODE HTTP EN FONCTION DES DIFFERENTES ACTION ! INSCRIPTION REUSSI, FAILED, MODIFICATION etc..
 
 
 

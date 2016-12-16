@@ -10,7 +10,7 @@
     $app = App\App::getInstance();
 
     $membre = $app->getTable("Membre");
-    $controller = $app->getController('Membre_controller');
+    $controller = $app->getController('Membre');
 
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
