@@ -96,8 +96,12 @@
         }
 
         public function inscription($values){
-            var_dump("contrôle de saisie inscription ici");
             var_dump($values);
+            echo "------";
+            foreach ($values as $key){
+                var_dump($key);
+            }
+            die();
         }
 
         public function verifUpdate($id, $fields, $table){
@@ -126,6 +130,7 @@
             }
             else{
                 //redirection avec message Modifications non prises en comptes
+                var_dump("erreur !");
             }
 
         }

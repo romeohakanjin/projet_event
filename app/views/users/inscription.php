@@ -6,7 +6,7 @@
 <h2>Inscription</h2>
 <br />
 <div class="container">
-  <form class="form-signin" name="form-signin" id="form-signin" action="" method="POST">
+  <form class="form-signin" name="form-signin" id="form-signin" action="index.php?p=confirm_insert" method="POST">
 
     <!-- Civilité -->
     <br/>

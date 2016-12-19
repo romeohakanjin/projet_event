@@ -33,6 +33,9 @@
         case 'sign-in':
             require ROOT.'/app/views/users/inscription.php';
             break;
+        case 'confirm_insert':
+            $controller->inscription($_POST);
+            break;
         default:
             $app->notFound();
             break;
