@@ -129,8 +129,8 @@
                 $good = false;
             }
 
-            if(!preg_match($stringControle,$resultat['type_contrat'])){
-                echo "bueno";
+            if(!in_array($resultat['niveau_etude'], $niveau_etude) || !in_array($resultat['civilite'], $civilite)){
+                $good = false;
             }
 
             if(!preg_match($cpControle, $resultat['code_postal'] )){
@@ -142,11 +142,13 @@
                 $good = false;
             }
 
-            var_dump($good);
+            /*if ($good){
+                header('Status: 204 No Content', false, 204);
+                return header('Location: http://localhost/projet_event/public/index.php');
+            }
 
-
-
-            die();
+            header('Status: 412 Precondition Failed', false, 412);
+            header('Location: http://localhost/projet_event/public/index.php?p=sign-in');*/
         }
 
         public function verifUpdate($id, $fields, $table){
