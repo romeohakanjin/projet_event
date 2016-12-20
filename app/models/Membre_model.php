@@ -21,12 +21,16 @@
             var_dump($value);die();
         }
 
-        /*public function existeEtude($etude){
-            $req = $this->db->prepare('SELECT * FROM membre WHERE niveau_etude = ? LIMIT 1', [$etude]);
+       /* public function existeEtude(){
+            return $this->db->query('SELECT DISTINCT niveau_etude FROM membre ');
         }
 
-        public function existeCivilite($civilite){
-            $req = $this->db->prepare('SELECT * FROM membre WHERE civilite = ? LIMIT 1', [$civilite]);
+        public function existeCivilite(){
+            return $this->db->query('SELECT DISTINCT civilite FROM membre ');
+        }
+
+        public function existeContrat(){
+            return $this->db->query('SELECT DISTINCT type_contrat FROM membre ');
         }*/
 
         public function getMembreEtatPage($etat_inscription, $ordre, $limm, $limp){

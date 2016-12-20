@@ -96,11 +96,56 @@
         }
 
         public function inscription($values){
-            var_dump($values);
+            $cpControle = "/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/";
+            $stringControle = '/^\p{L}+$/ui';
+            $good = true;
+            $civilite = ["Mr", "Mme"];
+            $niveau_etude = [1,2,3,4,5];
+
+            $resultat = [
+                'nom' => $values['inputNom'],
+                'prenom' => $values['inputPrenom'],
+                'email' => $values['inputEmail'],
+                'date_naissance' => $values['inputDateNaissance'],
+                'adresse' => $values['inputAdresse'],
+                'code_postal' => $values['inputCodePostal'],
+                'ville' => $values['inputVille'],
+                'type_contrat' => $values['selectTypeContrat'],
+                'civilite' => $values['selectCivilite'],
+                'niveau_etude' => $values['selectNiveauEtude']
+            ];
+
+            var_dump($resultat);
             echo "------";
-            foreach ($values as $key){
-                var_dump($key);
+
+            foreach ($resultat as $key){
+                if (empty($key)){
+                    $good = false;
+                }
             }
+
+            if(!preg_match($stringControle,$resultat['nom']) || !preg_match($stringControle,$resultat['prenom'])
+                || !preg_match($stringControle,$resultat['ville'])){
+                $good = false;
+            }
+
+            if(!preg_match($stringControle,$resultat['type_contrat'])){
+                echo "bueno";
+            }
+
+            if(!preg_match($cpControle, $resultat['code_postal'] )){
+                $good = false;
+            }
+
+            if (!filter_var( $resultat['email'], FILTER_VALIDATE_EMAIL))
+            {
+                $good = false;
+            }
+
+            var_dump($good);
+
+
+
             die();
         }
 
