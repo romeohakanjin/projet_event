@@ -8,20 +8,19 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
-        'edc6464955a37aa4d5fbf39d40fb6ee7' => __DIR__ . '/..' . '/symfony/polyfill-php55/bootstrap.php',
-        '3e2471375464aac821502deb0ac64275' => __DIR__ . '/..' . '/symfony/polyfill-php54/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'a' => 
+        array (
+            'api\\' => 4,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php70\\' => 23,
-            'Symfony\\Polyfill\\Php55\\' => 23,
-            'Symfony\\Polyfill\\Php54\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Validator\\' => 28,
             'Symfony\\Component\\Translation\\' => 30,
@@ -37,8 +36,13 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Config\\' => 25,
+            'Symfony\\Component\\Asset\\' => 24,
             'Symfony\\Bridge\\Twig\\' => 20,
             'Silex\\' => 6,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
         'D' => 
         array (
@@ -49,17 +53,13 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
     );
 
     public static $prefixDirsPsr4 = array (
+        'api\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Symfony\\Polyfill\\Php70\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php70',
-        ),
-        'Symfony\\Polyfill\\Php55\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php55',
-        ),
-        'Symfony\\Polyfill\\Php54\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php54',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -121,6 +121,10 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
         ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
         'Symfony\\Bridge\\Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bridge',
@@ -128,6 +132,10 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
         'Silex\\' => 
         array (
             0 => __DIR__ . '/..' . '/silex/silex/src/Silex',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Doctrine\\Common\\Cache\\' => 
         array (
@@ -153,13 +161,9 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Pimple' => 
             array (
-                0 => __DIR__ . '/..' . '/pimple/pimple/lib',
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
             ),
         ),
         'D' => 
@@ -186,7 +190,6 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
     public static $classMap = array (
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
-        'CallbackFilterIterator' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/CallbackFilterIterator.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
         'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
@@ -194,8 +197,6 @@ class ComposerStaticInitb663df7cb41565eb68a19f529be9f206
         'Locale' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Locale.php',
         'NumberFormatter' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/NumberFormatter.php',
         'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
-        'RecursiveCallbackFilterIterator' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/RecursiveCallbackFilterIterator.php',
-        'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php54/Resources/stubs/SessionHandlerInterface.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
     );
 

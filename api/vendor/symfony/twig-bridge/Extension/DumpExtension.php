@@ -23,12 +23,10 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 class DumpExtension extends \Twig_Extension
 {
     private $cloner;
-    private $dumper;
 
-    public function __construct(ClonerInterface $cloner, HtmlDumper $dumper = null)
+    public function __construct(ClonerInterface $cloner)
     {
         $this->cloner = $cloner;
-        $this->dumper = $dumper ?: new HtmlDumper();
     }
 
     public function getFunctions()
@@ -69,12 +67,13 @@ class DumpExtension extends \Twig_Extension
         }
 
         $dump = fopen('php://memory', 'r+b');
-        $this->dumper->setCharset($env->getCharset());
+        $dumper = new HtmlDumper($dump);
 
         foreach ($vars as $value) {
-            $this->dumper->dump($this->cloner->cloneVar($value), $dump);
+            $dumper->dump($this->cloner->cloneVar($value));
         }
+        rewind($dump);
 
-        return stream_get_contents($dump, -1, 0);
+        return stream_get_contents($dump);
     }
 }

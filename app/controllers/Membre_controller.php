@@ -146,6 +146,9 @@
                 header('Status: 204 No Content', false, 204);
                 return header('Location: http://localhost/projet_event/public/index.php');
             }
+            else{
+
+            }
 
             header('Status: 412 Precondition Failed', false, 412);
             header('Location: http://localhost/projet_event/public/index.php?p=sign-in');*/

@@ -34,7 +34,7 @@
             $nbPage = $controller->pageMax($ordre);
             $url = $controller->url();
 
-            include ROOT.'/app/views/admin/index.php';
+            include ROOT.'/app/views/admin/index.html.twig';
 
             break;
 
@@ -52,7 +52,7 @@
 
         case 'confirm_update':
             $controller->verifUpdate($_GET['id'], [$_POST], 'membre');
-            require ROOT.'/app/views/admin/index.php';
+            require ROOT.'/app/views/admin/index.html.twig';
             break;
 
         case 'confirm':

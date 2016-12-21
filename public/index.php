@@ -25,7 +25,7 @@
     //Redirection en fonction du paramètre
     switch ($p) {
         case 'home':
-            require ROOT.'/app/views/index.php';
+            require ROOT.'/app/views/index.html.twig';
             break;
         case 'partner':
             require ROOT.'/app/views/users/partenaire.php';

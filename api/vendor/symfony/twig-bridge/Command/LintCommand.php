@@ -61,7 +61,7 @@ class LintCommand extends Command
             ->setDescription('Lints a template and outputs encountered errors')
             ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The output format', 'txt')
             ->addArgument('filename', InputArgument::IS_ARRAY)
-            ->setHelp(<<<'EOF'
+            ->setHelp(<<<EOF
 The <info>%command.name%</info> command lints a template and outputs to STDOUT
 the first encountered syntax error.
 
@@ -105,7 +105,7 @@ EOF
                 $template .= fread(STDIN, 1024);
             }
 
-            return $this->display($input, $output, $io, array($this->validate($twig, $template, uniqid('sf_', true))));
+            return $this->display($input, $output, $io, array($this->validate($twig, $template, uniqid('sf_'))));
         }
 
         $filesInfo = $this->getFilesInfo($twig, $filenames);
@@ -142,7 +142,7 @@ EOF
         try {
             $temporaryLoader = new \Twig_Loader_Array(array((string) $file => $template));
             $twig->setLoader($temporaryLoader);
-            $nodeTree = $twig->parse($twig->tokenize(new \Twig_Source($template, (string) $file)));
+            $nodeTree = $twig->parse($twig->tokenize($template, (string) $file));
             $twig->compile($nodeTree);
             $twig->setLoader($realLoader);
         } catch (\Twig_Error $e) {
@@ -202,7 +202,7 @@ EOF
             }
         });
 
-        $output->writeln(json_encode($filesInfo, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        $output->writeln(json_encode($filesInfo, JSON_PRETTY_PRINT));
 
         return min($errors, 1);
     }
