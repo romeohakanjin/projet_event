@@ -1,29 +1,21 @@
 <?php
     // Home page
-$app->get('/', function () use ($app) {
+    $app->get('/', function () use ($app) {
+        $membres = $app['dao.membre']->findAll();
 
-    $membres = $app['dao.membre']->findAll();
-
-    return $app['twig']->render('index.html.twig', array('membres' => $membres));
-
-});
-
-    /* Afficher la liste des utilisateurs */
-    $app->get('users/', function() use ($app) {
-        $sql = "SELECT * FROM membre";
-        $post = $app['db']->fetchAll($sql);
-        return json_encode($post);
-    });
+        return $app['twig']->render('index.html.twig', array('membres' => $membres));
+    })->bind('home');
 
     /* Afficher un utilisateur en fonction de son id */
     $app->get('users/{id}', function ($id) use ($app) {
-        $sql = "SELECT * FROM membre WHERE id = ?";
-        $post = $app['db']->fetchAssoc($sql, array((int) $id));
-        if ($post == false) {
-            $app->abort(404, "id {$id} does not exist in database.");
+        $membres = $app['dao.membre']->find($id);
+
+        if (empty($membres)) {
+            return $app->abort(404, "id {$id} does not exist in database.");
         }
-        return json_encode($post);
-    });
+        return $app['twig']->render('membre.html.twig', array('membres' => $membres));
+        /* return json_encode($post);*/
+    })->bind('membre');
 
     /* Afficher les utilisateurs en fonction de leur etat*/
     $app->get('users/etat/{etat}', function ($etat) use ($app) {

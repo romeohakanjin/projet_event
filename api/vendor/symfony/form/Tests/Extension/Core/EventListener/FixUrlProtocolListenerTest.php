@@ -40,28 +40,15 @@ class FixUrlProtocolListenerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('http://www.symfony.com', $event->getData());
     }
 
-    public function provideUrlsWithSupportedProtocols()
+    public function testSkipOtherProtocol()
     {
-        return array(
-            array('ftp://www.symfony.com'),
-            array('chrome-extension://foo'),
-            array('h323://foo'),
-            array('iris.beep://foo'),
-            array('foo+bar://foo'),
-        );
-    }
-
-    /**
-     * @dataProvider provideUrlsWithSupportedProtocols
-     */
-    public function testSkipOtherProtocol($url)
-    {
+        $data = 'ftp://www.symfony.com';
         $form = $this->getMock('Symfony\Component\Form\Test\FormInterface');
-        $event = new FormEvent($form, $url);
+        $event = new FormEvent($form, $data);
 
         $filter = new FixUrlProtocolListener('http');
         $filter->onSubmit($event);
 
-        $this->assertEquals($url, $event->getData());
+        $this->assertEquals('ftp://www.symfony.com', $event->getData());
     }
 }

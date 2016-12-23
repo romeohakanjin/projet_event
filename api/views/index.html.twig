@@ -1,35 +1,39 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-        <title>Api - Home</title>
-    </head>
-    <body>
-        <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="">Api SL / RH</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbar-collapse-target">
-                    </div>
-                </div><!-- /.container -->
-            </nav>
-            {% for membres in membres %}
-                <article>
-                    <h2>{{ membres.id }} - {{ membres.nom }}</h2>
-                    <p>{{ membres.prenom }}</p>
-                </article>
-            {% endfor %}
-        </div>
-    </body>
-</html>
+{% extends "layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Membre</h2>
+    <table class="admin-table-gestion">
+        <tr class="tr-table-admin-gestion">
+            <th>id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date naissance</th>
+            <th>Adresse</th>
+            <th>Code postal</th>
+            <th>Ville</th>
+            <th>Etudes</th>
+            <th>Contrat</th>
+            <th>Modifier</th>
+        </tr>
+        {% for membres in membres %}
+        <tr>
+            <td>{{ membres.id }}</td>
+            <td>{{ membres.nom }}</td>
+            <td>{{ membres.prenom }}</td>
+            <td>{{ membres.date_naissance }}</td>
+            <td>{{ membres.adresse }}</td>
+            <td>{{ membres.code_postal }}</td>
+            <td>{{ membres.ville }}</td>
+            <td>{{ membres.niveau_etude }}</td>
+            <td>{{ membres.type_contrat }}</td>
+            <td>
+                <a href="{{ path('membre', { 'id': membres.id }) }}">
+                    <img src="../../projet_event/public/images/update.png"  class="icon-admin-gestion">
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

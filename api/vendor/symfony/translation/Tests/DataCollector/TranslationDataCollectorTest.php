@@ -13,7 +13,6 @@ namespace Symfony\Component\Translation\Tests\DataCollector;
 
 use Symfony\Component\Translation\DataCollectorTranslator;
 use Symfony\Component\Translation\DataCollector\TranslationDataCollector;
-use Symfony\Component\VarDumper\Cloner\VarCloner;
 
 class TranslationDataCollectorTest extends \PHPUnit_Framework_TestCase
 {
@@ -40,8 +39,6 @@ class TranslationDataCollectorTest extends \PHPUnit_Framework_TestCase
 
     public function testCollect()
     {
-        $cloner = new VarCloner();
-
         $collectedMessages = array(
             array(
                   'id' => 'foo',
@@ -118,9 +115,9 @@ class TranslationDataCollectorTest extends \PHPUnit_Framework_TestCase
                   'state' => DataCollectorTranslator::MESSAGE_MISSING,
                   'count' => 3,
                   'parameters' => array(
-                      $cloner->cloneVar(array('%count%' => 3)),
-                      $cloner->cloneVar(array('%count%' => 3)),
-                      $cloner->cloneVar(array('%count%' => 4, '%foo%' => 'bar')),
+                      array('%count%' => 3),
+                      array('%count%' => 3),
+                      array('%count%' => 4, '%foo%' => 'bar'),
                   ),
                   'transChoiceNumber' => 3,
             ),

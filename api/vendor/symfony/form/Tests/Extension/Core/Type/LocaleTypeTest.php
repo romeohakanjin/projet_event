@@ -19,7 +19,7 @@ class LocaleTypeTest extends TestCase
 {
     protected function setUp()
     {
-        IntlTestHelper::requireIntl($this, false);
+        IntlTestHelper::requireIntl($this);
 
         parent::setUp();
     }

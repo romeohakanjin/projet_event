@@ -60,7 +60,7 @@ class IdentityTranslatorTest extends \PHPUnit_Framework_TestCase
     public function testGetLocaleReturnsDefaultLocaleIfNotSet()
     {
         // in order to test with "pt_BR"
-        IntlTestHelper::requireFullIntl($this, false);
+        IntlTestHelper::requireFullIntl($this);
 
         $translator = new IdentityTranslator();
 

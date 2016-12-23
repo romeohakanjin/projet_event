@@ -1,5 +1,7 @@
 <?php
     namespace   api\Domain;
+    use Symfony\Component\Validator\Constraints\Date;
+
     class Membre{
         /**
          * Membre id.
@@ -32,7 +34,7 @@
         /**
          * Membre date_naissance.
          *
-         * @var string
+         * @var Date
          */
         private $date_naissance;
 
@@ -108,7 +110,7 @@
             return $this->email;
         }
 
-        public function getDateNaissance() {
+        public function getDate_naissance() {
             return $this->date_naissance;
         }
 
@@ -116,7 +118,7 @@
             return $this->adresse;
         }
 
-        public function getCodePostal() {
+        public function getCode_postal() {
             return $this->code_postal;
         }
 
@@ -124,7 +126,7 @@
             return $this->ville;
         }
 
-        public function getTypeContrat() {
+        public function getType_contrat() {
             return $this->type_contrat;
         }
 
@@ -136,7 +138,7 @@
             return $this->civilite;
         }
 
-        public function getNiveauEtude() {
+        public function getNiveau_etude() {
             return $this->niveau_etude;
         }
 
@@ -164,7 +166,7 @@
             return $this;
         }
 
-        public function setDateNaissance($dateNaissance) {
+        public function setDate_naissance($dateNaissance) {
             $this->date_naissance = $dateNaissance;
         return $this;
     }
@@ -174,7 +176,7 @@
             return $this;
         }
 
-        public function setCodePostal($code_postal) {
+        public function setCode_postal($code_postal) {
             $this->code_postal = $code_postal;
             return $this;
         }
@@ -184,7 +186,7 @@
             return $this;
         }
 
-        public function setTypeContrat($type_contrat) {
+        public function setType_contrat($type_contrat) {
             $this->type_contrat = $type_contrat;
             return $this;
         }
@@ -199,7 +201,7 @@
             return $this;
         }
 
-        public function setNiveauEtude($niveau_etude) {
+        public function setNiveau_etude($niveau_etude) {
             $this->niveau_etude = $niveau_etude;
             return $this;
         }
