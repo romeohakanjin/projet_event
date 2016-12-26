@@ -52,7 +52,7 @@
 
         case 'confirm_update':
             $controller->verifUpdate($_GET['id'], [$_POST], 'membre');
-            require ROOT.'/app/views/admin/index.html.twig';
+            require ROOT.'/app/views/admin/index.php';
             break;
 
         case 'confirm':
