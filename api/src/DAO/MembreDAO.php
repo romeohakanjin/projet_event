@@ -52,25 +52,22 @@
         /**
          * Saves a comment into the database.
          *
-         * @param \api\Domain\Membre $content The comment to save
+         * @param  api\Domain $content The comment to save
          */
         public function save(Membre $content) {
             $Data = array(
-                'art_id' => $content->getArticle()->getId(),
-                'usr_id' => $content->getAuthor()->getId(),
-                'com_content' => $content->getContent()
+                'id' => $content->getId(),
+                'nom' => $content->getId(),
+                'prenom' => $content->getId(),
+                'date_naissance' => $content->getId(),
+                'adresse' => $content->getId(),
+                'code_postal' => $content->getId(),
+                'ville' => $content->getId(),
+                'niveau_etudes' => $content->getId(),
+                'type_contrat' => $content->getId()
             );
 
-            if ($content->getId()) {
-                // The comment has already been saved : update it
-                $this->getDb()->update('t_comment', $Data, array('com_id' => $content->getId()));
-            } else {
-                // The comment has never been saved : insert it
-                $this->getDb()->insert('t_comment', $Data);
-                // Get the id of the newly created comment and set it on the entity.
-                $id = $this->getDb()->lastInsertId();
-                $content->setId($id);
-            }
+            return $this->db->update('membre', $Data, array('id' => $content->getId()));
         }
 
         /**

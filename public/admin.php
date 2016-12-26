@@ -34,7 +34,7 @@
             $nbPage = $controller->pageMax($ordre);
             $url = $controller->url();
 
-            include ROOT.'/app/views/admin/index.html.twig';
+            include ROOT.'/app/views/admin/index.php';
 
             break;
 

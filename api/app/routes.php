@@ -17,6 +17,36 @@
         /* return json_encode($post);*/
     })->bind('membre');
 
+    // Membre details with comments
+    $app->match('/membre/{id}', function ($id,  Symfony\Component\HttpFoundation\Request $request) use ($app) {
+        $membre = $app['dao.membre']->find($id);
+        $commentFormView = null;
+
+        // A user is fully authenticated : he can add comments
+        $comment = new \api\Domain\Membre();
+        $comment->setArticle($membre);
+        $user = $app['user'];
+        $comment->setAuthor($user);
+        $commentForm = $app['form.factory']->create(api\Form\Type\MembreType::class, $comment);
+        $commentForm->handleRequest($request);
+
+        return $app['twig']->render('membre.html.twig', array(
+            'membre' => $membre));
+    })->bind('membre');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* Afficher les utilisateurs en fonction de leur etat*/
     $app->get('users/etat/{etat}', function ($etat) use ($app) {
         $sql = "SELECT * FROM membre WHERE id_etat_inscription = ?";
