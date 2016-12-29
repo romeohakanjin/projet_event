@@ -1,4 +1,8 @@
 <?php
+    use Symfony\Component\HttpFoundation\Request;
+    use api\Domain\Membre;
+    use api\Form\Type\MembreType;
+
     // Home page
     $app->get('/', function () use ($app) {
         $membres = $app['dao.membre']->findAll();
@@ -13,69 +17,47 @@
         if (empty($membres)) {
             return $app->abort(404, "id {$id} does not exist in database.");
         }
-        return $app['twig']->render('membre.html.twig', array('membres' => $membres));
-        /* return json_encode($post);*/
+        /*return $app['twig']->render('membre.html.twig', array('membres' => $membres));*/
+         return json_encode($membres);
     })->bind('membre');
 
     // Membre details with comments
-    $app->match('/membre/{id}', function ($id,  Symfony\Component\HttpFoundation\Request $request) use ($app) {
-        $membre = $app['dao.membre']->find($id);
-        $commentFormView = null;
+    $app->post('/users/create/', function (Request $request) use ($app) {
+        $membreC = new Membre();
+        $MembreFormView = null;
 
-        // A user is fully authenticated : he can add comments
-        $comment = new \api\Domain\Membre();
-        $comment->setArticle($membre);
-        $user = $app['user'];
-        $comment->setAuthor($user);
-        $commentForm = $app['form.factory']->create(api\Form\Type\MembreType::class, $comment);
-        $commentForm->handleRequest($request);
+        $membreForm = $app['form.factory']->create(MembreType::class, $membreC);
+        $membreForm->handleRequest($request);
 
-        return $app['twig']->render('membre.html.twig', array(
-            'membre' => $membre));
-    })->bind('membre');
+        if ($membreForm->isSubmitted() && $membreForm->isValid()) {
+            $data = $membreForm->getData();
 
+            $ok = $app['dao.membre']->save($data, 'insert');
+            return $app->json($ok, 201);
+        }
 
+        $MembreFormView = $membreForm->createView();
 
+        return $app['twig']->render('ajout.html.twig', array(
+            'MembreForm' => $MembreFormView));
 
-
-
-
-
-
-
-
-
-
+    })->bind('ajout_membre');
 
     /* Afficher les utilisateurs en fonction de leur etat*/
-    $app->get('users/etat/{etat}', function ($etat) use ($app) {
-        $sql = "SELECT * FROM membre WHERE id_etat_inscription = ?";
-        $post = $app['db']->fetchAll($sql, array((int) $etat));
+    $app->get('users/etat/attente/', function () use ($app) {
+        $membres = $app['dao.membre']->findAttente();
 
-        if (empty($post)) {
-            $app->abort(404, "State : {$etat} does not exist in database. Try with 1,2 or 3");
+        if (empty($membres)) {
+            return $app->abort(404, "Aucun membre en attente");
         }
-        return json_encode($post);
+        return $app['twig']->render('index.html.twig', array('membres' => $membres));
+        /*return json_encode($membres);*/
+
     });
 
-    /* Ajouter un utilisateur */
-    $app->post('/users/add', function () use ($app){
-        $userData = array(
-            'nom' => 'nomINSERT',
-            'prenom' => 'prenomINSERT',
-            'email' => 'INSERT@inser.com',
-            'date_naissance' => '6666-11-06',
-            'adresse' => 'insertADRESSE',
-            'code_postal' => '55555',
-            'ville' => 'auber',
-            'type_contrat' => 'Contrat pro',
-            'id_etat_inscription' => '2',
-            'civilite' => 'Mr',
-            'niveau_etude' => '5'
-        );
-        $insert = $app['db']->insert('membre', $userData);
-        return $app->json($insert, 201);
-    });
+
+
+
 
     /* Modifier un utilisateur */
     $app->put('users/update/{id}', function ($id) use ($app){

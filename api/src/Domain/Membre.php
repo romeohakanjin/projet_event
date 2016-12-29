@@ -32,11 +32,11 @@
         private $email;
 
         /**
-         * Membre date_naissance.
+         * Membre dateNaissance.
          *
          * @var Date
          */
-        private $date_naissance;
+        private $dateNaissance;
 
         /**
          * Membre adresse.
@@ -46,11 +46,11 @@
         private $adresse;
 
         /**
-         * Membre code_postal.
+         * Membre codePostal.
          *
          * @var string
          */
-        private $code_postal;
+        private $codePostal;
 
         /**
          * Membre ville.
@@ -60,18 +60,18 @@
         private $ville;
 
         /**
-         * Membre type_contrat.
+         * Membre typeContrat.
          *
          * @var string
          */
-        private $type_contrat;
+        private $typeContrat;
 
         /**
-         * Membre id_etat_inscription.
+         * Membre idEtatInscription.
          *
          * @var int
          */
-        private $id_etat_inscription;
+        private $idEtatInscription;
 
         /**
          * Membre civilite.
@@ -81,18 +81,18 @@
         private $civilite;
 
         /**
-         * Membre niveau_etude.
+         * Membre niveauEtude.
          *
          * @var string
          */
-        private $niveau_etude;
+        private $niveauEtude;
 
         /**
-         * Membre date_inscription.
+         * Membre dateInscription.
          *
          * @var string
          */
-        private $date_inscription;
+        private $dateInscription;
 
         public function getId() {
             return $this->id;
@@ -110,24 +110,24 @@
             return $this->email;
         }
 
-        public function getDate_naissance() {
-            return $this->date_naissance;
+        public function getDateNaissance() {
+            return $this->dateNaissance;
         }
 
         public function getAdresse() {
             return $this->adresse;
         }
 
-        public function getCode_postal() {
-            return $this->code_postal;
+        public function getCodePostal() {
+            return $this->codePostal;
         }
 
         public function getVille() {
             return $this->ville;
         }
 
-        public function getType_contrat() {
-            return $this->type_contrat;
+        public function getTypeContrat() {
+            return $this->typeContrat;
         }
 
         public function getIdEtatInscription() {
@@ -138,12 +138,12 @@
             return $this->civilite;
         }
 
-        public function getNiveau_etude() {
-            return $this->niveau_etude;
+        public function getNiveauEtude() {
+            return $this->niveauEtude;
         }
 
         public function getDateInscription() {
-            return $this->date_inscription;
+            return $this->dateInscription;
         }
 
         public function setId($id) {
@@ -166,8 +166,8 @@
             return $this;
         }
 
-        public function setDate_naissance($dateNaissance) {
-            $this->date_naissance = $dateNaissance;
+        public function setDateNaissance($dateNaissance) {
+            $this->dateNaissance = $dateNaissance;
         return $this;
     }
 
@@ -176,8 +176,8 @@
             return $this;
         }
 
-        public function setCode_postal($code_postal) {
-            $this->code_postal = $code_postal;
+        public function setCodePostal($code_postal) {
+            $this->codePostal = $code_postal;
             return $this;
         }
 
@@ -186,8 +186,8 @@
             return $this;
         }
 
-        public function setType_contrat($type_contrat) {
-            $this->type_contrat = $type_contrat;
+        public function setTypeContrat($type_contrat) {
+            $this->typeContrat = $type_contrat;
             return $this;
         }
 
@@ -201,8 +201,8 @@
             return $this;
         }
 
-        public function setNiveau_etude($niveau_etude) {
-            $this->niveau_etude = $niveau_etude;
+        public function setNiveauEtude($niveau_etude) {
+            $this->niveauEtude = $niveau_etude;
             return $this;
         }
 

@@ -10,12 +10,12 @@
         public function buildForm(FormBuilderInterface $builder, array $options){
             $builder->add('nom', TextareaType::class);
             $builder->add('prenom', TextareaType::class);
-            $builder->add('date_naissance', TextareaType::class);
+            $builder->add('dateNaissance', TextareaType::class);
             $builder->add('adresse', TextareaType::class);
-            $builder->add('code_postal', TextareaType::class);
+            $builder->add('codePostal', TextareaType::class);
             $builder->add('ville', TextareaType::class);
-            $builder->add('etudes', TextareaType::class);
-            $builder->add('contrat', TextareaType::class);
+            $builder->add('niveauEtude', TextareaType::class);
+            $builder->add('typeContrat', TextareaType::class);
         }
 
         public function getName(){

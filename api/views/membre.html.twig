@@ -3,8 +3,28 @@
 {% block title %}{{ membres.id }}{% endblock %}
 
 {% block content %}
-
-    <h2>Utilisateur N°{{ membres.id }}</h2>
-
+    <h2>Membre N°{{ membres.id }}</h2>
+   <table class="admin-table-gestion">
+        <tr class="tr-table-admin-gestion">
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date naissance</th>
+            <th>Adresse</th>
+            <th>Code postal</th>
+            <th>Ville</th>
+            <th>Etudes</th>
+            <th>Contrat</th>
+        </tr>
+        <tr>
+            <td>{{ membres.nom }}</td>
+            <td>{{ membres.prenom }}</td>
+            <td>{{ membres.date_naissance }}</td>
+            <td>{{ membres.adresse }}</td>
+            <td>{{ membres.code_postal }}</td>
+            <td>{{ membres.ville }}</td>
+            <td>{{ membres.niveau_etude }}</td>
+            <td>{{ membres.type_contrat }}</td>
+        </tr>
+   </table>
 
 {% endblock %}

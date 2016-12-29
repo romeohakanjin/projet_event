@@ -3,9 +3,6 @@ Front :
 - Responsive design
 - Adéquation du graphisme avec le sujet retenu
 - Qualité de l'interface du site Internet (front et back)
-- bouton du  menu : quand la taille de l'écran = xs,sm et md ne fonctionne pas
-	--> n'affiche pas les boutons d'accès aux autres pages
-- footer :  partie contact = le boostrap est moche
 
 
 API:
@@ -13,14 +10,14 @@ API:
 	V- Voir la liste des inscrits
 	V- Obtenir les détails d'un utilisateur spécifique
 	- Valider et refuser une inscription(un utilisateur)
-	- Inscrire une personne
+	V Inscrire une personne
 - Format de retour JSON
 - Authentification effectuée avec JWT (accès unique)
 - Bien gérer les :
 	- Code de retours appropriés(200,204,400,401,404,405)
 	- Les méthodes adaptés(GET,POST,..)
 	- URI au bon format (/ressource/identifiant)
-- views
+V - views
 
 
 Back :

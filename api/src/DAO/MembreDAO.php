@@ -34,6 +34,16 @@
         }
 
         /**
+         * @return array
+         */
+        public function findAttente() {
+            $sql = "SELECT * FROM membre WHERE id_etat_inscription = ?";
+            $row = $this->db->fetchAll($sql, array(1));
+
+            return $row;
+        }
+
+        /**
          * Return a list of all membre, sorted by date (most recent first).
          *
          * @return array A list of all membre.
@@ -49,25 +59,24 @@
             return $membres;
         }
 
+
         /**
-         * Saves a comment into the database.
-         *
-         * @param  api\Domain $content The comment to save
+         * @param Membre $content
+         * @return int
          */
-        public function save(Membre $content) {
+        public function save(Membre $content, $option) {
             $Data = array(
-                'id' => $content->getId(),
-                'nom' => $content->getId(),
-                'prenom' => $content->getId(),
-                'date_naissance' => $content->getId(),
-                'adresse' => $content->getId(),
-                'code_postal' => $content->getId(),
-                'ville' => $content->getId(),
-                'niveau_etudes' => $content->getId(),
-                'type_contrat' => $content->getId()
+                'nom' => $content->getNom(),
+                'prenom' => $content->getPrenom(),
+                'date_naissance' => $content->getDateNaissance(),
+                'adresse' => $content->getAdresse(),
+                'code_postal' => $content->getCodePostal(),
+                'ville' => $content->getVille(),
+                'niveau_etude' => $content->getNiveauEtude(),
+                'type_contrat' => $content->getTypeContrat()
             );
 
-            return $this->db->update('membre', $Data, array('id' => $content->getId()));
+            return $this->db->$option('membre', $Data);
         }
 
         /**
@@ -82,14 +91,14 @@
             $membre->setNom($row['nom']);
             $membre->setPrenom($row['prenom']);
             $membre->setEmail($row['email']);
-            $membre->setDate_naissance($row['date_naissance']);
+            $membre->setDateNaissance($row['date_naissance']);
             $membre->setAdresse($row['adresse']);
-            $membre->setCode_postal($row['code_postal']);
+            $membre->setCodePostal($row['code_postal']);
             $membre->setVille($row['ville']);
-            $membre->setType_contrat($row['type_contrat']);
+            $membre->setTypeContrat($row['type_contrat']);
             $membre->setIdEtatInscription($row['id_etat_inscription']);
             $membre->setCivilite($row['civilite']);
-            $membre->setNiveau_etude($row['niveau_etude']);
+            $membre->setNiveauEtude($row['niveau_etude']);
             $membre->setDateInscription($row['date_inscription']);
 
             return $membre;

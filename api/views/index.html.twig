@@ -22,15 +22,15 @@
             <td>{{ membres.id }}</td>
             <td>{{ membres.nom }}</td>
             <td>{{ membres.prenom }}</td>
-            <td>{{ membres.date_naissance }}</td>
+            <td>{{ membres.dateNaissance }}</td>
             <td>{{ membres.adresse }}</td>
-            <td>{{ membres.code_postal }}</td>
+            <td>{{ membres.codePostal }}</td>
             <td>{{ membres.ville }}</td>
-            <td>{{ membres.niveau_etude }}</td>
-            <td>{{ membres.type_contrat }}</td>
+            <td>{{ membres.niveauEtude }}</td>
+            <td>{{ membres.typeContrat }}</td>
             <td>
                 <a href="{{ path('membre', { 'id': membres.id }) }}">
-                    <img src="../../projet_event/public/images/update.png"  class="icon-admin-gestion">
+                    <img src="../web/images/update.png"  class="icon-admin-gestion">
                 </a>
             </td>
         </tr>
