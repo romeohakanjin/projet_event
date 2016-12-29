@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+{% set adminMenu = true %}
+{% block title %}Ajout{% endblock %}
+
+{% block content %}
+    <div class="well">
+        {{ form_start(MembreForm, { 'attr': {'class': 'form-horizontal'} }) }}
+        <div class="form-group">
+            {{ form_label(MembreForm.nom, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(MembreForm.prenom) }}
+                {{ form_widget(MembreForm.prenom, { 'attr':  {
+                    'class': 'form-control'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(MembreForm.adresse, null, { 'label_attr':  {
+                'class': 'col-sm-4 control-label'
+            }}) }}
+            <div class="col-sm-6">
+                {{ form_errors(MembreForm.codePostal) }}
+                {{ form_widget(MembreForm.codePostal, { 'attr':  {
+                    'class': 'form-control',
+                    'rows': '8'
+                }}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-3">
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+        {{ form_end(MembreForm) }}
+    </div>
+{% endblock %}

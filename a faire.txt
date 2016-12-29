@@ -6,17 +6,17 @@ Front :
 
 
 API:
-- API RESTful actions suivantes :
+V- API RESTful actions suivantes :
 	V- Voir la liste des inscrits
 	V- Obtenir les détails d'un utilisateur spécifique
-	- Valider et refuser une inscription(un utilisateur)
-	V Inscrire une personne
+	V- Valider et refuser une inscription(un utilisateur)
+	V- Inscrire une personne
 - Format de retour JSON
 - Authentification effectuée avec JWT (accès unique)
 - Bien gérer les :
 	- Code de retours appropriés(200,204,400,401,404,405)
 	- Les méthodes adaptés(GET,POST,..)
-	- URI au bon format (/ressource/identifiant)
+	V- URI au bon format (/ressource/identifiant)
 V - views
 
 

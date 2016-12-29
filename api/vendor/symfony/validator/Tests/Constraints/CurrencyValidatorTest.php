@@ -14,9 +14,8 @@ namespace Symfony\Component\Validator\Tests\Constraints;
 use Symfony\Component\Intl\Util\IntlTestHelper;
 use Symfony\Component\Validator\Constraints\Currency;
 use Symfony\Component\Validator\Constraints\CurrencyValidator;
-use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
-class CurrencyValidatorTest extends ConstraintValidatorTestCase
+class CurrencyValidatorTest extends AbstractConstraintValidatorTest
 {
     protected function createValidator()
     {
@@ -60,7 +59,7 @@ class CurrencyValidatorTest extends ConstraintValidatorTestCase
      **/
     public function testValidCurrenciesWithCountrySpecificLocale($currency)
     {
-        IntlTestHelper::requireFullIntl($this, false);
+        IntlTestHelper::requireFullIntl($this);
 
         \Locale::setDefault('en_GB');
 

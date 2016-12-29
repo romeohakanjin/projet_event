@@ -18,12 +18,12 @@
     $app->register(new Silex\Provider\LocaleServiceProvider());
     $app->register(new Silex\Provider\TranslationServiceProvider());
 
-    $app['twig'] = $app->share($app->extend('twig', function(Twig_Environment $twig, $app) {
-        $twig->addExtension(new Twig_Extensions_Extension_Text());
-        return $twig;
-    }));
-    $app->register(new Silex\Provider\ValidatorServiceProvider());
-
     $app['dao.membre'] = function ($app) {
         return new api\DAO\MembreDAO($app['db']);
     };
+
+   /* $app['twig'] = $app->share($app->extend('twig', function(Twig_Environment $twig, $app) {
+        $twig->addExtension(new Twig_Extensions_Extension_Text());
+        return $twig;
+    }));
+    $app->register(new Silex\Provider\ValidatorServiceProvider());*/

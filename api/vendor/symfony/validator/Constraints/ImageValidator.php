@@ -13,7 +13,6 @@ namespace Symfony\Component\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
-use Symfony\Component\Validator\Exception\RuntimeException;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -47,8 +46,7 @@ class ImageValidator extends FileValidator
         if (null === $constraint->minWidth && null === $constraint->maxWidth
             && null === $constraint->minHeight && null === $constraint->maxHeight
             && null === $constraint->minRatio && null === $constraint->maxRatio
-            && $constraint->allowSquare && $constraint->allowLandscape && $constraint->allowPortrait
-            && !$constraint->detectCorrupted) {
+            && $constraint->allowSquare && $constraint->allowLandscape && $constraint->allowPortrait) {
             return;
         }
 
@@ -179,24 +177,6 @@ class ImageValidator extends FileValidator
                 ->setParameter('{{ height }}', $height)
                 ->setCode(Image::PORTRAIT_NOT_ALLOWED_ERROR)
                 ->addViolation();
-        }
-
-        if ($constraint->detectCorrupted) {
-            if (!function_exists('imagecreatefromstring')) {
-                throw new RuntimeException('Corrupted images detection requires installed and enabled GD extension');
-            }
-
-            $resource = @imagecreatefromstring(file_get_contents($value));
-
-            if (false === $resource) {
-                $this->context->buildViolation($constraint->corruptedMessage)
-                    ->setCode(Image::CORRUPTED_IMAGE_ERROR)
-                    ->addViolation();
-
-                return;
-            }
-
-            imagedestroy($resource);
         }
     }
 }

@@ -7,7 +7,7 @@
     $app->get('/', function () use ($app) {
         $membres = $app['dao.membre']->findAll();
 
-        return $app['twig']->render('index.html.twig', array('membres' => $membres));
+        return $app['twig']->render('admin.html.twig', array('membres' => $membres));
     })->bind('home');
 
     /* Afficher un utilisateur en fonction de son id */
@@ -21,8 +21,8 @@
          return json_encode($membres);
     })->bind('membre');
 
-    // Membre details with comments
-    $app->post('/users/create/', function (Request $request) use ($app) {
+    // Membre create
+    $app->match('/users/create/', function (Request $request) use ($app) {
         $membreC = new Membre();
         $MembreFormView = null;
 
@@ -41,7 +41,7 @@
         return $app['twig']->render('ajout.html.twig', array(
             'MembreForm' => $MembreFormView));
 
-    })->bind('ajout_membre');
+    })->bind('admin_membre_add');
 
     /* Afficher les utilisateurs en fonction de leur etat*/
     $app->get('users/etat/attente/', function () use ($app) {
@@ -50,38 +50,50 @@
         if (empty($membres)) {
             return $app->abort(404, "Aucun membre en attente");
         }
-        return $app['twig']->render('index.html.twig', array('membres' => $membres));
+        return $app['twig']->render('membre.html.twig', array('membres' => $membres));
         /*return json_encode($membres);*/
 
     });
 
+    // Remove an article
+    $app->get('/users/{id}/delete', function($id, Request $request) use ($app) {
+        // Delete the membre
+        $ok = $app['dao.membre']->delete($id);
+
+        // Redirect to admin home page
+        return $app->json($ok, 204);
+    })->bind('admin_membre_delete');
 
 
+    // Edit an existing membre
+    $app->match('/users/{id}/edit', function($id, Request $request) use ($app) {
+        $membre = $app['dao.membre']->find($id);
+        $membreForm = $app['form.factory']->create(MembreType::class, $membre);
+        $membreForm->handleRequest($request);
 
-
-    /* Modifier un utilisateur */
-    $app->put('users/update/{id}', function ($id) use ($app){
-        $sql = "SELECT * FROM membre WHERE id = ?";
-        $user = $app['db']->fetchAssoc($sql, array((int) $id));
-
-        if($user == false){
-            $app->abort(404, "id {$id} does not exist in database.");
+        if ($membreForm->isSubmitted() && $membreForm->isValid()) {
+            $data = $membreForm->getData();
+            $app['dao.membre']->update($data, $id);
         }
-        else{
-            $userData = array(
-                'nom' => '666666666',
-                'prenom' => 'atch66666'
-            );
-            $update = $app['db']->update('membre', $userData, array('id' => $id));
-        }
 
-        return $app->json($update, 201);
-    });
+        return $app['twig']->render('membre_form.html.twig', array(
+            'title' => 'Edit membre',
+            'MembreForm' => $membreForm->createView()));
+    })->bind('admin_membre_edit');
 
+    // Remove an article
+    $app->get('/users/{id}/accepter', function($id) use ($app) {
+        // Delete the membre
+        $ok = $app['dao.membre']->changeEtat($id, 2);
 
-    /* Supprimer un utilisateur en fonction de son id */
-    $app->delete('users/delete/{id}', function ($id) use ($app){
-        $app['db']->delete('membre', array('id' => $id));
+        // Redirect to admin home page
+        return $app->json($ok, 204);
+    })->bind('admin_membre_accepter');// Remove an article
 
-        return $app->json('No content', 204);
-    });
+    $app->get('/users/{id}/refuser', function($id) use ($app) {
+        // Delete the membre
+        $ok = $app['dao.membre']->changeEtat($id, 3);
+
+        // Redirect to admin home page
+        return $app->json($ok, 204);
+    })->bind('admin_membre_refuser');

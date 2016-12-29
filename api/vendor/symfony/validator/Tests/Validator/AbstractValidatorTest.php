@@ -1157,11 +1157,9 @@ abstract class AbstractValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('Violation in other group', $violations[0]->getMessage());
     }
 
-    /**
-     * @dataProvider getTestReplaceDefaultGroup
-     */
-    public function testReplaceDefaultGroup($sequence, array $assertViolations)
+    public function testReplaceDefaultGroupWithObjectFromGroupSequenceProvider()
     {
+        $sequence = new GroupSequence(array('Group 1', 'Group 2', 'Group 3', 'Entity'));
         $entity = new GroupSequenceProviderEntity($sequence);
 
         $callback1 = function ($value, ExecutionContextInterface $context) {
@@ -1191,41 +1189,43 @@ abstract class AbstractValidatorTest extends \PHPUnit_Framework_TestCase
         $violations = $this->validate($entity, null, 'Default');
 
         /* @var ConstraintViolationInterface[] $violations */
-        $this->assertCount(count($assertViolations), $violations);
-        foreach ($assertViolations as $key => $message) {
-            $this->assertSame($message, $violations[$key]->getMessage());
-        }
+        $this->assertCount(1, $violations);
+        $this->assertSame('Violation in Group 2', $violations[0]->getMessage());
     }
 
-    public function getTestReplaceDefaultGroup()
+    public function testReplaceDefaultGroupWithArrayFromGroupSequenceProvider()
     {
-        return array(
-            array(
-                'sequence' => new GroupSequence(array('Group 1', 'Group 2', 'Group 3', 'Entity')),
-                'assertViolations' => array(
-                    'Violation in Group 2',
-                ),
-            ),
-            array(
-                'sequence' => array('Group 1', 'Group 2', 'Group 3', 'Entity'),
-                'assertViolations' => array(
-                    'Violation in Group 2',
-                ),
-            ),
-            array(
-                'sequence' => new GroupSequence(array('Group 1', array('Group 2', 'Group 3'), 'Entity')),
-                'assertViolations' => array(
-                    'Violation in Group 2',
-                    'Violation in Group 3',
-                ),
-            ),
-            array(
-                'sequence' => array('Group 1', array('Group 2', 'Group 3'), 'Entity'),
-                'assertViolations' => array(
-                    'Violation in Group 2',
-                    'Violation in Group 3',
-                ),
-            ),
-        );
+        $sequence = array('Group 1', 'Group 2', 'Group 3', 'Entity');
+        $entity = new GroupSequenceProviderEntity($sequence);
+
+        $callback1 = function ($value, ExecutionContextInterface $context) {
+            $context->addViolation('Violation in Group 2');
+        };
+        $callback2 = function ($value, ExecutionContextInterface $context) {
+            $context->addViolation('Violation in Group 3');
+        };
+
+        $metadata = new ClassMetadata(get_class($entity));
+        $metadata->addConstraint(new Callback(array(
+            'callback' => function () {},
+            'groups' => 'Group 1',
+        )));
+        $metadata->addConstraint(new Callback(array(
+            'callback' => $callback1,
+            'groups' => 'Group 2',
+        )));
+        $metadata->addConstraint(new Callback(array(
+            'callback' => $callback2,
+            'groups' => 'Group 3',
+        )));
+        $metadata->setGroupSequenceProvider(true);
+
+        $this->metadataFactory->addMetadata($metadata);
+
+        $violations = $this->validate($entity, null, 'Default');
+
+        /* @var ConstraintViolationInterface[] $violations */
+        $this->assertCount(1, $violations);
+        $this->assertSame('Violation in Group 2', $violations[0]->getMessage());
     }
 }

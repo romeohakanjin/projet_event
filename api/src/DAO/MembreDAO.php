@@ -43,6 +43,14 @@
             return $row;
         }
 
+        public function changeEtat($id, $idEtat) {
+            $Data = array(
+                'id_etat_inscription' => $idEtat
+            );
+
+            return $this->db->update('membre', $Data, array('id' => $id));
+        }
+
         /**
          * Return a list of all membre, sorted by date (most recent first).
          *
@@ -77,6 +85,31 @@
             );
 
             return $this->db->$option('membre', $Data);
+        }
+
+        public function update($content, $id) {
+            $Data = array(
+                'nom' => $content['nom'],
+                'prenom' => $content['prenom'],
+                'date_naissance' => $content['dateNaissance'],
+                'adresse' => $content['adresse'],
+                'code_postal' => $content['codePostal'],
+                'ville' => $content['ville'],
+                'niveau_etude' => $content['niveauEtude'],
+                'type_contrat' => $content['typeContrat']
+            );
+
+            return $this->db->update('membre', $Data, array('id' => $id));
+        }
+
+        /**
+         * Removes an membre from the database.
+         *
+         * @param integer $id The membre id.
+         */
+        public function delete($id) {
+            // Delete the article
+            $this->db->delete('membre', array('id' => $id));
         }
 
         /**

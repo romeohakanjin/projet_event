@@ -13,9 +13,8 @@ namespace Symfony\Component\Validator\Tests\Constraints;
 
 use Symfony\Component\Validator\Constraints\Iban;
 use Symfony\Component\Validator\Constraints\IbanValidator;
-use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
-class IbanValidatorTest extends ConstraintValidatorTestCase
+class IbanValidatorTest extends AbstractConstraintValidatorTest
 {
     protected function createValidator()
     {

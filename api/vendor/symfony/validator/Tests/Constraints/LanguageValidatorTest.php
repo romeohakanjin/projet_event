@@ -14,9 +14,8 @@ namespace Symfony\Component\Validator\Tests\Constraints;
 use Symfony\Component\Intl\Util\IntlTestHelper;
 use Symfony\Component\Validator\Constraints\Language;
 use Symfony\Component\Validator\Constraints\LanguageValidator;
-use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
-class LanguageValidatorTest extends ConstraintValidatorTestCase
+class LanguageValidatorTest extends AbstractConstraintValidatorTest
 {
     protected function createValidator()
     {
@@ -91,7 +90,7 @@ class LanguageValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateUsingCountrySpecificLocale()
     {
-        IntlTestHelper::requireFullIntl($this, false);
+        IntlTestHelper::requireFullIntl($this);
 
         \Locale::setDefault('fr_FR');
         $existingLanguage = 'en';

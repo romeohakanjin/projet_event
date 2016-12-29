@@ -14,7 +14,6 @@ namespace Symfony\Component\Validator\Validator;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Constraints\GroupSequence;
 use Symfony\Component\Validator\ConstraintValidatorFactoryInterface;
-use Symfony\Component\Validator\Context\ExecutionContext;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Exception\NoSuchMetadataException;
@@ -111,11 +110,6 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         $previousMetadata = $this->context->getMetadata();
         $previousPath = $this->context->getPropertyPath();
         $previousGroup = $this->context->getGroup();
-        $previousConstraint = null;
-
-        if ($this->context instanceof ExecutionContext || method_exists($this->context, 'getConstraint')) {
-            $previousConstraint = $this->context->getConstraint();
-        }
 
         // If explicit constraints are passed, validate the value against
         // those constraints
@@ -143,10 +137,6 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
             $this->context->setNode($previousValue, $previousObject, $previousMetadata, $previousPath);
             $this->context->setGroup($previousGroup);
-
-            if (null !== $previousConstraint) {
-                $this->context->setConstraint($previousConstraint);
-            }
 
             return $this;
         }
@@ -224,7 +214,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $this->validateGenericNode(
                 $propertyValue,
                 $object,
-                $cacheKey.':'.get_class($object).':'.$propertyName,
+                $cacheKey.':'.$propertyName,
                 $propertyMetadata,
                 $propertyPath,
                 $groups,
@@ -280,7 +270,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $this->validateGenericNode(
                 $value,
                 $object,
-                $cacheKey.':'.get_class($object).':'.$propertyName,
+                $cacheKey.':'.$propertyName,
                 $propertyMetadata,
                 $propertyPath,
                 $groups,
@@ -319,7 +309,6 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
         return array($groups);
     }
-
     /**
      * Validates an object against the constraints defined for its class.
      *
@@ -589,7 +578,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
                 $this->validateGenericNode(
                     $propertyValue,
                     $object,
-                    $cacheKey.':'.get_class($object).':'.$propertyName,
+                    $cacheKey.':'.$propertyName,
                     $propertyMetadata,
                     PropertyPath::append($propertyPath, $propertyName),
                     $groups,
@@ -772,7 +761,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
      * @param int                       $traversalStrategy The strategy used for
      *                                                     traversing the value
      * @param GroupSequence             $groupSequence     The group sequence
-     * @param string|null               $cascadedGroup     The group that should
+     * @param string[]|null             $cascadedGroup     The group that should
      *                                                     be passed to cascaded
      *                                                     objects instead of
      *                                                     the group sequence
@@ -784,7 +773,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
         $cascadedGroups = $cascadedGroup ? array($cascadedGroup) : null;
 
         foreach ($groupSequence->groups as $groupInSequence) {
-            $groups = (array) $groupInSequence;
+            $groups = array($groupInSequence);
 
             if ($metadata instanceof ClassMetadataInterface) {
                 $this->validateClassNode(

@@ -13,7 +13,6 @@ namespace Symfony\Component\Validator\Tests\Constraints;
 
 use Symfony\Component\Intl\Util\IntlTestHelper;
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 class ComparisonTest_Class
 {
@@ -33,7 +32,7 @@ class ComparisonTest_Class
 /**
  * @author Daniel Holmes <daniel@danielholmes.org>
  */
-abstract class AbstractComparisonValidatorTestCase extends ConstraintValidatorTestCase
+abstract class AbstractComparisonValidatorTestCase extends AbstractConstraintValidatorTest
 {
     protected static function addPhp5Dot5Comparisons(array $comparisons)
     {

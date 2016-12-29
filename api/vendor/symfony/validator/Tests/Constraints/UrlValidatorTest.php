@@ -14,12 +14,11 @@ namespace Symfony\Component\Validator\Tests\Constraints;
 use Symfony\Bridge\PhpUnit\DnsMock;
 use Symfony\Component\Validator\Constraints\Url;
 use Symfony\Component\Validator\Constraints\UrlValidator;
-use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 /**
  * @group dns-sensitive
  */
-class UrlValidatorTest extends ConstraintValidatorTestCase
+class UrlValidatorTest extends AbstractConstraintValidatorTest
 {
     protected function createValidator()
     {
@@ -85,7 +84,6 @@ class UrlValidatorTest extends ConstraintValidatorTestCase
             array('http://www.symfony.com/doc/current/book/validation.html#supported-constraints'),
             array('http://very.long.domain.name.com/'),
             array('http://localhost/'),
-            array('http://myhost123/'),
             array('http://127.0.0.1/'),
             array('http://127.0.0.1:80/'),
             array('http://[::1]/'),
