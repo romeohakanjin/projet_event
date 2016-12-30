@@ -1,13 +1,12 @@
 <?php
     use Symfony\Component\HttpFoundation\Request;
     use api\Domain\Membre;
-    use api\Form\Type\MembreType;
 
     // Home page
     $app->get('/', function () use ($app) {
         $membres = $app['dao.membre']->findAll();
 
-        return $app['twig']->render('admin.html.twig', array('membres' => $membres));
+        return json_encode($membres);
     })->bind('home');
 
     /* Afficher un utilisateur en fonction de son id */
@@ -21,28 +20,6 @@
          return json_encode($membres);
     })->bind('membre');
 
-    // Membre create
-    $app->match('/users/create/', function (Request $request) use ($app) {
-        $membreC = new Membre();
-        $MembreFormView = null;
-
-        $membreForm = $app['form.factory']->create(MembreType::class, $membreC);
-        $membreForm->handleRequest($request);
-
-        if ($membreForm->isSubmitted() && $membreForm->isValid()) {
-            $data = $membreForm->getData();
-
-            $ok = $app['dao.membre']->save($data, 'insert');
-            return $app->json($ok, 201);
-        }
-
-        $MembreFormView = $membreForm->createView();
-
-        return $app['twig']->render('ajout.html.twig', array(
-            'MembreForm' => $MembreFormView));
-
-    })->bind('admin_membre_add');
-
     /* Afficher les utilisateurs en fonction de leur etat*/
     $app->get('users/etat/attente/', function () use ($app) {
         $membres = $app['dao.membre']->findAttente();
@@ -50,50 +27,91 @@
         if (empty($membres)) {
             return $app->abort(404, "Aucun membre en attente");
         }
-        return $app['twig']->render('membre.html.twig', array('membres' => $membres));
-        /*return json_encode($membres);*/
+
+        return json_encode($membres);
 
     });
 
-    // Remove an article
-    $app->get('/users/{id}/delete', function($id, Request $request) use ($app) {
-        // Delete the membre
-        $ok = $app['dao.membre']->delete($id);
 
-        // Redirect to admin home page
-        return $app->json($ok, 204);
-    })->bind('admin_membre_delete');
-
-
-    // Edit an existing membre
-    $app->match('/users/{id}/edit', function($id, Request $request) use ($app) {
-        $membre = $app['dao.membre']->find($id);
-        $membreForm = $app['form.factory']->create(MembreType::class, $membre);
-        $membreForm->handleRequest($request);
-
-        if ($membreForm->isSubmitted() && $membreForm->isValid()) {
-            $data = $membreForm->getData();
-            $app['dao.membre']->update($data, $id);
+    // Membre create
+    $app->post('/users/create', function (Request $request) use ($app) {
+        var_dump($request->request);
+        // Check request parameters
+        if (!$request->request->has('nom')) {
+            return $app->json('Missing required parameter: nom', 400);
+        }
+        if (!$request->request->has('prenom')) {
+            return $app->json('Missing required parameter: prenom', 400);
+        }
+        if (!$request->request->has('email')) {
+            return $app->json('Missing required parameter: email', 400);
+        }
+        if (!$request->request->has('adresse')) {
+            return $app->json('Missing required parameter: adresse', 400);
+        }
+        if (!$request->request->has('ville')) {
+            return $app->json('Missing required parameter: vile', 400);
+        }
+        if (!$request->request->has('date_naissance')) {
+            return $app->json('Missing required parameter: date_naissance', 400);
+        }
+        if (!$request->request->has('code_postal')) {
+            return $app->json('Missing required parameter: code_postal', 400);
+        }
+        if (!$request->request->has('type_contrat')) {
+            return $app->json('Missing required parameter: type_contrat', 400);
         }
 
-        return $app['twig']->render('membre_form.html.twig', array(
-            'title' => 'Edit membre',
-            'MembreForm' => $membreForm->createView()));
-    })->bind('admin_membre_edit');
+        // Build and save the new article
+        $membre = new Membre();
+        $membre->setNom($request->request->get('nom'));
+        $membre->setPrenom($request->request->get('prenom'));
+        $membre->setEmail($request->request->get('email'));
+        $membre->setDateNaissance($request->request->get('date_naissance'));
+        $membre->setAdresse($request->request->get('adresse'));
+        $membre->setCodePostal($request->request->get('code_postal'));
+        $membre->setVille($request->request->get('ville'));
+        $membre->setTypeContrat($request->request->get('type_contrat'));
+
+        $app['dao.membre']->save($membre, 'insert');
+        // Convert an object ($article) into an associative array ($responseData)
+        $responseData = array(
+            'id' => $membre->getId(),
+            'nom' => $membre->getNom(),
+            'prenom' => $membre->getPrenom(),
+            'date_naissance' => $membre->getDateNaissance(),
+            'adresse' => $membre->getAdresse(),
+            'code_postal' => $membre->getCodePostal(),
+            'ville' => $membre->getVille(),
+            'niveau_etude' => $membre->getNiveauEtude(),
+            'type_contrat' => $membre->getTypeContrat()
+        );
+        return $app->json($responseData, 201);  // 201 = Created
+    })->bind('admin_membre_add');
+
+
 
     // Remove an article
-    $app->get('/users/{id}/accepter', function($id) use ($app) {
+    $app->put('/users/{id}/accepter', function($id) use ($app) {
         // Delete the membre
         $ok = $app['dao.membre']->changeEtat($id, 2);
 
-        // Redirect to admin home page
         return $app->json($ok, 204);
-    })->bind('admin_membre_accepter');// Remove an article
+    })->bind('admin_membre_accepter');
 
-    $app->get('/users/{id}/refuser', function($id) use ($app) {
+    $app->put('/users/{id}/refuser', function($id) use ($app) {
         // Delete the membre
         $ok = $app['dao.membre']->changeEtat($id, 3);
 
-        // Redirect to admin home page
         return $app->json($ok, 204);
     })->bind('admin_membre_refuser');
+
+
+    // Remove an article
+    $app->delete('/users/{id}/delete', function($id, Request $request) use ($app) {
+        // Delete the membre
+        $ok = $app['dao.membre']->delete($id);
+
+        return $app->json($ok, 204);
+    })->bind('admin_membre_delete');
+

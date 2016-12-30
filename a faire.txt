@@ -11,11 +11,11 @@ V- API RESTful actions suivantes :
 	V- Obtenir les détails d'un utilisateur spécifique
 	V- Valider et refuser une inscription(un utilisateur)
 	V- Inscrire une personne
-- Format de retour JSON
+V- Format de retour JSON
 - Authentification effectuée avec JWT (accès unique)
 - Bien gérer les :
 	- Code de retours appropriés(200,204,400,401,404,405)
-	- Les méthodes adaptés(GET,POST,..)
+	V - Les méthodes adaptés(GET,POST,..)
 	V- URI au bon format (/ressource/identifiant)
 V - views
 
