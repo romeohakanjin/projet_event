@@ -22,12 +22,9 @@ V - views
 
 Back :
 - Accès à l’administration via l’URL « /admin »
-- formulaire edit contrôle de saisie
-- formulaire edit ajouter petit calendrier pour saisir la date de naissance côté admin et faire en sorte de prendre le bon format de date
-- Verifier que l'on respecte le thème car on doit faire un contrôle sur un événement,
-		genre le mec s'inscrit à un évenement pas sur le site
 - mettre les bonnes méthodes http en fonction de ajout, modif, etc..
 - METTRE DES CODE HTTP EN FONCTION DES DIFFERENTES ACTION ! INSCRIPTION REUSSI, FAILED, MODIFICATION etc..
+- METTRE POUR DATE INSCRIPTION entre 1950 et année en cours, DATE PAS PRISE EN COMPTE SUR PHPMYADMIN Needed datetime to be sent ?
 
 
 

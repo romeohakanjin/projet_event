@@ -15,24 +15,6 @@
             return $this->db->query("SELECT * FROM membre ORDER BY date_inscription ".$ordre." LIMIT ".$limm.", ".$limp );
         }
 
-
-        public function inscription($value){
-            echo "dans fonction isncription membre";
-            var_dump($value);die();
-        }
-
-       /* public function existeEtude(){
-            return $this->db->query('SELECT DISTINCT niveau_etude FROM membre ');
-        }
-
-        public function existeCivilite(){
-            return $this->db->query('SELECT DISTINCT civilite FROM membre ');
-        }
-
-        public function existeContrat(){
-            return $this->db->query('SELECT DISTINCT type_contrat FROM membre ');
-        }*/
-
         public function getMembreEtatPage($etat_inscription, $ordre, $limm, $limp){
             return $this->db->prepare('SELECT * FROM membre WHERE id_etat_inscription = ? ORDER BY date_inscription '.$ordre." LIMIT ".$limm.", ".$limp, [$etat_inscription]);
         }

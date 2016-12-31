@@ -52,7 +52,10 @@
 
         case 'confirm_update':
             $controller->verifUpdate($_GET['id'], [$_POST], 'membre');
-            require ROOT.'/app/views/admin/index.php';
+            if (!$good){
+                header('Status: 412 Precondition Failed', false, 412);
+                header('Location: http://localhost/projet/projet_event/public/admin.php?');
+            }
             break;
 
         case 'confirm':
@@ -62,6 +65,9 @@
             break;
 
         default:
+            /*
+             * METTRE CODE ERREUR 404 ET RETURNER EN HEADER UNE PAGE 404 DEJA CREER NORMALEMENT
+             * */
             $app->notFound();
             break;
     }

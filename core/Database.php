@@ -42,6 +42,12 @@
 			return $datas;
 		}
 
+        public function add($statement){
+            $req = $this->getPDO()->query($statement);
+
+            return $req;
+        }
+
         public function prepare($statment, $attributes){
             $req = $this->getPDO()->prepare($statment);
             $req->execute($attributes);

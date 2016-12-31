@@ -101,6 +101,7 @@
             $good = true;
             $civilite = ["Mr", "Mme"];
             $niveau_etude = [1,2,3,4,5];
+            $dateExplode = explode("-", $values['inputDateNaissance']);
 
             $resultat = [
                 'nom' => $values['inputNom'],
@@ -114,9 +115,6 @@
                 'civilite' => $values['selectCivilite'],
                 'niveau_etude' => $values['selectNiveauEtude']
             ];
-
-            var_dump($resultat);
-            echo "------";
 
             foreach ($resultat as $key){
                 if (empty($key)){
@@ -142,20 +140,33 @@
                 $good = false;
             }
 
-            /*if ($good){
-                header('Status: 204 No Content', false, 204);
-                return header('Location: http://localhost/projet_event/public/index.php');
+            if (sizeof($dateExplode) != 3){
+                $good = false;
             }
             else{
-
+                if (strlen($dateExplode[0]) == 4 && strlen($dateExplode[1]) == 2 && strlen($dateExplode[2]) == 2) {}
+                else {$good = false;}
             }
 
-            header('Status: 412 Precondition Failed', false, 412);
-            header('Location: http://localhost/projet_event/public/index.php?p=sign-in');*/
+            if(is_numeric($dateExplode[0]) && is_numeric($dateExplode[1]) && is_numeric($dateExplode[2])){}
+            else{$good = false;}
+
+            if ($good){
+                $this->membre->addMembre($resultat, "membre");
+            }
+
+            return $good;
         }
 
         public function verifUpdate($id, $fields, $table){
+            $cpControle = "/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/";
+            $stringControle = '/^\p{L}+$/ui';
+            $good = true;
+            $civilite = ["Mr", "Mme"];
+            $niveau_etude = [1,2,3,4,5];
+            $dateExplode = explode("-", $fields[0]['inputDate_naissance']);
             $empty = false;
+
             $resultat = [
                 'nom' => $fields[0]['inputNom'],
                 'prenom' => $fields[0]['inputPrenom'],
@@ -166,22 +177,40 @@
                 'type_contrat' => $fields[0]['inputContrat'],
                 'niveau_etude' => $fields[0]['inputEtude']
             ];
-            foreach ($resultat as $value){
-                if (empty($value)){
-                    $empty = true;
+            var_dump($resultat);
+            foreach ($resultat as $key){
+                if (empty($key)){
+                    $good = false;
                 }
-
+            }
+            if(!preg_match($stringControle,$resultat['nom']) || !preg_match($stringControle,$resultat['prenom'])
+                || !preg_match($stringControle,$resultat['ville'])){
+                $good = false;
+            }
+            var_dump($good);
+            if(!in_array($resultat['niveau_etude'], $niveau_etude)){
+                $good = false;
             }
 
-            if ($value == false){
-                var_dump("dans if");
-                var_dump($empty);
-                $this->membre->update($id, $resultat, $table);
+            if(!preg_match($cpControle, $resultat['code_postal'] )){
+                $good = false;
+            }
+
+            if (sizeof($dateExplode) != 3){
+                $good = false;
             }
             else{
-                //redirection avec message Modifications non prises en comptes
-                var_dump("erreur !");
+                if (strlen($dateExplode[0]) == 4 && strlen($dateExplode[1]) == 2 && strlen($dateExplode[2]) == 2) {}
+                else {$good = false;}
             }
 
+            if(is_numeric($dateExplode[0]) && is_numeric($dateExplode[1]) && is_numeric($dateExplode[2])){}
+            else{$good = false;}
+
+            if ($good){
+                $this->membre->update($id, $resultat, $table);
+            }
+
+            return $good;
         }
     }
