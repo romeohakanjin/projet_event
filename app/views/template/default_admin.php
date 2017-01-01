@@ -33,11 +33,6 @@
           </button>
           <a class="accroche navbar-brand" href="index.php?p=home">Push Your Career</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="admin.php?p=logout">Déconnexion</a></li>
-          </ul>
-        </div>
       </div>
     </nav>
 
