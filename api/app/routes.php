@@ -17,7 +17,7 @@
             return $app->abort(404, "id {$id} does not exist in database.");
         }
         /*return $app['twig']->render('membre.html.twig', array('membres' => $membres));*/
-         return json_encode($membres);
+        return json_encode($membres);
     })->bind('membre');
 
     /* Afficher les utilisateurs en fonction de leur etat*/
