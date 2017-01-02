@@ -63,10 +63,10 @@
 								<h4>Aubay</h4>
 								<h5>Entreprise de Services du Numérique (ESN) fondée en 1998</h5>
 								<ul class="tag clearfix">
-									<li class="btn"><a href="#">Web</a></li>
-									<li class="btn"><a href="#">Ui</a></li>
-									<li class="btn"><a href="#">Ux</a></li>
-									<li class="btn"><a href="#">Photoshop</a></li>
+									<li class="btn">Web</li>
+									<li class="btn">Ui</li>
+									<li class="btn">Ux</li>
+									<li class="btn">Photoshop</li>
 								</ul>
 
 								<ul class="social_icons">
@@ -93,10 +93,10 @@
 								<h4>NewsCo Group</h4>
 								<h5>Groupe d'information professionnelle fondé en 2011</h5>
 								<ul class="tag clearfix">
-									<li class="btn"><a href="#">Web</a></li>
-									<li class="btn"><a href="#">Ui</a></li>
-									<li class="btn"><a href="#">Ux</a></li>
-									<li class="btn"><a href="#">Photoshop</a></li>
+									<li class="btn">Web</li>
+									<li class="btn">Ui</li>
+									<li class="btn">Ux</li>
+									<li class="btn">Photoshop</li>
 								</ul>
 								<ul class="social_icons">
 									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -141,10 +141,10 @@
 								<h4>Alten</h4>
 								<h5>Leader européen de l'Ingénierie et du Conseil en Technologies</h5>
 								<ul class="tag clearfix">
-									<li class="btn"><a href="#">Web</a></li>
-									<li class="btn"><a href="#">Ui</a></li>
-									<li class="btn"><a href="#">Ux</a></li>
-									<li class="btn"><a href="#">Photoshop</a></li>
+									<li class="btn">Web</li>
+									<li class="btn">Ui</li>
+									<li class="btn">Ux</li>
+									<li class="btn">Photoshop</li>
 								</ul>
 								<ul class="social_icons">
 									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -168,10 +168,10 @@
 								<h4>SAFRAN</h4>
 								<h5>Groupe international de haute technologie</h5>
 								<ul class="tag clearfix">
-									<li class="btn"><a href="#">Web</a></li>
-									<li class="btn"><a href="#">Ui</a></li>
-									<li class="btn"><a href="#">Ux</a></li>
-									<li class="btn"><a href="#">Photoshop</a></li>
+									<li class="btn">Web</li>
+									<li class="btn">Ui</li>
+									<li class="btn">Ux</li>
+									<li class="btn">Photoshop</li>
 								</ul>
 								<ul class="social_icons">
 									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
