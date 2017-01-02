@@ -17,7 +17,7 @@
             return $app->abort(404, "id {$id} does not exist in database.");
         }
         /*return $app['twig']->render('membre.html.twig', array('membres' => $membres));*/
-        return json_encode($membres);
+         return json_encode($membres);
     })->bind('membre');
 
     /* Afficher les utilisateurs en fonction de leur etat*/
@@ -91,7 +91,7 @@
 
 
 
-    // Remove an article
+    //Accepter une inscription en fonction d'un id
     $app->put('/users/{id}/accepter', function($id) use ($app) {
         // Delete the membre
         $ok = $app['dao.membre']->changeEtat($id, 2);
@@ -99,6 +99,7 @@
         return $app->json($ok, 204);
     })->bind('admin_membre_accepter');
 
+    //Refuser une inscription en fonction d'un id
     $app->put('/users/{id}/refuser', function($id) use ($app) {
         // Delete the membre
         $ok = $app['dao.membre']->changeEtat($id, 3);
@@ -114,4 +115,3 @@
 
         return $app->json($ok, 204);
     })->bind('admin_membre_delete');
-

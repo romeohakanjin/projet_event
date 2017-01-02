@@ -6,16 +6,15 @@ V- API RESTful actions suivantes :
 	V- Inscrire une personne
 V- Format de retour JSON
 - Authentification effectuée avec JWT (accès unique)
-- Bien gérer les :
-	- Code de retours appropriés(200,204,400,401,404,405)
-	V - Les méthodes adaptés(GET,POST,..)
+V- Bien gérer les :
+	V- Code de retours appropriés(200,204,400,401,404,405)
+	V- Les méthodes adaptés(GET,POST,..)
 	V- URI au bon format (/ressource/identifiant)
-V - views
+V- views
 
 
 Back :
 - Accès à l’administration via l’URL « /admin »
-- mettre les bonnes méthodes http en fonction de ajout, modif, etc..
 - METTRE DES CODE HTTP EN FONCTION DES DIFFERENTES ACTION ! INSCRIPTION REUSSI, FAILED, MODIFICATION etc..
 - METTRE POUR DATE INSCRIPTION entre 1950 et année en cours, DATE PAS PRISE EN COMPTE SUR PHPMYADMIN Needed datetime to be sent ?
 

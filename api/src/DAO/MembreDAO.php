@@ -60,11 +60,11 @@
             $sql = "SELECT * FROM membre ORDER BY date_inscription DESC";
             $result = $this->db->fetchAll($sql);
             // Convert query result to an array of domain objects
-            $membres = array();
+           /* $membres = array();
             foreach ($result as $row) {
                 $membres[$row['id']] = $this->buildMembre($row);
-            }
-            return $membres;
+            }*/
+            return $result;
         }
 
 
