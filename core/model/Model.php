@@ -9,6 +9,7 @@
             $this->db = $db;
         }
 
+        //Fonction permettant de mettre un jour un user
         public function update($id, $fields, $table){
             $sql_parts = [];
             $attributes = [];
@@ -25,6 +26,7 @@
             header('Location: admin.php?p=home');
         }
 
+        //Fonction permettant l'insert
         public function addMembre($fields, $table){
             $sql_parts = [];
             $attributes = [];

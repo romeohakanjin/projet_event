@@ -1,6 +1,6 @@
 <?php
     namespace App;
-    
+
     //permet de charger automatiquement les différentes classes
     class Autoloader{
         static function register(){

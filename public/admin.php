@@ -7,8 +7,10 @@
     //Relancer et gérer l'autoloading
     \App\App::load();
 
+    //Instance de la classe app
     $app = App\App::getInstance();
 
+    //Parametre par défaut
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
     }
@@ -16,10 +18,12 @@
         $p = 'home';
     }
 
+    //Si l'utilisateur n'est pas conecté
     if ($app->logged()){
         $app->Unauthorized();
     }
 
+    //Instanciation des classes
     $membre = $app->getTable("Membre");
     $controller = $app->getController('Membre');
 

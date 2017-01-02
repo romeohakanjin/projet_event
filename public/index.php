@@ -7,11 +7,13 @@
     //Relancer et gérer l'autoloading
     \App\App::load();
 
+    //Instance de la classe app
     $app = App\App::getInstance();
 
     $membre = $app->getTable("Membre");
     $controller = $app->getController('Membre');
 
+    //Parametre par défaut
     if (isset($_GET['p'])) {
         $p = $_GET['p'];
     }

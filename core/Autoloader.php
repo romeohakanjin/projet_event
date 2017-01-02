@@ -1,6 +1,6 @@
 <?php
     namespace Core;
-//permet de charger automatiquement les différentes classes
+    //permet de charger automatiquement les différentes classes
     class Autoloader{
         static function register(){
             //Enregistrer et créer l'autoloader en fonction de la fonction autoload
