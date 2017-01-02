@@ -22,11 +22,7 @@ Back :
 
 
 test (une fois que c'est terminé) :
-- Faire des vérif sur les requetes et tout lorsque les variables sont vides
 - Tester TOUS les champs du site et bouton pour voir réaction
-- Qualité du code source produit
-- Faire des contrôles de saisie sur tous les champs ! Vérifier meme pour Mr Mme que c'est bien égale à l'un des deux etc
-- commenter toute les méthodes
 - modifier nom des variables nommer correctement et explicitsh
 
 
