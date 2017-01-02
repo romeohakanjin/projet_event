@@ -134,7 +134,7 @@
 					<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 						<div class="media">
 							<div class="pull-left">
-								<a href="#"><img class="media-object" src="../public/images/alten.png" alt=""></a>
+								<a href="#"><img class="media-object" src="../public/images/alten-logo.png" alt=""></a>
 							</div>
 
 							<div class="media-body">
