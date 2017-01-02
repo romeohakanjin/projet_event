@@ -136,7 +136,6 @@ jQuery(function($) {'use strict',
 
     function isDate(d) {
         // Cette fonction permet de vérifier la validité d'une date au format jj/mm/aa ou jj/mm/aaaa
-        // Par Romuald
 
         if (d == "") // si la variable est vide on retourne faux
             return false;
