@@ -63,7 +63,7 @@
 
         public function notFound(){
             header('HTTP/1.0 404 Not found');
-            die('Page introuvable');
+            require ROOT.'/app/views/users/404.php';
         }
 
         public function Unauthorized(){

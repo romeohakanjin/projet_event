@@ -1,103 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="Job Dating">
-  <meta name="author" content="RH-SL">
-  <link rel="icon" href="../../favicon.ico">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Job Dating">
+    <meta name="author" content="RH-SL">
+    <title>Push Your Career</title>
 
-  <title>Job Dating</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-  <!-- Google Web Font -->
-  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <!-- JQuery DatePicker -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- JQuery Validator -->
-  <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-  <script src="../public/js/inscription.js"></script>
-</head>
+    <!-- core CSS -->
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../public/css/animate.min.css" rel="stylesheet">
+    <link href="../public/css/prettyPhoto.css" rel="stylesheet">
+    <link href="../public/css/main.css" rel="stylesheet">
+    <link href="../public/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../public/js/html5shiv.js"></script>
+    <script src="../public/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="../public/images/orientation.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../public/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../public/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../public/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../public/images/ico/apple-touch-icon-57-precomposed.png">
+    <!-- JQuery Validator -->
 
-<body>
-<header>
-  <!-- <div class="flexslider col-xs-offset-1 col-md-offset-2">
-    <img src="../public/images/push_your_career.jpg" />
-  </div> -->
-</header>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="accroche navbar-brand" href="index.php?p=home">Push Your Career</a>
-    </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="index.php?p=partner">Nos partenaires</a></li>
-        <li><a href="index.php?p=sign-in">Inscription</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/jquery.validate.js"></script>
+    <script src="../public/js/jquery.validate.min.js"></script>
+    <script src="../public/js/inscription.js"></script>
+  </head><!--/head-->
 
-<aside>
-  <!-- <div class="calendar">
-    <h3>La date à retenir</h3>
-    <script src="../public/js/calendar.js"></script>
-  </div> -->
-</aside>
-<section>
-  <div class="container">
-    <div class="starter-template" style="padding-top: 100px">
-      <?php print $content; ?>
-    </div>
-  </div>
-</section>
+  <body class="homepage">
 
-<footer class="footer">
-  <div class="row">
-    <div class="col-xs-9 col-xs-offset-3  col-sm-6 col-md-4 col-md-offset-1">
-      <h1>Coordonées</h1>
-      <div class="row info">
-        <i class="fa fa-map-marker" aria-hidden="true"></i> 10 rue Sextius Michel - 75015 Paris<br />
-        <i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@jobdating.fr"> info@jobdating.fr<br /></a>
-        <i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0123568745"> 0123568745<br /></a>
-        <i class="fa fa-subway" aria-hidden="true"></i> ligne 6 : arrêt Bir-hakeim ou RER C : arrêt Champs de mars<br />
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Campus à proximité de la tour eiffel<br />
-      </div>
-    </div>
+  <header id="header">
+    <div class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-xs-4">
+            <div class="top-number"><a href="tel:+3316745901254" class="top-number"><i class="fa fa-phone-square"></i> +3360267213 </a></div>
+          </div>
+          <div class="col-sm-6 col-xs-8">
+            <div class="social">
+              <ul class="social-share">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div><!--/.container-->
+    </div><!--/.top-bar-->
 
-    <div class="col-xs-12 col-sm-6 col-md-4  col-md-offset-2">
-      <h1>Contact</h1>
-      <br/>
+    <nav class="navbar navbar-inverse" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php?p=home"><img src="../public/images/pyc_logo.png" alt="logo"></a>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li><a href="index.php?p=home">Accueil</a></li>
+            <li><a href="index.php?p=about-us">A propos de nous</a></li>
+            <li><a href="index.php?p=services">Services</a></li>
+            <li><a href="index.php?p=sign-in">Inscription</a></li>
+            <li><a href="index.php?p=contact-us">Contact</a></li>
+          </ul>
+        </div>
+      </div><!--/.container-->
+    </nav><!--/nav-->
+
+  </header><!--/header-->
+
+  <?php print $content; ?>
+
+  <footer id="footer" class="midnight-blue">
+    <div class="container">
       <div class="row">
-        <div class="col-xs-9 col-xs-offset-3 col-md-1 col-md-offset-0 fb-img">
-          <a href="https://www.facebook.com/"><img src="../public/images/facebook.png" class="header-img" alt="facebook"/></a>
-        </div>
-        <div class="col-xs-9 col-xs-offset-3  col-md-1 col-md-offset-3 lkd-img">
-          <a href="https://fr.linkedin.com/"><img src="../public/images/linkedin.png" class="header-img" alt="linkedin"/></a>
-        </div>
-        <div class="col-xs-9 col-xs-offset-3 col-md-1 col-md-offset-3 git-img">
-          <a href=""><img src="../public/images/git-black.png" class="header-img" alt="git"/></a>
+        <div class="col-sm-6">
+          &copy; 2017 <a target="_blank" href="index.php?p=home" title="HomePage">Projet Event</a>. All Rights Reserved.
         </div>
       </div>
-      <br/>
-      <br/>
     </div>
-  </div>
-</footer>
-</body>
+  </footer><!--/#footer-->
+
+  <script src="../public/js/jquery.js"></script>
+  <script src="../public/js/bootstrap.min.js"></script>
+  <script src="../public/js/jquery.prettyPhoto.js"></script>
+  <script src="../public/js/jquery.isotope.min.js"></script>
+  <script src="../public/js/main.js"></script>
+  <script src="../public/js/wow.min.js"></script>
+  </body>
 </html>

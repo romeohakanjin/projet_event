@@ -27,11 +27,23 @@
         case 'home':
             require ROOT.'/app/views/index.php';
             break;
+        case 'about-us':
+            require ROOT.'/app/views/users/about-us.php';
+            break;
+        case 'contact-us':
+            require ROOT.'/app/views/users/contact-us.php';
+            break;
+        case 'send_mail':
+            require ROOT.'/app/views/users/contact-us.php';
+            break;
         case 'partner':
             require ROOT.'/app/views/users/partenaire.php';
             break;
+        case 'services':
+            require ROOT.'/app/views/users/services.php';
+            break;
         case 'sign-in':
-            require ROOT.'/app/views/users/inscription.php';
+            require ROOT.'/app/views/users/sign-in.php';
             break;
         case 'confirm_insert':
             $good = $controller->inscription($_POST);
@@ -41,9 +53,6 @@
             }
             break;
         default:
-            /*
-             * METTRE CODE ERREUR 404 ET RETURNER EN HEADER UNE PAGE 404 DEJA CREER NORMALEMENT
-             * */
             $app->notFound();
             break;
     }
