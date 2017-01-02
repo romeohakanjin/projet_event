@@ -57,7 +57,7 @@
 					<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 						<div class="media">
 							<div class="pull-left">
-								<a href="#"><img class="media-object" src="../public/images/man1.jpg" alt=""></a>
+								<a href="#"><img class="media-object" src="../public/images/aubay.png" alt=""></a>
 							</div>
 							<div class="media-body">
 								<h4>Aubay</h4>
@@ -87,7 +87,7 @@
 					<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 						<div class="media">
 							<div class="pull-left">
-								<a href="#"><img class="media-object" src="../public/images/man2.jpg" alt=""></a>
+								<a href="#"><img class="media-object" src="../public/images/newsco.png" alt=""></a>
 							</div>
 							<div class="media-body">
 								<h4>NewsCo Group</h4>
@@ -134,7 +134,7 @@
 					<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 						<div class="media">
 							<div class="pull-left">
-								<a href="#"><img class="media-object" src="../public/images/man3.jpg" alt=""></a>
+								<a href="#"><img class="media-object" src="../public/images/alten.png" alt=""></a>
 							</div>
 
 							<div class="media-body">
@@ -162,7 +162,7 @@
 					<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 						<div class="media">
 							<div class="pull-left">
-								<a href="#"><img class="media-object" src="../public/images/man4.jpg" alt=""></a>
+								<a href="#"><img class="media-object" src="../public/images/safran.png" alt=""></a>
 							</div>
 							<div class="media-body">
 								<h4>SAFRAN</h4>

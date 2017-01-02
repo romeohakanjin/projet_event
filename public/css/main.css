@@ -1637,3 +1637,8 @@ input.invalid, select.invalid{
 input.valid, select.valid{
   border: 2px solid green;
 }
+
+div.team img{
+  width: 70px;
+  height: 70px;
+}
