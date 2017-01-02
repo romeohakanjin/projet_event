@@ -19,9 +19,9 @@
     }
 
     //Si l'utilisateur n'est pas conecté
-    if ($app->logged()){
+    /*if ($app->logged()){
         $app->Unauthorized();
-    }
+    }*/
 
     //Instanciation des classes
     $membre = $app->getTable("Membre");
