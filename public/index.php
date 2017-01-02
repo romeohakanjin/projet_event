@@ -34,7 +34,8 @@
             require ROOT.'/app/views/users/contact-us.php';
             break;
         case 'send_mail':
-            require ROOT.'/app/views/users/contact-us.php';
+            $ok = $controller->email($_POST);
+            require ROOT.'/app/views/index.php';
             break;
         case 'partner':
             require ROOT.'/app/views/users/partenaire.php';
