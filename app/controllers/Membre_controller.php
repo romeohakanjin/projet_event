@@ -101,19 +101,19 @@
             $good = true;
             $civilite = ["Mr", "Mme"];
             $niveau_etude = [1,2,3,4,5];
-            $dateExplode = explode("-", $values['inputDateNaissance']);
+            $dateExplode = explode("-", $values['signin-DateNaissance']);
 
             $resultat = [
-                'nom' => $values['inputNom'],
-                'prenom' => $values['inputPrenom'],
-                'email' => $values['inputEmail'],
-                'date_naissance' => $values['inputDateNaissance'],
-                'adresse' => $values['inputAdresse'],
-                'code_postal' => $values['inputCodePostal'],
-                'ville' => $values['inputVille'],
-                'type_contrat' => $values['selectTypeContrat'],
-                'civilite' => $values['selectCivilite'],
-                'niveau_etude' => $values['selectNiveauEtude']
+                'nom' => $values['signin-Nom'],
+                'prenom' => $values['signin-Prenom'],
+                'email' => $values['signin-Email'],
+                'date_naissance' => $values['signin-DateNaissance'],
+                'adresse' => $values['signin-Adresse'],
+                'code_postal' => $values['signin-CodePostal'],
+                'ville' => $values['signin-Ville'],
+                'type_contrat' => $values['signin-TypeContrat'],
+                'civilite' => $values['signin-Civilite'],
+                'niveau_etude' => $values['signin-NiveauEtude']
             ];
 
             foreach ($resultat as $key){

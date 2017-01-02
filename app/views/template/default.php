@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Job Dating">
-    <meta name="author" content="RH-SL">
-    <title>Push Your Career</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job Dating">
+  <meta name="author" content="RH-SL">
+  <title>Push Your Career</title>
+  <!-- Import CSS -->
+  <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../public/css/font-awesome.css" rel="stylesheet">
+  <link href="../public/css/animate.min.css" rel="stylesheet">
+  <link href="../public/css/prettyPhoto.css" rel="stylesheet">
+  <link href="../public/css/main.css" rel="stylesheet">
+  <link href="../public/css/responsive.css" rel="stylesheet">
+  <!--Pour IE 9-->
+  <script src="../public/js/html5shiv.js"></script>
+  <script src="../public/js/respond.min.js"></script>
+  <!--Logo page-->
+  <link rel="shortcut icon" href="../public/images/orientation.jpg">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../public/images/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../public/images/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../public/images/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="../public/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
-    <!-- core CSS -->
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../public/css/font-awesome.css" rel="stylesheet">
-    <link href="../public/css/animate.min.css" rel="stylesheet">
-    <link href="../public/css/prettyPhoto.css" rel="stylesheet">
-    <link href="../public/css/main.css" rel="stylesheet">
-    <link href="../public/css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="../public/js/html5shiv.js"></script>
-    <script src="../public/js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="../public/images/orientation.jpg">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../public/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../public/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../public/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../public/images/ico/apple-touch-icon-57-precomposed.png">
-    <!-- JQuery Validator -->
-
-    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-    <script src="../public/js/jquery.js"></script>
-    <script src="../public/js/jquery.validate.js"></script>
-    <script src="../public/js/jquery.validate.min.js"></script>
-    <script src="../public/js/inscription.js"></script>
-  </head><!--/head-->
-
-  <body class="homepage">
-
+<body class="homepage">
   <header id="header">
     <div class="top-bar">
       <div class="container">
@@ -94,11 +84,17 @@
     </div>
   </footer><!--/#footer-->
 
+  <!-- JQuery Datepicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Import JS -->
+  <script src="../public/js/inscription.js"></script>
   <script src="../public/js/jquery.js"></script>
   <script src="../public/js/bootstrap.min.js"></script>
   <script src="../public/js/jquery.prettyPhoto.js"></script>
   <script src="../public/js/jquery.isotope.min.js"></script>
   <script src="../public/js/main.js"></script>
   <script src="../public/js/wow.min.js"></script>
-  </body>
+</body>
 </html>
