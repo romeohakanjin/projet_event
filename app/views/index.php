@@ -13,6 +13,7 @@
                         <div class="col-sm-6">
                             <div class="carousel-content">
                                 <h1 class="animation animated-item-1">Venez rencontrer nos partenaires</h1>
+                                <h2>Venez échanger lors d'un entretien avec un de nos experts en recrutement</h2>
                             </div>
                         </div>
 
@@ -51,6 +52,11 @@
                         <div class="col-sm-6">
                             <div class="carousel-content">
                                 <h1 class="animation animated-item-1">Rencontrez nos conseillers afin de vous améliorer</h1>
+                                <p class="lead">
+                                    Vous cherchez activement un poste?<br>
+                                    Vous souhaitez obtenir quelques conseils sur votre CV ou en savoir plus sur votre évolution de carrière?<br>
+                                    Venez échanger lors d'un entretien avec l'un(e) de nos expert(e)s en recrutement.
+                                </p>
                             </div>
                         </div>
                         <div class="col-sm-6 hidden-xs animation animated-item-4">
@@ -159,7 +165,6 @@
     <div class="container">
         <div class="center wow fadeInDown">
             <h2>Nos partenaires</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
 
         <div class="partners">

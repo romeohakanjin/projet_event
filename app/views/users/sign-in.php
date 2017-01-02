@@ -32,7 +32,7 @@
                 <!--  Date de naissance  -->
                 <br/>
                 <label for="signin-DateNaissance">Date de naissance *</label>
-                <input type="text" name="DateNaissance" id="signin-DateNaissance" class="form-control" placeholder="Votre date de naissance au format JJ/MM/AAAA" onblur="isDate(this)" >
+                <input type="text" name="DateNaissance" id="signin-DateNaissance" class="form-control" placeholder="Votre date de naissance au format AAAA/MM/JJ" onblur="isDate(this)" >
                 <span class="error">Veuillez saisir votre date de naissance</span>
                 <!--  Adresse  -->
                 <br/>

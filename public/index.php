@@ -28,7 +28,7 @@
             require ROOT.'/app/views/index.php';
             break;
         case 'about-us':
-            require ROOT.'/app/views/users/about-us.php';
+            require ROOT.'/app/views/users/partners.php';
             break;
         case 'contact-us':
             require ROOT.'/app/views/users/contact-us.php';

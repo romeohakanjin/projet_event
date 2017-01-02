@@ -1,14 +1,5 @@
 <section id="about-us">
 	<div class="container">
-		<div class="center wow fadeInDown">
-			<h2><i class="fa fa-handshake-o" aria-hidden="true"></i> Venez comme vous êtes</h2>
-			<p class="lead">
-				Vous cherchez activement un poste?<br>
-				Vous souhaitez obtenir quelques conseils sur votre CV ou en savoir plus sur votre évolution de carrière?<br>
-				Venez échanger lors d'un entretien avec l'un(e) de nos expert(e)s en recrutement.
-			</p>
-		</div>
-
 		<!-- about us slider -->
 		<div id="about-slider">
 			<div id="carousel-slider" class="carousel slide" data-ride="carousel">

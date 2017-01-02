@@ -3,10 +3,13 @@
 
     class Membre_controller extends \core\controller\Controller {
         protected $membre;
+
+        //On build notre objet membre dès le début
         public function __construct(){
             $this->membre = \App\App::getInstance()->getTable("Membre");
         }
 
+        //permet de défénir les différents paramètres par défaut de la page
         public function index(){
             if (!isset($_GET['etat'])){
                 if(!isset($_GET['ordre']) || $_GET['ordre'] == 'ASC'){
@@ -29,6 +32,7 @@
             return null;
         }
 
+        //Récupérer la page si pas de page renvoi 1
         public function getPage(){
             if (!isset($_GET['page'])){
                 $_GET['page'] = 1;
@@ -39,6 +43,7 @@
             return $pagecourante;
         }
 
+        //Pagination des membres en fonction de l'ordre
         public function pagination($ordre)
         {
             $perPage = 4;
@@ -61,6 +66,7 @@
             return $membrePage;
         }
 
+        //Définit le nombre de page max en focnion du nombre de membres
         public function pageMax($ordre){
             $perPage = 4;
 
@@ -75,6 +81,7 @@
             return $pageMax;
         }
 
+        //Ecrit l'url en fonction des données
         public function url(){
             $url = 'p=home';
             if(isset($_GET['etat'])){
@@ -86,6 +93,7 @@
             return $url;
         }
 
+        //Permet de retourner l'id du membre à modifier
         public function edit_table($id){
             if(isset($_GET['p']) == 'edit_table'){
                 if (isset($_GET['id'])){
@@ -95,6 +103,7 @@
             return null;
         }
 
+        //permet de s'inscrire et effectue les controles sur la saisie utilisateur
         public function inscription($values){
             $cpControle = "/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/";
             $stringControle = '/^\p{L}+$/ui';
@@ -158,14 +167,13 @@
             return $good;
         }
 
+        //Permet de modifier un utilisateur et de controler les champs saisies
         public function verifUpdate($id, $fields, $table){
             $cpControle = "/^(([0-8][0-9])|(9[0-5]))[0-9]{3}$/";
             $stringControle = '/^\p{L}+$/ui';
             $good = true;
-            $civilite = ["Mr", "Mme"];
             $niveau_etude = [1,2,3,4,5];
             $dateExplode = explode("-", $fields[0]['inputDate_naissance']);
-            $empty = false;
 
             $resultat = [
                 'nom' => $fields[0]['inputNom'],
@@ -177,7 +185,7 @@
                 'type_contrat' => $fields[0]['inputContrat'],
                 'niveau_etude' => $fields[0]['inputEtude']
             ];
-            var_dump($resultat);
+
             foreach ($resultat as $key){
                 if (empty($key)){
                     $good = false;
@@ -212,6 +220,8 @@
             }
             return $good;
         }
+
+        //permet d'effectuer l'envoi de mail
         public function email($values){
             $destinataire = 'sindy.lim91@gmail.com';
 
