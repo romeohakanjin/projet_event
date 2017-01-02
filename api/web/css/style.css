@@ -1,0 +1,25 @@
+body {
+    padding-top: 50px;
+}
+
+table.admin-table-gestion th{
+    text-align: center;
+}
+
+table.admin-table-gestion td{
+    padding: 4px;
+    text-align: center;
+}
+
+.tr-table-admin-gestion{
+    border-bottom: solid 1px ;
+}
+
+table.admin-table-gestion img{
+    max-width: 25px;
+}
+table,td
+{
+    padding:15px;
+    border-collapse:collapse;
+}

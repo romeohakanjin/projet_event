@@ -1,0 +1,39 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Membre</h2>
+    <table class="admin-table-gestion">
+        <tr class="tr-table-admin-gestion">
+            <th>id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date naissance</th>
+            <th>Adresse</th>
+            <th>Code postal</th>
+            <th>Ville</th>
+            <th>Etudes</th>
+            <th>Contrat</th>
+            <th>Modifier</th>
+        </tr>
+        {% for membres in membres %}
+        <tr>
+            <td>{{ membres.id }}</td>
+            <td>{{ membres.nom }}</td>
+            <td>{{ membres.prenom }}</td>
+            <td>{{ membres.date_naissance }}</td>
+            <td>{{ membres.adresse }}</td>
+            <td>{{ membres.code_postal }}</td>
+            <td>{{ membres.ville }}</td>
+            <td>{{ membres.niveau_etude }}</td>
+            <td>{{ membres.type_contrat }}</td>
+            <td>
+                <a href="{{ path('membre', { 'id': membres.id }) }}">
+                    <img src="../../projet_event/public/images/update.png"  class="icon-admin-gestion">
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
