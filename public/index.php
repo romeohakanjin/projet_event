@@ -29,7 +29,7 @@
         case 'home':
             require ROOT.'/app/views/index.php';
             break;
-        case 'about-us':
+        case 'partners':
             require ROOT.'/app/views/users/partners.php';
             break;
         case 'contact-us':

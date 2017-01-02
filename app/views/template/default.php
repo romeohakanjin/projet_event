@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
             <li><a href="index.php?p=home">Accueil</a></li>
-            <li><a href="index.php?p=about-us">Partenaires</a></li>
+            <li><a href="index.php?p=partners">Partenaires</a></li>
             <li><a href="index.php?p=services">Services</a></li>
             <li><a href="index.php?p=sign-in">Inscription</a></li>
             <li><a href="index.php?p=contact-us">Contact</a></li>
