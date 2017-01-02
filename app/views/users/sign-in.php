@@ -5,7 +5,7 @@
             <p class="lead">Afin de participer à notre évênement, merci de vous inscrire en remplissant les champs ci-dessous</p>
         </div> 
         <div class="row contact-wrap">
-            <form class="form-signin" name="form-signin" id="form-signin" action="index.php?p=sign-in" method="POST">
+            <form class="form-signin" name="form-signin" id="form-signin" action="index.php?p=confirm_insert" method="POST">
 
                 <!-- Civilité -->
                 <br/>

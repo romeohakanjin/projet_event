@@ -110,19 +110,19 @@
             $good = true;
             $civilite = ["Mr", "Mme"];
             $niveau_etude = [1,2,3,4,5];
-            $dateExplode = explode("-", $values['signin-DateNaissance']);
-
+            $dateExplode = explode("-", $values['DateNaissance']);
+            var_dump($values);
             $resultat = [
-                'nom' => $values['signin-Nom'],
-                'prenom' => $values['signin-Prenom'],
-                'email' => $values['signin-Email'],
-                'date_naissance' => $values['signin-DateNaissance'],
-                'adresse' => $values['signin-Adresse'],
-                'code_postal' => $values['signin-CodePostal'],
-                'ville' => $values['signin-Ville'],
-                'type_contrat' => $values['signin-TypeContrat'],
-                'civilite' => $values['signin-Civilite'],
-                'niveau_etude' => $values['signin-NiveauEtude']
+                'nom' => $values['Nom'],
+                'prenom' => $values['Prenom'],
+                'email' => $values['Email'],
+                'date_naissance' => $values['DateNaissance'],
+                'adresse' => $values['Adresse'],
+                'code_postal' => $values['CodePostal'],
+                'ville' => $values['Ville'],
+                'type_contrat' => $values['TypeContrat'],
+                'civilite' => $values['Civilite'],
+                'niveau_etude' => $values['NiveauEtude']
             ];
 
             foreach ($resultat as $key){
@@ -159,7 +159,7 @@
 
             if(is_numeric($dateExplode[0]) && is_numeric($dateExplode[1]) && is_numeric($dateExplode[2])){}
             else{$good = false;}
-
+            
             if ($good){
                 $this->membre->addMembre($resultat, "membre");
             }

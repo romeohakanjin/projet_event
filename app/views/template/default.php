@@ -89,7 +89,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- Import JS -->
-  <script src="../public/js/inscription.js"></script>
+<!--  <script src="../public/js/inscription.js"></script>-->
   <script src="../public/js/jquery.js"></script>
   <script src="../public/js/bootstrap.min.js"></script>
   <script src="../public/js/jquery.prettyPhoto.js"></script>
