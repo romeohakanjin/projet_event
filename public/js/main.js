@@ -19,30 +19,6 @@ jQuery(function($) {'use strict',
 	//Initiat WOW JS
 	new WOW().init();
 
-	//Form Contact
-/*	$( "#contact" ).load(function() {
-		$(".alert-danger").hide();
-		$(".alert-success").hide();
-	});
-	$("#contact").click(function(){
-		$.ajax({
-			url : 'send_mail.php',
-			type : 'POST',
-			success : function () {
-				$("div")
-					.removeClass("alert-danger")
-					.addClass("alert-success");
-			},
-			error : function () {
-				$("div")
-					.removeClass("alert-success")
-					.addClass("alert-danger");
-			}
-		});
-
-	});*/
-
-
 	//goto top
 	$('.gototop').click(function(event) {
 		event.preventDefault();

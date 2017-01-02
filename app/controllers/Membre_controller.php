@@ -210,7 +210,6 @@
             if ($good){
                 $this->membre->update($id, $resultat, $table);
             }
-
             return $good;
         }
         public function email($values){

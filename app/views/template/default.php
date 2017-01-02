@@ -9,7 +9,7 @@
 
     <!-- core CSS -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../public/css/font-awesome.css" rel="stylesheet">
     <link href="../public/css/animate.min.css" rel="stylesheet">
     <link href="../public/css/prettyPhoto.css" rel="stylesheet">
     <link href="../public/css/main.css" rel="stylesheet">

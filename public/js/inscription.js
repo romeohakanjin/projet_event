@@ -34,10 +34,13 @@
 });*/
 
 $(document).ready(function() {
-    $('#inputDateNaissance').datepicker();
-    $('#selectCivilite').on('change', function() {
+    console.log("entre fonction");
+    $('#signin-DateNaissance').datepicker();
+    $('#signin-Civilite').on('change', function() {
         var input=$(this);
         var is_civility=input.val();
+        console.log("civilité");
+        console.log(is_civility);
         if(is_civility && is_civility !== -1){
             input.removeClass("invalid").addClass("valid");
         }
@@ -45,9 +48,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputNom').on('input', function() {
+    $('#signin-Nom').on('input', function() {
         var input=$(this);
         var is_name=input.val();
+        console.log("nom");console.log(is_name);
         if(is_name){
             input.removeClass("invalid").addClass("valid");
         }
@@ -55,9 +59,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputPrenom').on('input', function() {
+    $('#signin-Prenom').on('input', function() {
         var input=$(this);
         var is_first_name=input.val();
+        console.log("prenom");console.log(is_firt_name);
         if(is_first_name){
             input.removeClass("invalid").addClass("valid");
         }
@@ -65,9 +70,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputDateNaissance').on('input', function() {
+    $('#signin-DateNaissance').on('input', function() {
         var input=$(this);
         var is_birthdate=input.val();
+        console.log("date naiss");console.log(is_birthdate);
         if(is_birthdate){
             input.removeClass("invalid").addClass("valid");
         }
@@ -75,9 +81,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputAdresse').on('input', function() {
+    $('#signin-Adresse').on('input', function() {
         var input=$(this);
         var is_adress=input.val();
+        console.log("adre");console.log(is_adress);
         if(is_adress){
             input.removeClass("invalid").addClass("valid");
         }
@@ -85,9 +92,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputCodePostal').on('input', function() {
+    $('#signin-CodePostal').on('input', function() {
         var input=$(this);
         var is_post_code=input.val();
+        console.log("cp");console.log(is_post_code);
         if(is_post_code){
             input.removeClass("invalid").addClass("valid");
         }
@@ -95,9 +103,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputVille').on('input', function() {
+    $('#signin-Ville').on('input', function() {
         var input=$(this);
         var is_city=input.val();
+        console.log("city");console.log(is_city);
         if(is_city){
             input.removeClass("invalid").addClass("valid");
         }
@@ -105,10 +114,12 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#inputEmail').on('input', function() {
+    $('#signin-Email').on('input', function() {
         var input=$(this);
         var re = /^[_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+.)+[a-zA-Z]{2,4}$/;
         var is_email=re.test(input.val());
+
+        console.log("mail");console.log(is_email);
         if(is_email){
             input.removeClass("invalid").addClass("valid");
         }
@@ -116,9 +127,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#selectNiveauEtude').on('change', function() {
+    $('#signin-NiveauEtude').on('change', function() {
         var input=$(this);
         var is_study_level=input.val();
+        console.log("niveu");console.log(is_study_level);
         if(is_study_level){
             input.removeClass("invalid").addClass("valid");
         }
@@ -126,9 +138,10 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
-    $('#selectTypeContrat').on('change', function() {
+    $('#signin-TypeContrat').on('change', function() {
         var input=$(this);
         var is_contract_type=input.val();
+        console.log("contr");console.log(is_contract_type);
         if(is_contract_type){
             input.removeClass("invalid").addClass("valid");
         }
@@ -136,6 +149,24 @@ $(document).ready(function() {
             input.removeClass("valid").addClass("invalid");
         }
     });
+});
+$("#signin-submit button").click(function(event){
+    var form_data=$("#form-signin").serializeArray();
+    var error_free=true;
+    console.log("hello");
+    for (var input in form_data){
+        var element=$("#signin-"+form_data[input]['name']);
+        var valid=element.hasClass("valid");
+        var error_element=$("span", element.parent());
+        if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+        else{error_element.removeClass("error_show").addClass("error");}
+    }
+    if (!error_free){
+        event.preventDefault();
+    }
+    else{
+        alert('No errors: Form will be submitted');
+    }
 });
 
 function isDate(d) {
@@ -157,7 +188,7 @@ function isDate(d) {
 
     // Si l'année n'est composée que de 2 chiffres on complète automatiquement
     if (a < 1000) {
-        if (a < 89)	a+=2000; // Si a < 89 alors on ajoute 2000 sinon on ajoute 1900
+        if (a < 89) a+=2000; // Si a < 89 alors on ajoute 2000 sinon on ajoute 1900
         else a+=1900;
     }
 
