@@ -33,6 +33,18 @@
             return $row;
         }
 
+        public function verifAttente($id) {
+            $sql = "SELECT id_etat_inscription FROM membre WHERE id = ? ";
+            $row = $this->db->fetchAssoc($sql, array($id));
+
+            if($row['id_etat_inscription'] == 1){
+                return $good = true;
+            }
+            else{
+                return $good = false;
+            }
+        }
+
         /**
          * @return array
          */

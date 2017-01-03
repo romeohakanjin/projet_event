@@ -93,16 +93,24 @@
 
     //Accepter une inscription en fonction d'un id
     $app->put('/users/{id}/accepter', function($id) use ($app) {
-        // Delete the membre
-        $ok = $app['dao.membre']->changeEtat($id, 2);
+        if($app['dao.membre']->verifAttente($id)){
+            $ok = $app['dao.membre']->changeEtat($id, 2);
+        }
+        else{
+            return $app->json('Le membre est pas en attente', 400);
+        }
 
         return $app->json($ok, 204);
     })->bind('admin_membre_accepter');
 
     //Refuser une inscription en fonction d'un id
     $app->put('/users/{id}/refuser', function($id) use ($app) {
-        // Delete the membre
-        $ok = $app['dao.membre']->changeEtat($id, 3);
+        if($app['dao.membre']->verifAttente($id)){
+            $ok = $app['dao.membre']->changeEtat($id, 3);
+        }
+        else{
+            return $app->json('Le membre est pas en attente', 400);
+        }
 
         return $app->json($ok, 204);
     })->bind('admin_membre_refuser');
