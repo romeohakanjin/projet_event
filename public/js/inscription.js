@@ -45,7 +45,8 @@ jQuery(function($) {'use strict',
                 TypeContrat: "Veuillez sélectionner un type de contrat."
             },
             submitHandler: function(form) {
-              form.submit();
+                form.submit();
+                alert("Votre inscription a bien été effectué.");
             }
         });
     });
