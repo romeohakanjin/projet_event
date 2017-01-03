@@ -127,7 +127,7 @@
 
 
     // Remove an article
-    $app->delete('/users/{id}/delete', function($id, Request $request) use ($app) {
+    $app->delete('/users/{id}', function($id, Request $request) use ($app) {
         // Delete the membre
         $ok = $app['dao.membre']->delete($id);
 
