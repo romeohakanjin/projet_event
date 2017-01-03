@@ -79,6 +79,7 @@
             'id' => $membre->getId(),
             'nom' => $membre->getNom(),
             'prenom' => $membre->getPrenom(),
+            'email' => $membre->getEmail(),
             'date_naissance' => $membre->getDateNaissance(),
             'adresse' => $membre->getAdresse(),
             'code_postal' => $membre->getCodePostal(),

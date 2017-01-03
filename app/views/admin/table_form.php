@@ -5,6 +5,7 @@
     <tr class="tr-table-admin-gestion">
       <th>Nom</th>
       <th>Prenom</th>
+      <th>Email</th>
       <th>Date naissance</th>
       <th>Adresse</th>
       <th>Code postal</th>

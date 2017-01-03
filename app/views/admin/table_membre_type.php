@@ -4,6 +4,7 @@
 		<th>id</th>
 		<th>Nom</th>
 		<th>Prenom</th>
+		<th>Email</th>
 		<th>Date naissance</th>
 		<th>Adresse</th>
 		<th>Code postal</th>
@@ -19,6 +20,7 @@
 			<td><?php print $membreData->id ?></td>
 			<td><?php print $membreData->nom ?></td>
 			<td><?php print $membreData->prenom ?></td>
+			<td><?php print $membreData->email ?></td>
 			<td><?php print $membreData->date_naissance ?></td>
 			<td><?php print $membreData->adresse ?></td>
 			<td><?php print $membreData->code_postal ?></td>

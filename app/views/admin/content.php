@@ -5,6 +5,9 @@
     <td><input autocomplete="off" type="text" name="inputPrenom" id="inputPrenom" class="form-control"
                required autofocus value="<?php if(isset($data->prenom)) { echo $data->prenom; } ?>"></td>
 
+    <td><input autocomplete="off" type="text" name="inputEmail" id="inputEmail" class="form-control"
+               required value="<?php if(isset($data->email)) { echo $data->email; } ?>"></td>
+
     <td><input autocomplete="off" type="text" name="inputDate_naissance" id="inputDate_naissance" class="form-control"
                required value="<?php if(isset($data->date_naissance)) { echo $data->date_naissance; } ?>"></td>
 

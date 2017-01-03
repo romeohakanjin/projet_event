@@ -111,7 +111,7 @@
             $civilite = ["Mr", "Mme"];
             $niveau_etude = [1,2,3,4,5];
             $dateExplode = explode("-", $values['DateNaissance']);
-            var_dump($values);
+
             $resultat = [
                 'nom' => $values['Nom'],
                 'prenom' => $values['Prenom'],
@@ -178,6 +178,7 @@
             $resultat = [
                 'nom' => $fields[0]['inputNom'],
                 'prenom' => $fields[0]['inputPrenom'],
+                'email' => $fields[0]['inputEmail'],
                 'date_naissance' => $fields[0]['inputDate_naissance'],
                 'adresse' => $fields[0]['inputAdresse'],
                 'code_postal' => $fields[0]['inputCP'],
@@ -191,8 +192,7 @@
                     $good = false;
                 }
             }
-            if(!preg_match($stringControle,$resultat['nom']) || !preg_match($stringControle,$resultat['prenom'])
-                || !preg_match($stringControle,$resultat['ville'])){
+            if(!preg_match($stringControle,$resultat['nom']) || !preg_match($stringControle,$resultat['prenom'])){
                 $good = false;
             }
 
@@ -201,6 +201,11 @@
             }
 
             if(!preg_match($cpControle, $resultat['code_postal'] )){
+                $good = false;
+            }
+
+            if (!filter_var( $resultat['email'], FILTER_VALIDATE_EMAIL))
+            {
                 $good = false;
             }
 

@@ -44,18 +44,6 @@
             return $this->db_instance;
         }
 
-        //Gestion conenxion
-        /*public function logged(){
-           if ( !isset($_SERVER['PHP_AUTH_USER'])
-                || !isset($_SERVER['PHP_AUTH_PW'])
-                || ($_SERVER['PHP_AUTH_USER'] !== "admin" )
-                || ($_SERVER['PHP_AUTH_PW'] !== "1") ){
-                return true;
-            }
-
-            return false;
-        }*/
-
         //Gestion déconnexion
         public function logout(){
             header('WWW-Authenticate: Basic realm="private"');
