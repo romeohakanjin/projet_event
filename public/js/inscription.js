@@ -1,6 +1,6 @@
 jQuery(function($) {'use strict',
     $(document).ready(function() {
-        $('#signin-DateNaissance').datepicker();
+        $('#signin-DateNaissance').datepicker({ dateFormat: 'yy-mm-dd' });
     });
     $(function(){
         $("form[name='form-signin']").validate({

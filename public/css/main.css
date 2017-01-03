@@ -259,7 +259,7 @@ ul.social-share li a:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
-	background-color: #c52d2f;
+  background-color: #c52d2f;
   color: #fff;
 }
 
@@ -1618,11 +1618,6 @@ shortcodes page css
 
 label.error{
   display: none;
-  color: red;
-  margin-left: 10px;
-}
-
-#form-signin .error_show{
   color: red;
   margin-left: 10px;
 }
