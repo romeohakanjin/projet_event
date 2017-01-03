@@ -4,8 +4,8 @@
 </Files>
 
 <Files admin.php>
-   AuthUserFile "C:\xampp\htdocs\projet\projet_event\app\views\admin\.htpasswd"
-#    AuthUserFile "C:\wamp\www\projet\projet_event\app\views\admin\.htpasswd"
+#   AuthUserFile "C:\xampp\htdocs\projet\projet_event\app\views\admin\.htpasswd"
+    AuthUserFile "C:\wamp\www\projet\projet_event\app\views\admin\.htpasswd"
     AuthName "Administration"
     AuthType Basic
     Require valid-user
