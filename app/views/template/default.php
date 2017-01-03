@@ -13,6 +13,7 @@
   <link href="../public/css/prettyPhoto.css" rel="stylesheet">
   <link href="../public/css/main.css" rel="stylesheet">
   <link href="../public/css/responsive.css" rel="stylesheet">
+  <link href="../public/css/jquery-ui-1.9.2.custom.css" rel="stylesheet">
   <!--Pour IE 9-->
   <script src="../public/js/html5shiv.js"></script>
   <script src="../public/js/respond.min.js"></script>
@@ -84,12 +85,12 @@
     </div>
   </footer><!--/#footer-->
 
-  <!-- JQuery Datepicker -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <!-- Import JS -->
-<!--  <script src="../public/js/inscription.js"></script>-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+  <script src="../public/js/jquery.ui.datepicker.validation.js"></script>
+  <script src="../public/js/jquery.validate.js"></script>
+  <script src="../public/js/inscription.js"></script>
   <script src="../public/js/jquery.js"></script>
   <script src="../public/js/bootstrap.min.js"></script>
   <script src="../public/js/jquery.prettyPhoto.js"></script>
