@@ -69,9 +69,6 @@
             break;
 
         default:
-            /*
-             * METTRE CODE ERREUR 404 ET RETURNER EN HEADER UNE PAGE 404 DEJA CREER NORMALEMENT
-             * */
             $app->notFound();
             break;
     }

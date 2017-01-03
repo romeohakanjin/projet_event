@@ -159,7 +159,7 @@
 
             if(is_numeric($dateExplode[0]) && is_numeric($dateExplode[1]) && is_numeric($dateExplode[2])){}
             else{$good = false;}
-            
+
             if ($good){
                 $this->membre->addMembre($resultat, "membre");
             }

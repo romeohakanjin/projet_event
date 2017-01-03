@@ -9,7 +9,7 @@
             $this->db = $db;
         }
 
-        //Fonction permettant de mettre un jour un user
+        //Fonction permettant de mettre à jour un user
         public function update($id, $fields, $table){
             $sql_parts = [];
             $attributes = [];
