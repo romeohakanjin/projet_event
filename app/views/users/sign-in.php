@@ -20,13 +20,13 @@
                 <!--  Nom  -->
                 <br/>
                 <label for="signin-Nom">Nom *</label>
-                <input type="text" name="Nom" id="signin-Nom" class="form-control" placeholder="Votre nom"  value="<?php if(isset($nom)) { echo $nom; } ?>">
+                <input type="text" name="Nom" id="signin-Nom" class="form-control" placeholder="Votre nom" autocomplete="off"  value="<?php if(isset($nom)) { echo $nom; } ?>">
                 <label id="error"></label>
 
                 <!--  Prénom  -->
                 <br/>
                 <label for="signin-Prenom">Prenom *</label>
-                <input type="text" name="Prenom" id="signin-Prenom" class="form-control" placeholder="Votre prénom"  value="<?php if(isset($prenom)) { echo $prenom; } ?>">
+                <input type="text" name="Prenom" id="signin-Prenom" class="form-control" placeholder="Votre prénom" autocomplete="off" value="<?php if(isset($prenom)) { echo $prenom; } ?>">
                 <label id="error"></label>
 
                 <!--  Date de naissance  -->
@@ -38,24 +38,24 @@
                 <!--  Adresse  -->
                 <br/>
                 <label for="signin-Adresse">Adresse *</label>
-                <input type="text" name="Adresse" id="signin-Adresse" class="form-control" placeholder="Le numéro de voie, nom de rue"  value="<?php if(isset($adresse)) { echo $adresse; } ?>">
+                <input type="text" name="Adresse" id="signin-Adresse" class="form-control" placeholder="Le numéro de voie, nom de rue" autocomplete="off" value="<?php if(isset($adresse)) { echo $adresse; } ?>">
                 <label id="error"></label>
 
                 <!--  Code postal  -->
                 <br/>
                 <label for="signin-CodePostale">Code Postal *</label>
-                <input type="text" name="CodePostal" id="signin-CodePostal" class="form-control" placeholder="Votre Code Postal"  value="<?php if(isset($codePostal)) { echo $codePostal; } ?>">
+                <input type="text" name="CodePostal" id="signin-CodePostal" class="form-control" placeholder="Votre Code Postal" autocomplete="off" value="<?php if(isset($codePostal)) { echo $codePostal; } ?>">
                 <label id="error"></label>
                 <!--  Ville  -->
                 <br/>
                 <label for="signin-Ville">Ville *</label>
-                <input type="text" name="Ville" id="signin-Ville" class="form-control" placeholder="Votre ville"  value="<?php if(isset($ville)) { echo $ville; } ?>">
+                <input type="text" name="Ville" id="signin-Ville" class="form-control" placeholder="Votre ville" autocomplete="off" value="<?php if(isset($ville)) { echo $ville; } ?>">
                 <label id="error"></label>
 
                 <!--  Email  -->
                 <br/>
                 <label for="signin-Email">Email *</label>
-                <input type="email" name="Email" id="signin-Email" class="form-control" placeholder="Votre adresse email" value="<?php if(isset($mail)) { echo $mail; } ?>">
+                <input type="email" name="Email" id="signin-Email" class="form-control" placeholder="Votre adresse email" autocomplete="off" value="<?php if(isset($mail)) { echo $mail; } ?>">
                 <label id="error"></label>
 
                 <!--  Niveau d'étude  -->
