@@ -55,7 +55,7 @@
             break;
 
         case 'confirm_update':
-            $controller->verifUpdate($_GET['id'], [$_POST], 'membre');
+            $good = $controller->verifUpdate($_GET['id'], [$_POST], 'membre');
             if (!$good){
                 header('Status: 412 Precondition Failed', false, 412);
                 header('Location: http://localhost/projet/projet_event/public/admin.php');

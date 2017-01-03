@@ -22,7 +22,6 @@ Back :
 
 test (une fois que c'est terminé) :
 - Tester TOUS les champs du site et bouton pour voir réaction
-- modifier nom des variables nommer correctement et explicitsh
 
 
 

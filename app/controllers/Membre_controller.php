@@ -195,7 +195,7 @@
                 || !preg_match($stringControle,$resultat['ville'])){
                 $good = false;
             }
-            var_dump($good);
+
             if(!in_array($resultat['niveau_etude'], $niveau_etude)){
                 $good = false;
             }
