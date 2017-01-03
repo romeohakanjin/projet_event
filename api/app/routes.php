@@ -35,7 +35,6 @@
 
     // Membre create
     $app->post('/users/create', function (Request $request) use ($app) {
-        var_dump($request->request);
         // Check request parameters
         if (!$request->request->has('nom')) {
             return $app->json('Missing required parameter: nom', 400);
@@ -61,6 +60,12 @@
         if (!$request->request->has('type_contrat')) {
             return $app->json('Missing required parameter: type_contrat', 400);
         }
+        if (!$request->request->has('civilite')) {
+            return $app->json('Missing required parameter: civilite', 400);
+        }
+        if (!$request->request->has('niveau_etude')) {
+            return $app->json('Missing required parameter: niveau_etude', 400);
+        }
 
         // Build and save the new article
         $membre = new Membre();
@@ -72,7 +77,9 @@
         $membre->setCodePostal($request->request->get('code_postal'));
         $membre->setVille($request->request->get('ville'));
         $membre->setTypeContrat($request->request->get('type_contrat'));
-
+        $membre->setCivilite($request->request->get('civilite'));
+        $membre->setNiveauEtude($request->request->get('niveau_etude'));
+        var_dump($membre);
         $app['dao.membre']->save($membre, 'insert');
         // Convert an object ($article) into an associative array ($responseData)
         $responseData = array(
@@ -85,8 +92,10 @@
             'code_postal' => $membre->getCodePostal(),
             'ville' => $membre->getVille(),
             'niveau_etude' => $membre->getNiveauEtude(),
-            'type_contrat' => $membre->getTypeContrat()
+            'type_contrat' => $membre->getTypeContrat(),
+            'civilite' => $membre->getCivilite()
         );
+
         return $app->json($responseData, 201);  // 201 = Created
     })->bind('admin_membre_add');
 

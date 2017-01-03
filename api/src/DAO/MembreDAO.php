@@ -88,12 +88,14 @@
             $Data = array(
                 'nom' => $content->getNom(),
                 'prenom' => $content->getPrenom(),
+                'email' => $content->getEmail(),
                 'date_naissance' => $content->getDateNaissance(),
                 'adresse' => $content->getAdresse(),
                 'code_postal' => $content->getCodePostal(),
                 'ville' => $content->getVille(),
                 'niveau_etude' => $content->getNiveauEtude(),
-                'type_contrat' => $content->getTypeContrat()
+                'type_contrat' => $content->getTypeContrat(),
+                'civilite' => $content->getCivilite()
             );
 
             return $this->db->$option('membre', $Data);
