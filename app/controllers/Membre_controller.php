@@ -224,7 +224,6 @@
         //permet d'effectuer l'envoi de mail
         public function email($values){
             $destinataire = 'sindy.lim91@gmail.com';
-
             function Rec($text)
             {
                 $text = htmlspecialchars(trim($text), ENT_QUOTES);
