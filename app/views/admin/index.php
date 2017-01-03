@@ -1,3 +1,13 @@
+<?php
+    if ($good){
+        ?>
+        <div class='alert alert-success'>
+            <strong>Modification OK!</strong>.
+        </div>
+        <?php
+    }
+?>
+
 <h1>Gestion Admin</h1>
 <div class="ul-gestion-admin-type-membre">
     <h3>Liste membre</h3>
