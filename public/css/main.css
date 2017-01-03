@@ -169,10 +169,6 @@ body > section {
 *******Header******
 **************************/
 
-#header .search{
-  display: inline-block;
-}
-
 .navbar>.container .navbar-brand{
   margin-left: 0;
 }
@@ -186,10 +182,6 @@ body > section {
 
 .top-number{
   color: #fff;
-}
-
-.top-number p{
-  margin: 0
 }
 
 .social{
@@ -220,10 +212,6 @@ ul.social-share li a {
 
 ul.social-share li a:hover {
   background: #c52d2f;
-  color: #fff;
-}
-
-.search i {
   color: #fff;
 }
 
@@ -273,9 +261,6 @@ ul.social-share li a:hover {
   color: #fff;
 }
 
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus,
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
@@ -637,22 +622,12 @@ ul.social-share li a:hover {
   color:#fff;
 }
 
-a.accordion-toggle  i{
-  width: 45px;
-  line-height: 44px;
-  font-size: 20px;
-  margin-top: -10px;
-  text-align: center;
-  margin-right: -15px;
-  background: #c9c9c9;
-}
-
-.panel-heading.active a.accordion-toggle i{
+.panel-heading.active i{
   background: #c52d2f;
   color: #fff;
 }
 
-.panel-heading.active a.accordion-toggle.collapsed i{
+.panel-heading.active i{
   background: #c52d2f;
   color: #fff;
 }
@@ -750,30 +725,6 @@ a.accordion-toggle  i{
   width: 20%;
 }
 
-#contat-info{
-  background: #fff url(../images/contact.png) no-repeat 90% 0;
-  padding: 30px 0;
-}
-
-.contact-info i{
-  width: 60px;
-  height: 60px;
-  font-size: 40px;
-  line-height: 60px;
-  color: #fff;
-  background: #000;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.contact-info h2{
-  margin-top: 0;
-  color: #000;
-}
-
-.contact-info{
-  color:#000;
-}
 
 /*************************
 ********* About Us Page CSS ******
@@ -784,8 +735,7 @@ a.accordion-toggle  i{
   margin-bottom: -110px;
 }
 
-.about-us h2, 
-.skill_text h2 {
+.about-us h2,{
   color:#4e4e4e;
   font-size: 30px;
   font-weight: 600;

@@ -52,11 +52,11 @@
                         <div class="col-sm-6">
                             <div class="carousel-content">
                                 <h1 class="animation animated-item-1">Rencontrez nos conseillers afin de vous améliorer</h1>
-                                <p class="lead">
+                                <h2>
                                     Vous cherchez activement un poste?<br>
                                     Vous souhaitez obtenir quelques conseils sur votre CV ou en savoir plus sur votre évolution de carrière?<br>
                                     Venez échanger lors d'un entretien avec l'un(e) de nos expert(e)s en recrutement.
-                                </p>
+                                </h2>
                             </div>
                         </div>
                         <div class="col-sm-6 hidden-xs animation animated-item-4">

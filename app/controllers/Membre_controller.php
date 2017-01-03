@@ -275,6 +275,12 @@
                 $message = str_replace("&amp;", "&", $message);
 
                 $success = @mail($destinataire, $objet, $message, $headers);
+                echo"<script language='javascript'>";
+                echo"alert('Votre message a bien été envoyé')";
+                echo"</script>";
             }
+            echo"<script language='javascript'>";
+            echo"alert('Votre message n'a pas pu être envoyé, merci de réessayer ultérieurement')";
+            echo"</script>";
         }
     }

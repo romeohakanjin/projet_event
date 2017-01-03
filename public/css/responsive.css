@@ -125,13 +125,13 @@
   }
 
   .tab-wrap .media .parrent.pull-left, 
-  .media.accordion-inner .pull-left{
+  .pull-left{
     clear: both;
     width: 100%;
   }
 
   .tab-wrap .media .parrent.media-body, 
-  .media.accordion-inner .media-body{
+   .media-body{
     clear: both;
   }
 
@@ -219,16 +219,6 @@
   .feature-wrap h3, 
   .single-services h3{
     font-size: 14px;
-  }
-
-
-  .media.accordion-inner .pull-left, 
-  .media.accordion-inner .media-body{
-    clear: both;
-  }
-
-  .accordion-inner h4 {
-    margin-top: 10px;
   }
 
   .tab-wrap .media .pull-left{
