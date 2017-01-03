@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-sm-5 text-center">
                     <div class="gmap">
-                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgxd6SBtw5kcRCY0Qu5lWSZQ&key=AIzaSyD_8p21DtwPsA1dZOPIXDdV51yPGv32mog""></iframe>
+                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgxd6SBtw5kcRCY0Qu5lWSZQ&key=AIzaSyD_8p21DtwPsA1dZOPIXDdV51yPGv32mog"></iframe>
                     </div>
                 </div>
                 <div class="col-sm-7 map-content">
@@ -29,10 +29,10 @@
             <p class="lead">Vous avez une question? <br> Nous sommes là pour y répondre</p>
         </div>
         <div class="row contact-wrap">
-            <!--<div class="alert alert-success">
+            <!--<div class="alert success">
                 <strong>Success!</strong> Votre message a été envoyé, il sera pris en compte dans un délais de 24h.
             </div>
-            <div class="alert alert-danger">
+            <div class="alert error">
                 <strong>Danger!</strong> Impossible d'envoyer le mail. Réessayer ultérieurement.
             </div>-->
             <form id="contact" class="contact-form" name="contact-form" method="post" action="index.php?p=send_mail">
