@@ -4,9 +4,11 @@ jQuery(function($) {'use strict',
     });
     $(function(){
         $("form[name='form-signin']").validate({
+            errorElement: "div",
+                    //place all errors in a <div id="errors"> element
             errorPlacement: function(error, element) {
-                        error.insertAfter("label");
-            },
+                        error.appendTo("div.form-element");
+                    },
             rules: {
                 Civilite: "required",
                 Nom: "required",

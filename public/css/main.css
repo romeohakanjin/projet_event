@@ -1630,13 +1630,6 @@ shortcodes page css
   color: red;
   margin-left: 10px;
 }
-input.invalid, select.invalid{
-  border: 2px solid red;
-}
-
-input.valid, select.valid{
-  border: 2px solid green;
-}
 
 div.team img{
   width: 70px;
