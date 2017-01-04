@@ -79,7 +79,7 @@
         $membre->setTypeContrat($request->request->get('type_contrat'));
         $membre->setCivilite($request->request->get('civilite'));
         $membre->setNiveauEtude($request->request->get('niveau_etude'));
-        var_dump($membre);
+
         $app['dao.membre']->save($membre, 'insert');
         // Convert an object ($article) into an associative array ($responseData)
         $responseData = array(

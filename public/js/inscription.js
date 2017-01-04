@@ -46,7 +46,7 @@ jQuery(function($) {'use strict',
             },
             submitHandler: function(form) {
                 form.submit();
-                alert("Votre inscription a bien été effectué.");
+                alert("Votre inscription a bien été effectuée.");
             }
         });
     });

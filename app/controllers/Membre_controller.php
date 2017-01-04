@@ -17,16 +17,19 @@
                     return 'ASC';
                 }
                 if ($_GET['ordre'] == 'DESC'){
+                    $_GET['ordre'] = 'DESC';
                     return 'DESC';
                 }
             }
             else if(isset($_GET['etat'])){
                 if(!isset($_GET['ordre']) || $_GET['ordre'] == 'ASC'){
-                    return $_GET['ordre'] = 'ASC';
+                    $_GET['ordre'] = 'ASC';
+                    return 'ASC';
 
                 }
                 else{
-                     return $_GET['ordre'] == 'DESC';
+                    $_GET['ordre'] = 'DESC';
+                    return 'DESC';
                 }
             }
             return null;
