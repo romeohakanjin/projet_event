@@ -1,0 +1,49 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}Membre en attente{% endblock %}
+
+{% block content %}
+    <h2 class="text-center">{{ block('title') }}</h2>
+    <div class="tab-content">
+    <div class="tab-pane fade in active adminTable" id="membres">
+        {% if membres %}
+            <div class="table-responsive">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date naissance</th>
+                        <th>Adresse</th>
+                        <th>Code postal</th>
+                        <th>Ville</th>
+                        <th>Etudes</th>
+                        <th>Contrat</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    {% for membre in membres %}
+                        <tr>
+                            <td><a class="membreTitle" href="{{ path('membre', { 'id': membre.id }) }}">{{ membre.id }}</a></td>
+                            <td>{{ membre.nom }}</td>
+                            <td>{{ membre.prenom }}</td>
+                            <td>{{ membre.date_naissance }}</td>
+                            <td>{{ membre.adresse }}</td>
+                            <td>{{ membre.code_postal }}</td>
+                            <td>{{ membre.ville }}</td>
+                            <td>{{ membre.niveau_etude }}</td>
+                            <td>{{ membre.type_contrat }}</td>
+                            <td>
+                                <a href="{{ path('admin_membre_accepter', { 'id': membre.id }) }}" class="btn btn-info btn-xs" title="Accepter">Accepter</a>
+                                <a href="{{ path('admin_membre_refuser', { 'id': membre.id }) }}" class="btn btn-danger btn-xs" title="Refuser">Refuser</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">No members found.</div>
+        {% endif %}
+    </div>
+{% endblock %}

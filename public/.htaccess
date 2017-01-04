@@ -1,0 +1,19 @@
+﻿<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
+
+<Files admin.php>
+#    AuthUserFile "C:\xampp\htdocs\projet\projet_event\app\views\admin\.htpasswd"
+    AuthUserFile "C:\wamp64\www\projet_event\app\views\admin\.htpasswd"
+#    AuthUserFile "C:\wamp\www\projet\projet_event\app\views\admin\.htpasswd"
+    AuthName "Administration"
+    AuthType Basic
+    Require valid-user
+</Files>
+
+###FILTRE CONTRE CERTAINS ROBOTS DES PIRATES
+RewriteEngine On
+## EXCEPTION: TOUS LES ROBOTS MEMES ANONYMES OU BANNIS PEUVENT ACCEDER A CES FICHIERS
+RewriteCond %{REQUEST_URI} !^/robots.txt
+RewriteCond %{REQUEST_URI} !^/sitemap.xml
