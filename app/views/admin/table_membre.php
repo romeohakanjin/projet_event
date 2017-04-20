@@ -4,6 +4,7 @@
 		<th>id</th>
 		<th>Nom</th>
 		<th>Prenom</th>
+        <th>EMail</th>
 		<th>Date naissance</th>
 		<th>Adresse</th>
 		<th>Code postal</th>
